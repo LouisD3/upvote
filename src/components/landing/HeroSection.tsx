@@ -1,8 +1,9 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { WaitlistForm } from "./WaitlistForm";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-20 text-center">
+    <section className="min-h-[90vh] flex flex-col items-center justify-center px-6 py-20 text-center">
       <AnimatedSection className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
           Transforme Reddit en canal d'acquisition récurrent pour ton{" "}
@@ -16,6 +17,10 @@ export const HeroSection = () => {
           <span className="font-semibold text-foreground">+10k€ de MRR</span> — avec un{" "}
           <span className="font-semibold text-primary">CAC proche de 0€</span>.
         </p>
+      </AnimatedSection>
+
+      <AnimatedSection delay={400} className="mt-10 w-full max-w-md mx-auto">
+        <WaitlistForm variant="hero" />
       </AnimatedSection>
     </section>
   );
