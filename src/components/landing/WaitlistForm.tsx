@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Twitter } from "lucide-react";
+import { XIcon } from "@/components/icons/XIcon";
 import { cn } from "@/lib/utils";
 
 interface WaitlistFormProps {
@@ -92,7 +92,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
       </div>
       
       <div className="relative">
-        <Twitter className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+        <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
         <Input
           type="text"
           placeholder="@tonhandle (optionnel)"

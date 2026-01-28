@@ -1,3 +1,4 @@
+import { Header } from "@/components/landing/Header";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ApproachSection } from "@/components/landing/ApproachSection";
@@ -5,9 +6,12 @@ import { ApproachSection } from "@/components/landing/ApproachSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection />
+      <Header />
+      <div className="pt-16">
+        <HeroSection />
       <ProblemSection />
-      <ApproachSection />
+        <ApproachSection />
+      </div>
       
       {/* Footer */}
       <footer className="py-8 px-6 text-center">
