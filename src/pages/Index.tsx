@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ApproachSection } from "@/components/landing/ApproachSection";
-import { WaitlistForm } from "@/components/landing/WaitlistForm";
 
 const Index = () => {
   return (
@@ -9,7 +8,6 @@ const Index = () => {
       <HeroSection />
       <ProblemSection />
       <ApproachSection />
-      <WaitlistForm />
       
       {/* Footer */}
       <footer className="py-8 px-6 text-center">
