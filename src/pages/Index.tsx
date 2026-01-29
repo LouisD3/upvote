@@ -2,6 +2,7 @@ import { Header } from "@/components/landing/Header";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ApproachSection } from "@/components/landing/ApproachSection";
+import { GrowthChartSection } from "@/components/landing/GrowthChartSection";
 
 const Index = () => {
   return (
@@ -9,7 +10,8 @@ const Index = () => {
       <Header />
       <div className="pt-16">
         <HeroSection />
-      <ProblemSection />
+        <ProblemSection />
+        <GrowthChartSection />
         <ApproachSection />
       </div>
       
