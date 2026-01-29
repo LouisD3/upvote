@@ -29,7 +29,7 @@ export const HeroSection = () => {
 
       <AnimatedSection className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
-          Transforme Reddit en canal d'acquisition récurrent pour ton{" "}
+          Transforme <span className="text-primary">Reddit</span> en canal d'acquisition pour ton{" "}
           <span className="text-primary">SaaS B2B</span>.
         </h1>
       </AnimatedSection>
@@ -37,15 +37,14 @@ export const HeroSection = () => {
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
           On transforme Reddit en machine à leads inbound pour les SaaS B2B qui font{" "}
-          <span className="font-semibold text-foreground">+10k€ de MRR</span> — avec un{" "}
-          <span className="font-semibold text-primary">CAC proche de 0€</span>.
+          <span className="font-semibold text-foreground">+10k€ de MRR</span>.
         </p>
       </AnimatedSection>
 
       <AnimatedSection delay={350} className="mt-6 max-w-xl mx-auto relative z-10">
         <div className="bg-primary/10 border border-primary/20 rounded-lg px-4 py-3">
           <p className="text-sm md:text-base text-muted-foreground">
-            <span className="font-semibold text-primary">Bonus:</span> Le contenu Reddit est de plus en plus utilisé comme source par les LLMs (ChatGPT, Perplexity, Claude) — ta marque gagne en visibilité avec le temps.
+            <span className="font-semibold text-primary">Bonus:</span> Le contenu Reddit est de plus en plus utilisé comme source par les LLMs (ChatGPT, Perplexity, Claude).
           </p>
         </div>
       </AnimatedSection>
