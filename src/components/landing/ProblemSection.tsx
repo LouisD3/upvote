@@ -1,20 +1,12 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-
-const approaches = [
-  "Du storytelling natif Reddit",
-  "Une distribution via les conversations",
-  "De la visibilité par les commentaires stratégiques",
-  "Des outils pour détecter où l'attention existe déjà",
-];
-
+const approaches = ["Du storytelling natif Reddit", "Une distribution via les conversations", "De la visibilité par les commentaires stratégiques", "Des outils pour détecter où l'attention existe déjà"];
 export const ProblemSection = () => {
-  return (
-    <section className="py-20 px-6 bg-secondary/50">
+  return <section className="py-20 px-6 bg-secondary/50">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-8">
             La plupart des SaaS B2B échouent sur Reddit.{" "}
-            <span className="text-primary">Pas nous.</span>
+            <span className="text-primary">Pas vous.</span>
           </h2>
         </AnimatedSection>
 
@@ -26,16 +18,13 @@ export const ProblemSection = () => {
         </AnimatedSection>
 
         <div className="space-y-4">
-          {approaches.map((approach, index) => (
-            <AnimatedSection key={approach} delay={200 + index * 100}>
+          {approaches.map((approach, index) => <AnimatedSection key={approach} delay={200 + index * 100}>
               <div className="flex items-start gap-4 p-4 rounded-lg bg-background border border-border">
                 <div className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-primary" />
                 <p className="text-foreground font-medium">{approach}</p>
               </div>
-            </AnimatedSection>
-          ))}
+            </AnimatedSection>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
