@@ -24,7 +24,7 @@ export const HeroSection = () => {
       <AnimatedSection className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
           Transforme <span className="text-primary">Reddit</span> en canal d'acquisition pour ton{" "}
-          <span className="text-primary">SaaS B2B</span>.
+          <span className="text-primary">SaaS</span>.
         </h1>
       </AnimatedSection>
       
