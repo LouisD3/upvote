@@ -11,13 +11,13 @@ import {
 } from "recharts";
 
 const data = [
-  { month: "Jan", reddit: 10, mrr: 8 },
-  { month: "Fév", reddit: 15, mrr: 12 },
-  { month: "Mar", reddit: 25, mrr: 22 },
-  { month: "Avr", reddit: 35, mrr: 32 },
-  { month: "Mai", reddit: 50, mrr: 48 },
-  { month: "Juin", reddit: 65, mrr: 62 },
-  { month: "Juil", reddit: 80, mrr: 78 },
+  { month: "Jan", reddit: 5, mrr: 3 },
+  { month: "Fév", reddit: 8, mrr: 5 },
+  { month: "Mar", reddit: 14, mrr: 10 },
+  { month: "Avr", reddit: 22, mrr: 18 },
+  { month: "Mai", reddit: 35, mrr: 30 },
+  { month: "Juin", reddit: 55, mrr: 48 },
+  { month: "Juil", reddit: 78, mrr: 72 },
   { month: "Août", reddit: 100, mrr: 95 },
 ];
 
@@ -92,7 +92,7 @@ export const GrowthChartSection = () => {
                   name="MRR"
                   stroke="hsl(var(--chart-2))"
                   strokeWidth={3}
-                  dot={{ fill: "hsl(var(--chart-2))", strokeWidth: 2, r: 4 }}
+                  dot={false}
                   activeDot={{ r: 6, fill: "hsl(var(--chart-2))" }}
                 />
               </LineChart>
