@@ -3,6 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { XIcon } from "@/components/icons/XIcon";
+import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { cn } from "@/lib/utils";
 
 interface WaitlistFormProps {
@@ -12,6 +13,7 @@ interface WaitlistFormProps {
 export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   const [email, setEmail] = useState("");
   const [twitter, setTwitter] = useState("");
+  const [linkedin, setLinkedin] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -30,7 +32,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
-    console.log("Waitlist submission:", { email, twitter });
+    console.log("Waitlist submission:", { email, twitter, linkedin });
     
     setIsLoading(false);
     setIsSubmitted(true);
@@ -73,7 +75,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   }
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" id="waitlist-form">
       <div>
         <Input
           type="email"
@@ -98,6 +100,17 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
           placeholder="@tonhandle (optionnel)"
           value={twitter}
           onChange={(e) => setTwitter(e.target.value)}
+          className="h-12 text-base bg-background border-border focus:border-primary pl-11"
+        />
+      </div>
+
+      <div className="relative">
+        <LinkedInIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+        <Input
+          type="text"
+          placeholder="linkedin.com/in/tonprofil (optionnel)"
+          value={linkedin}
+          onChange={(e) => setLinkedin(e.target.value)}
           className="h-12 text-base bg-background border-border focus:border-primary pl-11"
         />
       </div>
