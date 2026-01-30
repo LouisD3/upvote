@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { XIcon } from "@/components/icons/XIcon";
 import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistFormProps {
   variant?: "hero" | "section";
@@ -12,7 +13,7 @@ interface WaitlistFormProps {
 
 export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   const [email, setEmail] = useState("");
-  const [saasName, setSaasName] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [twitter, setTwitter] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,13 +31,34 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Waitlist submission:", { email, saasName, twitter, phone });
+    try {
+      const { error: insertError } = await supabase
+        .from('waitlist')
+        .insert({
+          email: email.trim(),
+          company_name: companyName.trim() || null,
+          phone: phone.trim() || null,
+          twitter_handle: twitter.trim() || null,
+        });
+
+      if (insertError) {
+        if (insertError.code === '23505') {
+          setError("Cet email est déjà inscrit sur la waitlist.");
+        } else {
+          setError("Une erreur est survenue. Réessaie plus tard.");
+          console.error("Waitlist error:", insertError);
+        }
+        setIsLoading(false);
+        return;
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError("Une erreur est survenue. Réessaie plus tard.");
+      console.error("Waitlist error:", err);
+    }
     
     setIsLoading(false);
-    setIsSubmitted(true);
   };
 
   if (isSubmitted) {
@@ -99,8 +121,8 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
           <Input
             type="text"
             placeholder="Nom de l'entreprise"
-            value={saasName}
-            onChange={(e) => setSaasName(e.target.value)}
+            value={companyName}
+            onChange={(e) => setCompanyName(e.target.value)}
             className="h-11 text-base bg-background border-border focus:border-primary"
           />
         </div>
