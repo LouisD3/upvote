@@ -14,22 +14,22 @@ const blurredChartData = [
 const credibilityPillars = [
   {
     icon: Users,
-    quote: "J'ai construit et marketé mes propres produits SaaS.",
-    meaning: "Je vous comprends. Je suis un partenaire, pas un prestataire.",
+    quote: "On a construit et marketé nos propres produits SaaS.",
+    meaning: "On vous comprend. On est un partenaire, pas un prestataire.",
   },
   {
     icon: MessageSquare,
-    quote: "J'ai fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
-    meaning: "Je sais créer de la valeur en écrivant.",
+    quote: "On a fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
+    meaning: "On sait créer de la valeur en écrivant.",
   },
   {
     icon: TrendingUp,
-    quote: "J'ai écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
-    meaning: "Je sais créer le buzz et surfer sur le momentum.",
+    quote: "On a écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
+    meaning: "On sait créer le buzz et surfer sur le momentum.",
   },
   {
     icon: Zap,
-    quote: "Je combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
+    quote: "On combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
     meaning: "Social listening, timing, analytics mais aucun posts automatisés.",
   },
 ];
@@ -127,7 +127,7 @@ export const ApproachSection = () => {
         {/* Credibility Pillars */}
         <AnimatedSection delay={200}>
           <h3 className="text-2xl font-bold text-foreground text-center mb-10">
-            Pourquoi me faire confiance ?
+            Pourquoi nous faire confiance ?
           </h3>
         </AnimatedSection>
 
