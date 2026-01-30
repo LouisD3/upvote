@@ -1,49 +1,64 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Lock, TrendingUp, Users, MessageSquare, Zap } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Area, AreaChart } from "recharts";
-
-const blurredChartData = [
-  { month: "J", impressions: 5000, leads: 2, mrr: 20 },
-  { month: "F", impressions: 12000, leads: 5, mrr: 25 },
-  { month: "M", impressions: 28000, leads: 12, mrr: 32 },
-  { month: "A", impressions: 65000, leads: 28, mrr: 45 },
-  { month: "M", impressions: 120000, leads: 52, mrr: 68 },
-  { month: "J", impressions: 280000, leads: 95, mrr: 110 },
-];
-
-const credibilityPillars = [
-  {
-    icon: Users,
-    quote: "On a construit et marketé nos propres produits SaaS.",
-    meaning: "On vous comprend. On est un partenaire, pas un prestataire.",
-  },
-  {
-    icon: MessageSquare,
-    quote: "On a fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
-    meaning: "On sait créer de la valeur en écrivant.",
-  },
-  {
-    icon: TrendingUp,
-    quote: "On a écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
-    meaning: "On sait créer le buzz et surfer sur le momentum.",
-  },
-  {
-    icon: Zap,
-    quote: "On combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
-    meaning: "Social listening, timing, analytics mais aucun posts automatisés.",
-  },
-];
-
+const blurredChartData = [{
+  month: "J",
+  impressions: 5000,
+  leads: 2,
+  mrr: 20
+}, {
+  month: "F",
+  impressions: 12000,
+  leads: 5,
+  mrr: 25
+}, {
+  month: "M",
+  impressions: 28000,
+  leads: 12,
+  mrr: 32
+}, {
+  month: "A",
+  impressions: 65000,
+  leads: 28,
+  mrr: 45
+}, {
+  month: "M",
+  impressions: 120000,
+  leads: 52,
+  mrr: 68
+}, {
+  month: "J",
+  impressions: 280000,
+  leads: 95,
+  mrr: 110
+}];
+const credibilityPillars = [{
+  icon: Users,
+  quote: "On a construit et marketé nos propres produits SaaS.",
+  meaning: "On vous comprend. On est un partenaire, pas un prestataire."
+}, {
+  icon: MessageSquare,
+  quote: "On a fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
+  meaning: "On sait créer de la valeur en écrivant."
+}, {
+  icon: TrendingUp,
+  quote: "On a écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
+  meaning: "On sait créer le buzz et surfer sur le momentum."
+}, {
+  icon: Zap,
+  quote: "On combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
+  meaning: "Social listening, timing, analytics mais aucun posts automatisés."
+}];
 export const ApproachSection = () => {
   const scrollToForm = () => {
     const formElement = document.getElementById("waitlist-form");
     if (formElement) {
-      formElement.scrollIntoView({ behavior: "smooth" });
+      formElement.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section className="py-20 px-6">
+  return <section className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
@@ -56,10 +71,7 @@ export const ApproachSection = () => {
 
         {/* Blurred Chart Section */}
         <AnimatedSection delay={100}>
-          <div 
-            className="relative bg-card border border-border rounded-2xl p-6 mb-16 cursor-pointer group"
-            onClick={scrollToForm}
-          >
+          <div className="relative bg-card border border-border rounded-2xl p-6 mb-16 cursor-pointer group" onClick={scrollToForm}>
             {/* Chart - Blurred */}
             <div className="blur-sm group-hover:blur-md transition-all duration-300">
               <div className="flex items-center justify-between mb-4">
@@ -84,20 +96,8 @@ export const ApproachSection = () => {
                   <AreaChart data={blurredChartData}>
                     <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={12} />
                     <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
-                    <Area 
-                      type="monotone" 
-                      dataKey="impressions" 
-                      stroke="hsl(var(--primary))" 
-                      fill="hsl(var(--primary)/0.2)"
-                      strokeWidth={2}
-                    />
-                    <Area 
-                      type="monotone" 
-                      dataKey="mrr" 
-                      stroke="#3b82f6" 
-                      fill="rgba(59, 130, 246, 0.2)"
-                      strokeWidth={2}
-                    />
+                    <Area type="monotone" dataKey="impressions" stroke="hsl(var(--primary))" fill="hsl(var(--primary)/0.2)" strokeWidth={2} />
+                    <Area type="monotone" dataKey="mrr" stroke="#3b82f6" fill="rgba(59, 130, 246, 0.2)" strokeWidth={2} />
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
@@ -119,9 +119,9 @@ export const ApproachSection = () => {
               </span>
             </div>
           </div>
-          <p className="text-muted-foreground text-center mt-6 max-w-2xl mx-auto">
-            Les résultats varient selon le produit et le marché, mais Reddit surpasse systématiquement le trafic payant en qualité des leads.
-          </p>
+          <p className="text-muted-foreground text-center mt-6 max-w-2xl mx-auto">Les résultats varient selon le produit et le marché, mais Reddit surpasse systématiquement le trafic payant en qualité des leads.
+
+        </p>
         </AnimatedSection>
 
         {/* Credibility Pillars */}
@@ -132,8 +132,7 @@ export const ApproachSection = () => {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credibilityPillars.map((pillar, index) => (
-            <AnimatedSection key={index} delay={300 + index * 100}>
+          {credibilityPillars.map((pillar, index) => <AnimatedSection key={index} delay={300 + index * 100}>
               <div className="relative h-full">
                 {/* Pillar design */}
                 <div className="h-full bg-card border border-border rounded-2xl p-6 flex flex-col relative overflow-hidden group hover:border-primary/50 transition-colors">
@@ -161,10 +160,8 @@ export const ApproachSection = () => {
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
                 </div>
               </div>
-            </AnimatedSection>
-          ))}
+            </AnimatedSection>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
