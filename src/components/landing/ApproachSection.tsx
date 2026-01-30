@@ -119,6 +119,9 @@ export const ApproachSection = () => {
               </span>
             </div>
           </div>
+          <p className="text-muted-foreground text-center mt-6 max-w-2xl mx-auto">
+            Les résultats varient selon le produit et le marché, mais Reddit surpasse systématiquement le trafic payant en qualité des leads.
+          </p>
         </AnimatedSection>
 
         {/* Credibility Pillars */}
