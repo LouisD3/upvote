@@ -50,13 +50,8 @@ const credibilityPillars = [{
   meaning: "Social listening, timing, analytics mais aucun posts automatisés."
 }];
 export const ApproachSection = () => {
-  const scrollToForm = () => {
-    const formElement = document.getElementById("waitlist-form");
-    if (formElement) {
-      formElement.scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return <section className="py-20 px-6">
       <div className="max-w-5xl mx-auto">
@@ -71,7 +66,7 @@ export const ApproachSection = () => {
 
         {/* Blurred Chart Section */}
         <AnimatedSection delay={100}>
-          <div className="relative bg-card border border-border rounded-2xl p-6 mb-16 cursor-pointer group" onClick={scrollToForm}>
+          <div className="relative bg-card border border-border rounded-2xl p-6 mb-16 cursor-pointer group" onClick={scrollToTop}>
             {/* Chart - Blurred */}
             <div className="blur-sm group-hover:blur-md transition-all duration-300">
               <div className="flex items-center justify-between mb-4">
