@@ -23,9 +23,6 @@ export const HeroSection = () => {
       </div>
 
       {/* Surtitre */}
-      <AnimatedSection delay={50} className="relative z-10">
-        
-      </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
