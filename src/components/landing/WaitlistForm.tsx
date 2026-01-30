@@ -148,7 +148,12 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
             Inscription...
           </span>
         ) : (
-          "Rejoindre la waitlist"
+          <span className="flex items-center justify-center gap-2">
+            <span>Rejoindre la waitlist</span>
+            <span className="bg-background/20 text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
+              🔥 Plus que 7 places
+            </span>
+          </span>
         )}
       </Button>
     </form>
