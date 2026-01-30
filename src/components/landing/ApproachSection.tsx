@@ -125,7 +125,7 @@ export const ApproachSection = () => {
         </AnimatedSection>
 
         {/* Credibility Pillars */}
-        <AnimatedSection delay={200}>
+        <AnimatedSection delay={200} className="mt-12">
           <h3 className="text-2xl font-bold text-foreground text-center mb-10">
             Pourquoi nous faire confiance ?
           </h3>
