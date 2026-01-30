@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { XIcon } from "@/components/icons/XIcon";
-import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
+import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WaitlistFormProps {
@@ -12,8 +12,9 @@ interface WaitlistFormProps {
 
 export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   const [email, setEmail] = useState("");
+  const [saasName, setSaasName] = useState("");
   const [twitter, setTwitter] = useState("");
-  const [linkedin, setLinkedin] = useState("");
+  const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -32,7 +33,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
-    console.log("Waitlist submission:", { email, twitter, linkedin });
+    console.log("Waitlist submission:", { email, saasName, twitter, phone });
     
     setIsLoading(false);
     setIsSubmitted(true);
@@ -92,6 +93,16 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
           <p className="mt-2 text-sm text-destructive">{error}</p>
         )}
       </div>
+
+      <div>
+        <Input
+          type="text"
+          placeholder="Nom de ton SaaS"
+          value={saasName}
+          onChange={(e) => setSaasName(e.target.value)}
+          className="h-12 text-base bg-background border-border focus:border-primary"
+        />
+      </div>
       
       <div className="relative">
         <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -105,12 +116,12 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
       </div>
 
       <div className="relative">
-        <LinkedInIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
         <Input
-          type="text"
-          placeholder="linkedin.com/in/tonprofil (optionnel)"
-          value={linkedin}
-          onChange={(e) => setLinkedin(e.target.value)}
+          type="tel"
+          placeholder="Téléphone (optionnel)"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           className="h-12 text-base bg-background border-border focus:border-primary pl-11"
         />
       </div>
