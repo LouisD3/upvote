@@ -30,7 +30,7 @@ const credibilityPillars = [
   {
     icon: Zap,
     quote: "Je combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
-    meaning: "Social listening, timing, analytics — pas des posts automatisés.",
+    meaning: "Social listening, timing, analytics mais aucun posts automatisés.",
   },
 ];
 
