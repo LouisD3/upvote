@@ -26,8 +26,7 @@ export const HeroSection = () => {
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
-          Transforme <span className="text-primary">Reddit</span> en machine à leads pour ton{" "}
-          <span className="text-primary">SaaS</span>.
+          Transforme <span className="text-primary">Reddit</span> en canal d'acquisition récurrent pour ton <span className="text-primary">SaaS</span>.
         </h1>
       </AnimatedSection>
       
