@@ -24,7 +24,7 @@ export const HeroSection = () => {
 
       {/* Logo */}
       <AnimatedSection className="mb-6 relative z-10">
-        <img src={logo} alt="Reddit Acquisition" className="w-20 h-20 md:w-24 md:h-24 mx-auto" />
+        
       </AnimatedSection>
 
       {/* Surtitre */}
