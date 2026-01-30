@@ -3,11 +3,8 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo_reddit_agence.png";
 
 export const Header = () => {
-  const scrollToForm = () => {
-    const formElement = document.getElementById("waitlist-form");
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -23,7 +20,7 @@ export const Header = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <Button onClick={scrollToForm} size="sm" className="flex items-center gap-2">
+          <Button onClick={scrollToTop} size="sm" className="flex items-center gap-2">
             <span>Rejoindre la waitlist</span>
             <span className="bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
               7 places
