@@ -25,20 +25,20 @@ export const HeroSection = () => {
       {/* Surtitre */}
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
           Transforme <span className="text-primary">Reddit</span> en canal d'acquisition récurrent pour ton <span className="text-primary">SaaS</span>.
         </h1>
       </AnimatedSection>
       
       <AnimatedSection delay={200} className="mt-4 max-w-2xl mx-auto relative z-10">
-        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+        <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
           Reddit devient un canal d'acquisition inbound cumulatif pour les SaaS générant plus de <span className="font-bold text-foreground">10k de MRR.</span>
         </p>
       </AnimatedSection>
 
       <AnimatedSection delay={350} className="mt-4 max-w-xl mx-auto relative z-10">
         <div className="bg-primary/10 border border-primary/20 rounded-lg px-3 py-2">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             <span className="font-semibold text-primary">Bonus:</span> Le contenu Reddit est de plus en plus utilisé comme source par les LLMs (ChatGPT, Perplexity, Claude).
           </p>
         </div>
