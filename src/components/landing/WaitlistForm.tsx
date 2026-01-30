@@ -6,6 +6,37 @@ import { XIcon } from "@/components/icons/XIcon";
 import { Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+// Zod validation schema for waitlist form
+const waitlistSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, "L'email est requis")
+    .max(255, "L'email ne peut pas dépasser 255 caractères")
+    .email("Merci d'entrer un email valide"),
+  company_name: z
+    .string()
+    .trim()
+    .max(100, "Le nom de l'entreprise ne peut pas dépasser 100 caractères")
+    .optional()
+    .transform(val => val || null),
+  phone: z
+    .string()
+    .trim()
+    .max(20, "Le numéro de téléphone ne peut pas dépasser 20 caractères")
+    .regex(/^(\+?[\d\s\-()]*)?$/, "Format de téléphone invalide")
+    .optional()
+    .transform(val => val || null),
+  twitter_handle: z
+    .string()
+    .trim()
+    .max(50, "Le handle Twitter ne peut pas dépasser 50 caractères")
+    .regex(/^(@?[a-zA-Z0-9_]*)?$/, "Format de handle Twitter invalide (lettres, chiffres et _ uniquement)")
+    .optional()
+    .transform(val => val || null),
+});
 
 interface WaitlistFormProps {
   variant?: "hero" | "section";
@@ -24,21 +55,31 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
     e.preventDefault();
     setError("");
 
-    if (!email || !email.includes("@")) {
-      setError("Merci d'entrer un email valide.");
+    // Validate form data with Zod
+    const validationResult = waitlistSchema.safeParse({
+      email: email,
+      company_name: companyName,
+      phone: phone,
+      twitter_handle: twitter,
+    });
+
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      setError(firstError.message);
       return;
     }
 
+    const validatedData = validationResult.data;
     setIsLoading(true);
     
     try {
       const { error: insertError } = await supabase
         .from('waitlist')
         .insert({
-          email: email.trim(),
-          company_name: companyName.trim() || null,
-          phone: phone.trim() || null,
-          twitter_handle: twitter.trim() || null,
+          email: validatedData.email,
+          company_name: validatedData.company_name,
+          phone: validatedData.phone,
+          twitter_handle: validatedData.twitter_handle,
         });
 
       if (insertError) {
@@ -46,7 +87,6 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
           setError("Cet email est déjà inscrit sur la waitlist.");
         } else {
           setError("Une erreur est survenue. Réessaie plus tard.");
-          console.error("Waitlist error:", insertError);
         }
         setIsLoading(false);
         return;
@@ -55,7 +95,6 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
       setIsSubmitted(true);
     } catch (err) {
       setError("Une erreur est survenue. Réessaie plus tard.");
-      console.error("Waitlist error:", err);
     }
     
     setIsLoading(false);
