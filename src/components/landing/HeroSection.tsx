@@ -19,7 +19,7 @@ export const HeroSection = () => {
         <FloatingRedditLogo className="absolute bottom-[20%] left-[15%] w-10 h-10 text-primary/10 animate-[float2_11s_ease-in-out_infinite]" />
         <FloatingRedditLogo className="absolute bottom-[30%] right-[15%] w-14 h-14 text-primary/6 animate-[float3_8s_ease-in-out_infinite_0.5s]" />
         <FloatingRedditLogo className="absolute top-[60%] right-[25%] w-6 h-6 text-primary/8 animate-[float1_7s_ease-in-out_infinite_2s]" />
-        <FloatingRedditLogo className="absolute bottom-[10%] left-[30%] w-12 h-12 text-primary/5 animate-[float2_13s_ease-in-out_infinite]" />
+        
       </div>
 
       {/* Logo */}
@@ -29,7 +29,9 @@ export const HeroSection = () => {
 
       {/* Surtitre */}
       <AnimatedSection delay={50} className="relative z-10">
-        <span className="inline-block text-sm md:text-base font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-2 rounded-full mb-6">🇺🇸 "La stratégie secrète des SaaS américains arrive en France"</span>
+        <span className="inline-block text-sm md:text-base font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-2 rounded-full mb-6">
+          🇺🇸 La stratégie secrète des SaaS américains arrive en France
+        </span>
       </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">

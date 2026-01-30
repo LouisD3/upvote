@@ -1,49 +1,37 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Check, X } from "lucide-react";
-
-const comparisonData = [
-  {
-    without: "Se fait bannir ou flag",
-    with: "Exécution native, conforme aux règles Reddit"
-  },
-  {
-    without: "0-2 leads aléatoires (avec de la chance)",
-    with: "Conversations inbound qualifiées régulières"
-  },
-  {
-    without: "6-10h/semaine perdues",
-    with: "100% done-for-you"
-  },
-  {
-    without: "Posts qui sentent la promo → ban",
-    with: "Perçu comme une voix respectée de la communauté"
-  },
-  {
-    without: "Court après les posts viraux",
-    with: "Construit l'autorité dans les bonnes communautés"
-  },
-  {
-    without: "Pics de trafic éphémères",
-    with: "Threads qui génèrent du trafic pendant des mois"
-  },
-  {
-    without: "Risque de damage réputationnel",
-    with: "Positionnement de marque renforcé"
-  },
-  {
-    without: "Aucune visibilité hors Reddit",
-    with: "Contenu qui compound via Search & LLMs"
-  }
-];
-
+const comparisonData = [{
+  without: "Se fait bannir ou flag",
+  with: "Exécution native, conforme aux règles Reddit"
+}, {
+  without: "0-2 leads aléatoires (avec de la chance)",
+  with: "Conversations inbound qualifiées régulières"
+}, {
+  without: "6-10h/semaine perdues",
+  with: "100% done-for-you"
+}, {
+  without: "Posts qui sentent la promo → ban",
+  with: "Perçu comme une voix respectée de la communauté"
+}, {
+  without: "Court après les posts viraux",
+  with: "Construit l'autorité dans les bonnes communautés"
+}, {
+  without: "Pics de trafic éphémères",
+  with: "Threads qui génèrent du trafic pendant des mois"
+}, {
+  without: "Risque de damage réputationnel",
+  with: "Positionnement de marque renforcé"
+}, {
+  without: "Aucune visibilité hors Reddit",
+  with: "Contenu qui compound via Search & LLMs"
+}];
 export const ProblemSection = () => {
-  return (
-    <section className="py-20 px-6 bg-secondary/50">
+  return <section className="py-20 px-6 bg-secondary/50">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             La plupart des SaaS échouent sur Reddit.{" "}
-            <span className="text-primary">Pas toi.</span>
+            <span className="text-primary">Pas nous.</span>
           </h2>
         </AnimatedSection>
 
@@ -65,12 +53,10 @@ export const ProblemSection = () => {
                 <h3 className="text-lg font-semibold text-foreground">Sans stratégie Reddit-native</h3>
               </div>
               <ul className="space-y-4">
-                {comparisonData.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {comparisonData.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{item.without}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </AnimatedSection>
@@ -88,17 +74,14 @@ export const ProblemSection = () => {
                 <h3 className="text-lg font-semibold text-foreground">Avec notre système d'acquisition</h3>
               </div>
               <ul className="space-y-4">
-                {comparisonData.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
+                {comparisonData.map((item, index) => <li key={index} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-foreground">{item.with}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </AnimatedSection>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
