@@ -15,7 +15,7 @@ export const Header = () => {
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <AnimatedSection>
           <a href="/" className="flex items-center gap-2 group">
-            <img src={logo} alt="RedditGrowth" className="w-8 h-8 rounded-lg" />
+            <img src={logo} alt="RedditGrowth" className="w-10 h-10 rounded-lg" />
             <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
               RedditGrowth
             </span>
