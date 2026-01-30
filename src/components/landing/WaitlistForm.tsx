@@ -76,54 +76,58 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   }
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="space-y-4" id="waitlist-form">
-      <div>
-        <Input
-          type="email"
-          placeholder="ton@email.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className={cn(
-            "h-12 text-base bg-background border-border focus:border-primary",
-            error && "border-destructive"
+    <form onSubmit={handleSubmit} className="space-y-3" id="waitlist-form">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div>
+          <Input
+            type="email"
+            placeholder="ton@email.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={cn(
+              "h-11 text-base bg-background border-border focus:border-primary",
+              error && "border-destructive"
+            )}
+            required
+          />
+          {error && (
+            <p className="mt-1 text-sm text-destructive">{error}</p>
           )}
-          required
-        />
-        {error && (
-          <p className="mt-2 text-sm text-destructive">{error}</p>
-        )}
-      </div>
+        </div>
 
-      <div>
-        <Input
-          type="text"
-          placeholder="Nom de ton SaaS"
-          value={saasName}
-          onChange={(e) => setSaasName(e.target.value)}
-          className="h-12 text-base bg-background border-border focus:border-primary"
-        />
+        <div>
+          <Input
+            type="text"
+            placeholder="Nom de l'entreprise"
+            value={saasName}
+            onChange={(e) => setSaasName(e.target.value)}
+            className="h-11 text-base bg-background border-border focus:border-primary"
+          />
+        </div>
       </div>
       
-      <div className="relative">
-        <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-        <Input
-          type="text"
-          placeholder="@tonhandle (optionnel)"
-          value={twitter}
-          onChange={(e) => setTwitter(e.target.value)}
-          className="h-12 text-base bg-background border-border focus:border-primary pl-11"
-        />
-      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="relative">
+          <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <Input
+            type="tel"
+            placeholder="Téléphone (optionnel)"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="h-11 text-base bg-background border-border focus:border-primary pl-11"
+          />
+        </div>
 
-      <div className="relative">
-        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-        <Input
-          type="tel"
-          placeholder="Téléphone (optionnel)"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          className="h-12 text-base bg-background border-border focus:border-primary pl-11"
-        />
+        <div className="relative">
+          <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder="@tonhandle (optionnel)"
+            value={twitter}
+            onChange={(e) => setTwitter(e.target.value)}
+            className="h-11 text-base bg-background border-border focus:border-primary pl-11"
+          />
+        </div>
       </div>
 
       <Button
