@@ -26,15 +26,15 @@ export const HeroSection = () => {
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight">
-          Transforme <span className="text-primary">Reddit</span> en machine à leads pour ton{" "}
+          Transforme <span className="text-primary">Reddit</span> en canal d'acquisition récurrent pour ton{" "}
           <span className="text-primary">SaaS</span>.
         </h1>
       </AnimatedSection>
       
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-          On génère des conversations inbound qualifiées sur Reddit pour les SaaS qui veulent scaler{" "}
-          <span className="font-semibold text-foreground">sans dépendre de la pub</span>.
+          Reddit devient un canal d'acquisition inbound cumulatif pour les SaaS générant plus de 10k$ de MRR —{" "}
+          <span className="font-semibold text-foreground">avec un CAC à 0$</span>.
         </p>
       </AnimatedSection>
 
