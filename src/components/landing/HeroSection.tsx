@@ -33,8 +33,7 @@ export const HeroSection = () => {
       
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-          On génère des conversations inbound qualifiées sur Reddit pour les SaaS qui veulent scaler{" "}
-          .
+          Reddit devient un canal d'acquisition inbound cumulatif pour les SaaS générant plus de 10k de MRR.
         </p>
       </AnimatedSection>
 
