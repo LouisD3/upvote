@@ -5,16 +5,10 @@ const comparisonData = [{
   with: "Exécution native, conforme aux règles Reddit"
 }, {
   without: "0-2 leads aléatoires (avec de la chance)",
-  with: "Conversations inbound qualifiées régulières"
+  with: "Leads inbound qualifiés récurrents automatiquement"
 }, {
   without: "6-10h/semaine perdues",
   with: "100% done-for-you"
-}, {
-  without: "Posts qui sentent la promo → ban",
-  with: "Perçu comme une voix respectée de la communauté"
-}, {
-  without: "Court après les posts viraux",
-  with: "Construit l'autorité dans les bonnes communautés"
 }, {
   without: "Pics de trafic éphémères",
   with: "Threads qui génèrent du trafic pendant des mois"
@@ -31,7 +25,7 @@ export const ProblemSection = () => {
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             La plupart des SaaS échouent sur Reddit.{" "}
-            <span className="text-primary">Pas nous.</span>
+            <span className="text-primary">Pas vous.</span>
           </h2>
         </AnimatedSection>
 
