@@ -23,7 +23,7 @@ const comparisonData = [{
   with: "Positionnement de marque renforcé"
 }, {
   without: "Aucune visibilité hors Reddit",
-  with: "Contenu qui compound via Search & LLMs"
+  with: "Contenu qui compound via SEO & LLMs"
 }];
 export const ProblemSection = () => {
   return <section className="py-20 px-6 bg-secondary/50">
