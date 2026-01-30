@@ -29,9 +29,7 @@ export const HeroSection = () => {
 
       {/* Surtitre */}
       <AnimatedSection delay={50} className="relative z-10">
-        <span className="inline-block text-sm md:text-base font-medium text-primary bg-primary/10 border border-primary/20 px-4 py-2 rounded-full mb-6">
-          🇺🇸 La stratégie secrète des SaaS américains arrive en France
-        </span>
+        
       </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
