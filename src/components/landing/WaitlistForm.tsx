@@ -99,7 +99,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
 
   const formContent = (
     <form onSubmit={handleSubmit} className="space-y-3" id="waitlist-form">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3">
         <div>
           <Input
             type="email"
@@ -128,7 +128,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3">
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
