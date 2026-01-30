@@ -1,5 +1,6 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo_reddit_agence.png";
 
 export const Header = () => {
   const scrollToForm = () => {
@@ -14,9 +15,7 @@ export const Header = () => {
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <AnimatedSection>
           <a href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">R</span>
-            </div>
+            <img src={logo} alt="RedditGrowth" className="w-8 h-8 rounded-lg" />
             <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
               RedditGrowth
             </span>
@@ -24,8 +23,11 @@ export const Header = () => {
         </AnimatedSection>
         
         <AnimatedSection delay={100}>
-          <Button onClick={scrollToForm} size="sm">
-            Rejoindre la waitlist
+          <Button onClick={scrollToForm} size="sm" className="flex items-center gap-2">
+            <span>Rejoindre la waitlist</span>
+            <span className="bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
+              7 places
+            </span>
           </Button>
         </AnimatedSection>
       </div>
