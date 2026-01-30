@@ -22,7 +22,7 @@ export const Header = () => {
         <AnimatedSection delay={100}>
           <Button onClick={scrollToTop} size="sm" className="flex items-center gap-2">
             <span>Rejoindre la waitlist</span>
-            <span className="bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
+            <span className="hidden sm:inline bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
               7 places
             </span>
           </Button>
