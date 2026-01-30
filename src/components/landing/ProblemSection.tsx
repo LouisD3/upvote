@@ -50,7 +50,7 @@ export const ProblemSection = () => {
                 <div className="w-10 h-10 rounded-full bg-destructive/10 flex items-center justify-center">
                   <X className="w-5 h-5 text-destructive" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">Sans stratégie Reddit-native</h3>
+                <h3 className="text-lg font-semibold text-foreground">Sans stratégie</h3>
               </div>
               <ul className="space-y-4">
                 {comparisonData.map((item, index) => <li key={index} className="flex items-start gap-3">
