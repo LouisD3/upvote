@@ -25,7 +25,7 @@ export const ProblemSection = () => {
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
             La plupart des SaaS échouent sur Reddit.{" "}
-            <span className="text-primary">Pas vous.</span>
+            <span className="text-primary">Pas nous.</span>
           </h2>
         </AnimatedSection>
 
