@@ -32,7 +32,7 @@ export const HeroSection = () => {
       
       <AnimatedSection delay={200} className="mt-4 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Reddit devient un canal d'acquisition inbound cumulatif pour les SaaS générant plus de <span className="font-bold text-foreground">10k de MRR.</span>
+          Nous gérons de A à Z ton marketing Reddit si ton SaaS génère plus de  <span className="font-bold text-foreground">10k de MRR.</span>
         </p>
       </AnimatedSection>
 
