@@ -1,6 +1,6 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { WaitlistForm } from "./WaitlistForm";
-import logo from "@/assets/logo_reddit_agence.png";
+import { LogoBanner } from "./LogoBanner";
 const FloatingRedditLogo = ({
   className
 }: {
@@ -47,5 +47,7 @@ export const HeroSection = () => {
       <AnimatedSection delay={500} className="mt-6 w-full max-w-xl mx-auto relative z-10">
         <WaitlistForm variant="hero" />
       </AnimatedSection>
+
+      <LogoBanner />
     </section>;
 };
