@@ -13,7 +13,7 @@ const comparisonData = [{
   without: "Pics de trafic éphémères",
   with: "Threads qui génèrent du trafic pendant des mois"
 }, {
-  without: "Risque de domage réputationnel",
+  without: "Image de marque fragilisée",
   with: "Positionnement de marque renforcé"
 }, {
   without: "Aucune visibilité hors Reddit",
