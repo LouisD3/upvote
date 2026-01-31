@@ -2,10 +2,10 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Check, X } from "lucide-react";
 const comparisonData = [{
   without: "Se fait bannir ou flag",
-  with: "Exécution native, conforme aux règles Reddit"
+  with: "Un canal d'acquisition stable"
 }, {
   without: "0-2 leads aléatoires (avec de la chance)",
-  with: "Leads inbound qualifiés récurrents automatiquement"
+  with: "Des leads ultras qualifiés récurrents en automatique"
 }, {
   without: "6-10h/semaine perdues",
   with: "100% done-for-you"
