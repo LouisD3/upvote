@@ -53,8 +53,8 @@ const logos = [
 
 export const LogoBanner = () => {
   return (
-    <AnimatedSection delay={600} className="w-full mt-12 relative z-10">
-      <p className="text-sm text-muted-foreground mb-6 text-center font-medium">
+    <AnimatedSection delay={600} className="w-full mt-16 mb-8 relative z-10">
+      <p className="text-base text-muted-foreground mb-8 text-center font-medium">
         Rejoignez les SaaS qui utilisent Reddit comme canal d'acquisition
       </p>
       
@@ -63,13 +63,13 @@ export const LogoBanner = () => {
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
-        <div className="flex animate-scroll">
+        <div className="flex animate-scroll py-4">
           {/* First set of logos */}
-          <div className="flex items-center gap-12 px-6 shrink-0">
+          <div className="flex items-center gap-16 px-8 shrink-0">
             {logos.map((logo) => (
               <div 
                 key={logo.name} 
-                className="flex items-center justify-center text-muted-foreground/40 hover:text-primary transition-all duration-300 hover:scale-110" 
+                className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" 
                 title={logo.name}
               >
                 {logo.svg}
@@ -77,11 +77,11 @@ export const LogoBanner = () => {
             ))}
           </div>
           {/* Duplicate for seamless loop */}
-          <div className="flex items-center gap-12 px-6 shrink-0">
+          <div className="flex items-center gap-16 px-8 shrink-0">
             {logos.map((logo) => (
               <div 
-                key={`${logo.name}-dup`} 
-                className="flex items-center justify-center text-muted-foreground/40 hover:text-primary transition-all duration-300 hover:scale-110" 
+                key={`${logo.name}-dup`}
+                className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" 
                 title={logo.name}
               >
                 {logo.svg}
