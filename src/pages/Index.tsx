@@ -2,6 +2,7 @@ import { Header } from "@/components/landing/Header";
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ApproachSection } from "@/components/landing/ApproachSection";
+import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { Heart } from "lucide-react";
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
         <HeroSection />
         <ProblemSection />
         <ApproachSection />
+        <TestimonialsSection />
       </div>
       
       {/* Footer */}
