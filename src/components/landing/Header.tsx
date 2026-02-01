@@ -31,11 +31,12 @@ export const Header = () => {
           <Button 
             onClick={scrollToTop} 
             size="sm" 
-            className="flex items-center gap-2 h-10 px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
           >
-            <Sparkles className="w-4 h-4" />
-            <span>Rejoindre la waitlist</span>
-            <span className="hidden sm:inline bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
+            <Sparkles className="w-4 h-4 flex-shrink-0" />
+            <span className="hidden xs:inline text-sm sm:text-base">Rejoindre</span>
+            <span className="hidden sm:inline text-sm sm:text-base">la waitlist</span>
+            <span className="hidden md:inline bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
               7 places
             </span>
           </Button>
