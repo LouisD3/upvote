@@ -1,7 +1,6 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { WaitlistForm } from "./WaitlistForm";
 import { LogoBanner } from "./LogoBanner";
-import { Sparkles } from "lucide-react";
 
 const FloatingRedditLogo = ({
   className
@@ -33,13 +32,6 @@ export const HeroSection = () => {
         <FloatingRedditLogo className="absolute top-[60%] right-[25%] w-6 h-6 text-primary/8 animate-[float1_7s_ease-in-out_infinite_2s]" />
       </div>
 
-      {/* Sparkle badge */}
-      <AnimatedSection delay={50} className="relative z-10 mb-6">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary backdrop-blur-sm">
-          <Sparkles className="w-4 h-4" />
-          <span>Agence spécialisée Reddit Marketing</span>
-        </div>
-      </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
