@@ -1,13 +1,15 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Star } from "lucide-react";
+import mateoAvatar from "@/assets/mateo-avatar.png";
 
 const testimonials = [
   {
     name: "Matéo",
     role: "CEO",
     company: "StagingEasy",
-    avatar: "M",
+    avatar: mateoAvatar,
+    isImage: true,
     content: "En 3 mois, Reddit est devenu notre 2ème source d'acquisition. Les leads sont ultra qualifiés car ils viennent à nous après avoir vu notre expertise.",
     stars: 5,
   },
@@ -16,6 +18,7 @@ const testimonials = [
     role: "Head of Growth",
     company: "DataSync",
     avatar: "T",
+    isImage: false,
     content: "L'approche organique a complètement changé notre perception du marketing. Zéro spam, que de la valeur. Notre CAC a baissé de 80%.",
     stars: 5,
   },
@@ -24,6 +27,7 @@ const testimonials = [
     role: "Fondatrice",
     company: "CloudMetrics",
     avatar: "S",
+    isImage: false,
     content: "Je recommande sans hésitation. L'équipe comprend vraiment les codes de Reddit et sait créer du contenu qui résonne avec notre audience B2B.",
     stars: 5,
   },
@@ -75,9 +79,17 @@ export const TestimonialsSection = () => {
                   
                   {/* Author */}
                   <div className="flex items-center gap-3 pt-4 border-t border-border/50">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-sm font-semibold text-primary">
-                      {testimonial.avatar}
-                    </div>
+                    {testimonial.isImage ? (
+                      <img 
+                        src={testimonial.avatar} 
+                        alt={testimonial.name}
+                        className="w-10 h-10 rounded-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-sm font-semibold text-primary">
+                        {testimonial.avatar}
+                      </div>
+                    )}
                     <div>
                       <p className="font-semibold text-foreground">
                         {testimonial.name}
