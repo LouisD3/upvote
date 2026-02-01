@@ -3,7 +3,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { XIcon } from "@/components/icons/XIcon";
-import { Phone } from "lucide-react";
+import { Phone, CheckCircle2, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
@@ -104,41 +104,35 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
     return (
       <div className={cn(
         "text-center",
-        variant === "section" && "py-20 px-6 bg-secondary/50"
+        variant === "section" && "py-20 px-6 bg-gradient-section"
       )}>
         <div className={cn(
-          "p-8 rounded-2xl bg-background border border-primary/20",
+          "relative p-8 rounded-2xl bg-card shadow-card border border-primary/20 overflow-hidden",
           variant === "hero" && "max-w-md mx-auto"
         )}>
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <svg
-              className="w-8 h-8 text-primary"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
+          {/* Success glow */}
+          <div className="absolute inset-0 bg-primary/5" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+          
+          <div className="relative z-10">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center animate-scale-in">
+              <CheckCircle2 className="w-10 h-10 text-primary" />
+            </div>
+            <h3 className="text-2xl font-bold text-foreground mb-3">
+              Tu es sur la liste ! 🎉
+            </h3>
+            <p className="text-muted-foreground">
+              Je te contacterai personnellement dans les prochains jours.
+            </p>
           </div>
-          <h3 className="text-2xl font-bold text-foreground mb-3">
-            Tu es sur la liste ! 🎉
-          </h3>
-          <p className="text-muted-foreground">
-            Je te contacterai personnellement dans les prochains jours.
-          </p>
         </div>
       </div>
     );
   }
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="space-y-3" id="waitlist-form">
-      <div className="grid grid-cols-2 gap-3">
+    <form onSubmit={handleSubmit} className="space-y-4" id="waitlist-form">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div>
           <Input
             type="email"
@@ -146,13 +140,16 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={cn(
-              "h-11 text-base bg-background border-border focus:border-primary",
-              error && "border-destructive"
+              "h-12 text-base bg-background border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300",
+              error && "border-destructive focus:border-destructive focus:ring-destructive/20"
             )}
             required
           />
           {error && (
-            <p className="mt-1 text-sm text-destructive">{error}</p>
+            <p className="mt-2 text-sm text-destructive flex items-center gap-1">
+              <span className="inline-block w-1 h-1 rounded-full bg-destructive" />
+              {error}
+            </p>
           )}
         </div>
 
@@ -162,76 +159,82 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
             placeholder="Nom de l'entreprise"
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
-            className="h-11 text-base bg-background border-border focus:border-primary"
+            className="h-12 text-base bg-background border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
           />
         </div>
       </div>
       
-      <div className="grid grid-cols-2 gap-3">
-        <div className="relative">
-          <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="relative group">
+          <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground transition-colors duration-300 group-focus-within:text-primary" />
           <Input
             type="tel"
             placeholder="Téléphone (optionnel)"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="h-11 text-base bg-background border-border focus:border-primary pl-11"
+            className="h-12 text-base bg-background border-border focus:border-primary focus:ring-2 focus:ring-primary/20 pl-11 transition-all duration-300"
           />
         </div>
 
-        <div className="relative">
-          <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+        <div className="relative group">
+          <XIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground transition-colors duration-300 group-focus-within:text-primary" />
           <Input
             type="text"
             placeholder="@tonhandle (optionnel)"
             value={twitter}
             onChange={(e) => setTwitter(e.target.value)}
-            className="h-11 text-base bg-background border-border focus:border-primary pl-11"
+            className="h-12 text-base bg-background border-border focus:border-primary focus:ring-2 focus:ring-primary/20 pl-11 transition-all duration-300"
           />
         </div>
       </div>
 
-      <Button
-        type="submit"
-        disabled={isLoading}
-        className={cn(
-          "w-full h-12 text-base font-semibold",
-          "bg-primary text-primary-foreground",
-          "hover:bg-primary/90",
-          "transition-all duration-300",
-          "hover:scale-[1.02] active:scale-[0.98]",
-          !isLoading && "animate-pulse-glow"
-        )}
-      >
-        {isLoading ? (
-          <span className="flex items-center gap-2">
-            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-                fill="none"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              />
-            </svg>
-            Inscription...
-          </span>
-        ) : (
-          <span className="flex items-center justify-center gap-2">
-            <span>Rejoindre la waitlist</span>
-            <span className="bg-background/20 text-xs font-bold px-2 py-0.5 rounded-full animate-pulse">
-              🔥 Plus que 7 places
+      <div className="relative group pt-1">
+        {/* Button glow effect */}
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/70 rounded-xl blur opacity-40 group-hover:opacity-60 transition duration-500" />
+        
+        <Button
+          type="submit"
+          disabled={isLoading}
+          className={cn(
+            "relative w-full h-14 text-base font-bold rounded-xl",
+            "bg-primary text-primary-foreground",
+            "hover:bg-primary/90",
+            "transition-all duration-300",
+            "hover:scale-[1.02] active:scale-[0.98]",
+            !isLoading && "shadow-lg shadow-primary/30"
+          )}
+        >
+          {isLoading ? (
+            <span className="flex items-center gap-3">
+              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  fill="none"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+              <span>Inscription en cours...</span>
             </span>
-          </span>
-        )}
-      </Button>
+          ) : (
+            <span className="flex items-center justify-center gap-3">
+              <Sparkles className="w-5 h-5" />
+              <span>Rejoindre la waitlist</span>
+              <span className="bg-background/20 text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">
+                🔥 7 places
+              </span>
+            </span>
+          )}
+        </Button>
+      </div>
     </form>
   );
 
@@ -240,7 +243,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
   }
 
   return (
-    <section className="py-20 px-6 bg-secondary/50">
+    <section className="py-20 px-6 bg-gradient-section">
       <div className="max-w-xl mx-auto">
         <AnimatedSection>
           <p className="text-center text-lg text-muted-foreground mb-8 leading-relaxed">
