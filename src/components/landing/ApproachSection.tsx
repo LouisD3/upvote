@@ -73,7 +73,7 @@ export const ApproachSection = () => {
             onClick={scrollToTop}
           >
             {/* Chart - Blurred */}
-            <div className="blur-sm group-hover:blur-md transition-all duration-500">
+            <div className="blur-[2px] group-hover:blur-sm transition-all duration-500">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
                 <h3 className="text-xl font-bold text-foreground">Résultats d'un client (6 mois)</h3>
                 <div className="flex flex-wrap gap-4 text-sm">
