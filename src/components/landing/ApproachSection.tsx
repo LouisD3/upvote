@@ -115,10 +115,10 @@ export const ApproachSection = () => {
                 <Lock className="w-10 h-10 text-primary" />
               </div>
               <p className="text-xl font-bold text-foreground text-center px-4 mb-2">
-                Nos clients restent anonymes
+                Contrat d'exclusivité garanti
               </p>
               <p className="text-muted-foreground text-center px-4 max-w-md">
-                Le marketing Reddit efficace, c'est en toute discrétion.
+                On ne travaille jamais avec vos concurrents. Vos performances explosent, et on reste discrets si vous le souhaitez.
               </p>
               <div className="mt-6 inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all duration-300">
                 <span>Rejoins la waitlist pour en savoir plus</span>
