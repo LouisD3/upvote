@@ -2,10 +2,8 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Star } from "lucide-react";
 import mateoAvatar from "@/assets/mateo-avatar.png";
-
 export const TestimonialsSection = () => {
-  return (
-    <section className="py-24 px-6 relative overflow-hidden">
+  return <section className="py-24 px-6 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
       
@@ -24,27 +22,18 @@ export const TestimonialsSection = () => {
               <Quote className="w-12 h-12 text-primary/30 mb-6" />
               
               {/* Testimonial text */}
-              <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8 max-w-2xl">
-                "Avant RedditPartners, on dépensait des milliers d'euros en ads avec des leads tièdes. En 3 mois de collaboration, Reddit est devenu notre 2ème source d'acquisition. Les leads sont ultra qualifiés car ils viennent à nous après avoir vu notre expertise sur les discussions. Résultat : un CAC à 0€ sur ces leads et un taux de closing de 70%."
-              </blockquote>
+              <blockquote className="text-lg md:text-xl text-foreground leading-relaxed mb-8 max-w-2xl">"En 3 mois, Reddit est devenu notre 2ème source d'acquisition. Les leads sont ultra qualifiés car ils viennent à nous après avoir vu notre expertise sur les discussions. Résultat : un CAC à 0€ sur ces leads et un taux de closing de 70%. C'est juste magique."</blockquote>
               
               {/* Stars */}
               <div className="flex gap-1 mb-6">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className="w-5 h-5 fill-primary text-primary" 
-                  />
-                ))}
+                {Array.from({
+                length: 5
+              }).map((_, i) => <Star key={i} className="w-5 h-5 fill-primary text-primary" />)}
               </div>
               
               {/* Author */}
               <div className="flex flex-col items-center gap-3">
-                <img 
-                  src={mateoAvatar} 
-                  alt="Matéo"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/20"
-                />
+                <img src={mateoAvatar} alt="Matéo" className="w-16 h-16 rounded-full object-cover border-2 border-primary/20" />
                 <div>
                   <p className="font-semibold text-foreground text-lg">
                     Matéo
@@ -58,6 +47,5 @@ export const TestimonialsSection = () => {
           </Card>
         </AnimatedSection>
       </div>
-    </section>
-  );
+    </section>;
 };
