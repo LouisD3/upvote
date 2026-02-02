@@ -130,6 +130,20 @@ export default {
             boxShadow: "0 0 40px 10px hsl(16 100% 50% / 0.4), inset 0 0 30px 0 hsl(16 100% 50% / 0.1)" 
           },
         },
+        "wiggle-glow": {
+          "0%, 100%": { 
+            transform: "rotate(-0.5deg)",
+            boxShadow: "0 0 20px 0 hsl(16 100% 50% / 0.3)"
+          },
+          "50%": { 
+            transform: "rotate(0.5deg)",
+            boxShadow: "0 0 35px 8px hsl(16 100% 50% / 0.5)"
+          },
+        },
+        "draw-line": {
+          "0%": { strokeDashoffset: "100" },
+          "100%": { strokeDashoffset: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -146,6 +160,8 @@ export default {
         "slide-up": "slide-up 0.6s ease-out forwards",
         "bounce-soft": "bounce-soft 2s ease-in-out infinite",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "wiggle-glow": "wiggle-glow 2s ease-in-out infinite",
+        "draw-line": "draw-line 1s ease-out forwards",
       },
     },
   },
