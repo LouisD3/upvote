@@ -1,7 +1,7 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, LucideIcon } from "lucide-react";
+import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, LucideIcon, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { WaitlistForm } from "./WaitlistForm";
+import { Button } from "@/components/ui/button";
 
 interface ProcessStep {
   number: number;
@@ -234,9 +234,26 @@ export const ProcessSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA - Same as Hero */}
-        <AnimatedSection delay={1200} className="mt-16 w-full max-w-xl mx-auto">
-          <WaitlistForm variant="hero" />
+        {/* Bottom CTA - Scroll to Hero */}
+        <AnimatedSection delay={1200} className="mt-16 text-center">
+          <Button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            size="lg"
+            className={cn(
+              "h-14 px-8 text-base font-bold rounded-xl",
+              "bg-primary text-primary-foreground",
+              "hover:bg-primary/90",
+              "transition-all duration-300",
+              "hover:scale-[1.02] active:scale-[0.98]",
+              "shadow-lg shadow-primary/30 animate-wiggle-glow"
+            )}
+          >
+            <Sparkles className="w-5 h-5 mr-2" />
+            Rejoindre la waitlist
+            <span className="ml-2 bg-background/20 text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">
+              🔥 7 places
+            </span>
+          </Button>
         </AnimatedSection>
       </div>
     </section>
