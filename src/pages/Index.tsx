@@ -13,8 +13,8 @@ const Index = () => {
       <div className="pt-16">
         <HeroSection />
         <ProblemSection />
-        <ApproachSection />
         <ProcessSection />
+        <ApproachSection />
         <TestimonialsSection />
       </div>
       

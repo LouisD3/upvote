@@ -1,6 +1,7 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { WaitlistForm } from "./WaitlistForm";
 
 interface ProcessStep {
   number: number;
@@ -31,7 +32,7 @@ const steps: ProcessStep[] = [
   {
     number: 4,
     title: "Exécution",
-    description: "Déploiement de la strat + reporting mensuel",
+    description: "Déploiement de la stratégie + reporting mensuel",
     icon: Rocket,
   },
   {
@@ -233,22 +234,9 @@ export const ProcessSection = () => {
           ))}
         </div>
 
-        {/* Bottom CTA hint */}
-        <AnimatedSection delay={1200} className="mt-20 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-            <span className="text-muted-foreground text-sm">
-              Prêt à lancer ta stratégie Reddit ?
-            </span>
-            <a 
-              href="#waitlist-form" 
-              className="text-primary hover:text-primary/80 font-semibold text-sm transition-colors flex items-center gap-1"
-            >
-              Rejoins la waitlist
-              <svg className="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
-          </div>
+        {/* Bottom CTA - Same as Hero */}
+        <AnimatedSection delay={1200} className="mt-16 w-full max-w-xl mx-auto">
+          <WaitlistForm variant="hero" />
         </AnimatedSection>
       </div>
     </section>
