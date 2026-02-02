@@ -201,7 +201,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
             "hover:bg-primary/90",
             "transition-all duration-300",
             "hover:scale-[1.02] active:scale-[0.98]",
-            !isLoading && "shadow-lg shadow-primary/30"
+            !isLoading && "shadow-lg shadow-primary/30 animate-wiggle-glow"
           )}
         >
           {isLoading ? (
