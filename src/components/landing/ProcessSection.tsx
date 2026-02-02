@@ -45,107 +45,153 @@ const steps: ProcessStep[] = [
 const StepCard = ({ step, index }: { step: ProcessStep; index: number }) => {
   const Icon = step.icon;
   const isEven = index % 2 === 0;
+  const isLast = index === steps.length - 1;
 
   return (
-    <AnimatedSection 
-      delay={index * 150} 
-      animation="slide-up"
-      className="w-full"
-    >
-      <div
-        className={cn(
-          "flex items-center gap-6",
-          "md:w-[85%]",
-          isEven ? "md:justify-start md:ml-0" : "md:justify-end md:ml-auto"
-        )}
+    <div className="relative">
+      <AnimatedSection 
+        delay={index * 200} 
+        animation="slide-up"
+        className="w-full relative z-10"
       >
-        {/* Card content */}
         <div
           className={cn(
-            "flex items-center gap-5 p-5 rounded-2xl w-full",
-            "bg-card/60 backdrop-blur-sm",
-            "border border-primary/10",
-            "hover:border-primary/30 hover:bg-card/80",
-            "transition-all duration-500",
-            "group cursor-default",
-            isEven ? "md:flex-row" : "md:flex-row-reverse"
+            "flex items-center gap-6",
+            "md:w-[80%]",
+            isEven ? "md:justify-start md:ml-0" : "md:justify-end md:ml-auto"
           )}
         >
-          {/* Number circle with icon */}
-          <div className="relative flex-shrink-0">
-            {/* Glow effect */}
-            <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div
-              className={cn(
-                "relative w-16 h-16 rounded-2xl",
-                "bg-gradient-to-br from-primary to-primary/80",
-                "flex items-center justify-center",
-                "shadow-lg shadow-primary/20",
-                "group-hover:shadow-primary/40 group-hover:scale-105",
-                "transition-all duration-500"
-              )}
-            >
-              <Icon className="w-7 h-7 text-primary-foreground" />
+          {/* Card content */}
+          <div
+            className={cn(
+              "flex items-center gap-5 p-6 rounded-2xl w-full",
+              "bg-card/80 backdrop-blur-sm",
+              "border border-primary/20",
+              "hover:border-primary/40 hover:bg-card",
+              "transition-all duration-500",
+              "group cursor-default",
+              "shadow-lg shadow-primary/5",
+              isEven ? "md:flex-row" : "md:flex-row-reverse"
+            )}
+          >
+            {/* Number circle with icon */}
+            <div className="relative flex-shrink-0">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-primary/30 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              {/* Step number badge */}
               <div
                 className={cn(
-                  "absolute -top-2 -right-2",
-                  "w-7 h-7 rounded-full",
-                  "bg-background border-2 border-primary",
+                  "relative w-16 h-16 rounded-2xl",
+                  "bg-gradient-to-br from-primary to-primary/80",
                   "flex items-center justify-center",
-                  "text-sm font-bold text-primary"
+                  "shadow-lg shadow-primary/30",
+                  "group-hover:shadow-primary/50 group-hover:scale-110",
+                  "transition-all duration-500"
                 )}
               >
-                {step.number}
+                <Icon className="w-7 h-7 text-primary-foreground" />
+                
+                {/* Step number badge */}
+                <div
+                  className={cn(
+                    "absolute -top-2 -right-2",
+                    "w-7 h-7 rounded-full",
+                    "bg-background border-2 border-primary",
+                    "flex items-center justify-center",
+                    "text-sm font-bold text-primary",
+                    "shadow-md"
+                  )}
+                >
+                  {step.number}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Text content */}
-          <div className={cn("flex-1", isEven ? "text-left" : "md:text-right text-left")}>
-            <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-              {step.title}
-            </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              {step.description}
-            </p>
+            {/* Text content */}
+            <div className={cn("flex-1", isEven ? "text-left" : "md:text-right text-left")}>
+              <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                {step.title}
+              </h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {step.description}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </AnimatedSection>
-  );
-};
+      </AnimatedSection>
 
-const ConnectorLine = ({ index }: { index: number }) => {
-  const isEven = index % 2 === 0;
-  
-  return (
-    <div className="relative h-12 md:h-8 flex items-center justify-center">
-      {/* Mobile vertical line */}
-      <div className="md:hidden w-0.5 h-full bg-gradient-to-b from-primary/40 to-primary/20" />
-      
-      {/* Desktop diagonal SVG */}
-      <svg
-        className={cn(
-          "hidden md:block absolute w-full h-16",
-          "text-primary/30"
-        )}
-        preserveAspectRatio="none"
-      >
-        <path
-          d={isEven 
-            ? "M 15% 0 Q 50% 50%, 85% 100%" 
-            : "M 85% 0 Q 50% 50%, 15% 100%"
-          }
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeDasharray="8 4"
-          className="opacity-60"
-        />
-      </svg>
+      {/* Connector path to next step */}
+      {!isLast && (
+        <AnimatedSection delay={index * 200 + 100} animation="fade-in" className="relative z-0">
+          <div className="py-4 md:py-2">
+            {/* Mobile: Vertical connector */}
+            <div className="md:hidden flex justify-center">
+              <div className="relative h-16 w-12">
+                {/* Gradient line */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/50 rounded-full" />
+                {/* Animated dot */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full animate-pulse shadow-lg shadow-primary/50" />
+              </div>
+            </div>
+
+            {/* Desktop: Curved SVG path */}
+            <svg
+              className="hidden md:block w-full h-20"
+              viewBox="0 0 400 80"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <linearGradient id={`pathGradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(16 100% 50% / 0.5)" />
+                  <stop offset="50%" stopColor="hsl(16 100% 50% / 0.8)" />
+                  <stop offset="100%" stopColor="hsl(16 100% 50% / 0.5)" />
+                </linearGradient>
+                
+                {/* Animated dot along path */}
+                <circle id={`dot-${index}`} r="4" fill="hsl(16 100% 50%)">
+                  <animateMotion
+                    dur="3s"
+                    repeatCount="indefinite"
+                    path={isEven 
+                      ? "M 60,10 Q 200,40 340,70"
+                      : "M 340,10 Q 200,40 60,70"
+                    }
+                  />
+                </circle>
+              </defs>
+              
+              {/* Main curved path */}
+              <path
+                d={isEven 
+                  ? "M 60,10 Q 200,40 340,70"
+                  : "M 340,10 Q 200,40 60,70"
+                }
+                fill="none"
+                stroke={`url(#pathGradient-${index})`}
+                strokeWidth="3"
+                strokeLinecap="round"
+                className="drop-shadow-sm"
+              />
+              
+              {/* Dashed overlay for style */}
+              <path
+                d={isEven 
+                  ? "M 60,10 Q 200,40 340,70"
+                  : "M 340,10 Q 200,40 60,70"
+                }
+                fill="none"
+                stroke="hsl(16 100% 50% / 0.2)"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeDasharray="0 15"
+              />
+
+              {/* Animated traveling dot */}
+              <use href={`#dot-${index}`} />
+            </svg>
+          </div>
+        </AnimatedSection>
+      )}
     </div>
   );
 };
@@ -154,16 +200,17 @@ export const ProcessSection = () => {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
       
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl" />
       
       <div className="max-w-3xl mx-auto relative z-10">
         {/* Header */}
-        <AnimatedSection className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+        <AnimatedSection className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
             <Target className="w-4 h-4" />
             Notre méthode
           </span>
@@ -172,28 +219,36 @@ export const ProcessSection = () => {
             <span className="text-primary">exploser sur Reddit</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Un process éprouvé, du-for-you, pour transformer Reddit en machine à leads
+            Un process éprouvé, done-for-you, pour transformer Reddit en machine à leads
           </p>
         </AnimatedSection>
 
-        {/* Process steps serpent */}
-        <div className="space-y-0">
+        {/* Process steps with connected path */}
+        <div className="relative">
+          {/* Background continuous line (desktop only) */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent" />
+          
           {steps.map((step, index) => (
-            <div key={step.number}>
-              <StepCard step={step} index={index} />
-              {index < steps.length - 1 && <ConnectorLine index={index} />}
-            </div>
+            <StepCard key={step.number} step={step} index={index} />
           ))}
         </div>
 
         {/* Bottom CTA hint */}
-        <AnimatedSection delay={800} className="mt-16 text-center">
-          <p className="text-muted-foreground text-sm">
-            Prêt à lancer ta stratégie Reddit ?{" "}
-            <a href="#waitlist-form" className="text-primary hover:underline font-medium">
-              Rejoins la waitlist ↓
+        <AnimatedSection delay={1200} className="mt-20 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
+            <span className="text-muted-foreground text-sm">
+              Prêt à lancer ta stratégie Reddit ?
+            </span>
+            <a 
+              href="#waitlist-form" 
+              className="text-primary hover:text-primary/80 font-semibold text-sm transition-colors flex items-center gap-1"
+            >
+              Rejoins la waitlist
+              <svg className="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
             </a>
-          </p>
+          </div>
         </AnimatedSection>
       </div>
     </section>
