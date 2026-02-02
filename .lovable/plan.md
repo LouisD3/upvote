@@ -1,49 +1,81 @@
 
 
-# Remplacement des témoignages par une section Résultats
+# Transformation en témoignage unique "star" de Matéo
 
 ## Objectif
-Transformer la section "Témoignages" en une section "Résultats" avec 3 métriques clés impactantes.
+Transformer la section témoignages (actuellement 3 avis en grille) en un seul témoignage mis en valeur de Matéo, avec un commentaire enrichi incluant les nouvelles métriques.
 
-## Les 3 métriques à afficher
+---
 
-| Métrique | Valeur | Description |
-|----------|--------|-------------|
-| Leads qualifiés | **15/mois** | "en moyenne" |
-| Coût d'acquisition | **0$** | "CAC" |
-| Performance | **2ème source** | "d'acquisition en 3 mois" |
+## Le nouveau témoignage
+
+**Texte enrichi avec CAC 0€ et taux de closing 70% :**
+
+> "Avant RedditPartners, on dépensait des milliers d'euros en ads avec des leads tièdes. En 3 mois de collaboration, Reddit est devenu notre 2ème source d'acquisition. Les leads sont ultra qualifiés car ils viennent à nous après avoir vu notre expertise sur les discussions. Résultat : un CAC à 0€ sur ces leads et un taux de closing de 70%."
+
+---
 
 ## Design prévu
 
-- **Layout** : Grille de 3 colonnes (identique à l'actuel)
-- **Style des cartes** : 
-  - Grande valeur numérique en orange (text-5xl font-bold text-primary)
-  - Label descriptif en dessous
-  - Icônes contextuelles (Users, DollarSign, TrendingUp)
-- **Header de section** : 
-  - Badge "Résultats" avec icône BarChart3
-  - Titre : "Des résultats concrets"
-  - Sous-titre : "Les performances moyennes de nos clients SaaS"
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                  💬 Témoignage client                       │
+│                                                             │
+│   ┌───────────────────────────────────────────────────────┐ │
+│   │                                                       │ │
+│   │                      ❝                                │ │
+│   │                                                       │ │
+│   │    "Avant RedditPartners, on dépensait des            │ │
+│   │    milliers d'euros en ads avec des leads tièdes.     │ │
+│   │    En 3 mois de collaboration, Reddit est devenu      │ │
+│   │    notre 2ème source d'acquisition. Les leads sont    │ │
+│   │    ultra qualifiés car ils viennent à nous après      │ │
+│   │    avoir vu notre expertise sur les discussions.      │ │
+│   │    Résultat : un CAC à 0€ sur ces leads et un         │ │
+│   │    taux de closing de 70%."                           │ │
+│   │                                                       │ │
+│   │                    ★★★★★                               │ │
+│   │                                                       │ │
+│   │              [Photo Matéo]                            │ │
+│   │                 Matéo                                 │ │
+│   │            CEO @ StagingEasy                          │ │
+│   │                                                       │ │
+│   └───────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
 
 ## Changements techniques
 
-1. **Renommer le fichier** : `TestimonialsSection.tsx` devient `ResultsSection.tsx`
-2. **Mettre à jour Index.tsx** : Importer le nouveau composant
-3. **Nettoyer** : Supprimer l'import de l'avatar Matéo (plus utilisé)
+### Fichier : `src/components/landing/TestimonialsSection.tsx`
 
-## Aperçu visuel
+1. **Supprimer le tableau `testimonials`** et la logique de mapping
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│              📊 Résultats                               │
-│         Des résultats concrets                          │
-│   Les performances moyennes de nos clients SaaS         │
-├─────────────────┬─────────────────┬─────────────────────┤
-│   👥            │   💰            │   📈                │
-│   15            │   0$            │   2ème              │
-│   leads/mois    │   CAC           │   source            │
-│   ultra         │   Coût          │   d'acquisition     │
-│   qualifiés     │   d'acquisition │   en 3 mois         │
-└─────────────────┴─────────────────┴─────────────────────┘
-```
+2. **Simplifier la structure** :
+   - Carte unique centrée (max-width ~800px)
+   - Grande icône Quote decorative en haut
+   - Texte du témoignage en plus grand (text-lg md:text-xl)
+   - 5 étoiles centrées
+   - Photo de Matéo plus grande (w-16 h-16) et centrée
+   - Nom et rôle centrés sous la photo
+
+3. **Mettre à jour le header** :
+   - Badge : "Témoignage client" (singulier)
+   - Supprimer le titre et sous-titre (le témoignage parle de lui-même)
+
+4. **Conserver** : L'import de `mateoAvatar`
+
+---
+
+## Éléments de style
+
+| Element | Style |
+|---------|-------|
+| Carte | `bg-card/50 backdrop-blur-sm border-primary/20 max-w-3xl mx-auto` |
+| Icône Quote | `w-12 h-12 text-primary/30` centré |
+| Texte | `text-lg md:text-xl text-foreground leading-relaxed text-center` |
+| Étoiles | 5 étoiles `fill-primary text-primary` centrées |
+| Photo | `w-16 h-16 rounded-full` centrée |
+| Auteur | Texte centré sous la photo |
 
