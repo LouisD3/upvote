@@ -1,50 +1,66 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Lock, TrendingUp, Users, MessageSquare, Zap, ArrowUpRight } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Area, AreaChart } from "recharts";
-
-const blurredChartData = [
-  { month: "J", impressions: 5000, leads: 2, mrr: 20 },
-  { month: "F", impressions: 12000, leads: 5, mrr: 25 },
-  { month: "M", impressions: 28000, leads: 12, mrr: 32 },
-  { month: "A", impressions: 65000, leads: 28, mrr: 45 },
-  { month: "M", impressions: 120000, leads: 52, mrr: 68 },
-  { month: "J", impressions: 280000, leads: 95, mrr: 110 }
-];
-
-const credibilityPillars = [
-  {
-    icon: Users,
-    quote: "On a construit et marketé nos propres produits SaaS.",
-    meaning: "On vous comprend. On est un partenaire, pas un prestataire.",
-    gradient: "from-blue-500/20 to-cyan-500/20"
-  },
-  {
-    icon: MessageSquare,
-    quote: "On a fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
-    meaning: "On sait créer de la valeur en écrivant.",
-    gradient: "from-purple-500/20 to-pink-500/20"
-  },
-  {
-    icon: TrendingUp,
-    quote: "On a écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
-    meaning: "On sait créer le buzz et surfer sur le momentum.",
-    gradient: "from-primary/20 to-orange-500/20"
-  },
-  {
-    icon: Zap,
-    quote: "On combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
-    meaning: "Social listening, timing, analytics mais aucun posts automatisés.",
-    gradient: "from-yellow-500/20 to-green-500/20"
-  }
-];
-
+const blurredChartData = [{
+  month: "J",
+  impressions: 5000,
+  leads: 2,
+  mrr: 20
+}, {
+  month: "F",
+  impressions: 12000,
+  leads: 5,
+  mrr: 25
+}, {
+  month: "M",
+  impressions: 28000,
+  leads: 12,
+  mrr: 32
+}, {
+  month: "A",
+  impressions: 65000,
+  leads: 28,
+  mrr: 45
+}, {
+  month: "M",
+  impressions: 120000,
+  leads: 52,
+  mrr: 68
+}, {
+  month: "J",
+  impressions: 280000,
+  leads: 95,
+  mrr: 110
+}];
+const credibilityPillars = [{
+  icon: Users,
+  quote: "On a construit et marketé nos propres produits SaaS.",
+  meaning: "On vous comprend. On est un partenaire, pas un prestataire.",
+  gradient: "from-blue-500/20 to-cyan-500/20"
+}, {
+  icon: MessageSquare,
+  quote: "On a fait passer une audience X de 0 à 3k en 90 jours en misant sur la valeur.",
+  meaning: "On sait créer de la valeur en écrivant.",
+  gradient: "from-purple-500/20 to-pink-500/20"
+}, {
+  icon: TrendingUp,
+  quote: "On a écrit du contenu qui a généré des millions d'impressions organiques en quelques jours.",
+  meaning: "On sait créer le buzz et surfer sur le momentum.",
+  gradient: "from-primary/20 to-orange-500/20"
+}, {
+  icon: Zap,
+  quote: "On combine l'écriture Reddit-native avec des outils modernes de détection de signaux.",
+  meaning: "Social listening, timing, analytics mais aucun posts automatisés.",
+  gradient: "from-yellow-500/20 to-green-500/20"
+}];
 export const ApproachSection = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="py-24 px-6 relative overflow-hidden">
+  return <section className="py-24 px-6 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-[600px] h-[600px] rounded-full bg-primary/3 blur-[120px]" />
@@ -68,10 +84,7 @@ export const ApproachSection = () => {
 
         {/* Blurred Chart Section */}
         <AnimatedSection delay={100}>
-          <div 
-            className="relative bg-card shadow-card border border-border rounded-2xl p-8 mb-16 cursor-pointer group transition-all duration-500 hover:shadow-card-hover hover:border-primary/30"
-            onClick={scrollToTop}
-          >
+          <div className="relative bg-card shadow-card border border-border rounded-2xl p-8 mb-16 cursor-pointer group transition-all duration-500 hover:shadow-card-hover hover:border-primary/30" onClick={scrollToTop}>
             {/* Chart - Blurred */}
             <div className="blur-[2px] group-hover:blur-sm transition-all duration-500">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
@@ -128,7 +141,7 @@ export const ApproachSection = () => {
           </div>
           
           <p className="text-muted-foreground text-center max-w-2xl mx-auto leading-relaxed">
-            Les résultats varient selon le produit et le marché, mais Reddit surpasse systématiquement le trafic payant en qualité des leads.
+            Les résultats varient selon le produit et le marché, mais Reddit surpasse systématiquement n'importe quel traffic payant en qualité des leads.
           </p>
         </AnimatedSection>
 
@@ -140,8 +153,7 @@ export const ApproachSection = () => {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {credibilityPillars.map((pillar, index) => (
-            <AnimatedSection key={index} delay={300 + index * 100}>
+          {credibilityPillars.map((pillar, index) => <AnimatedSection key={index} delay={300 + index * 100}>
               <div className="group h-full">
                 <div className={`h-full bg-card shadow-card border border-border rounded-2xl p-6 flex flex-col relative overflow-hidden transition-all duration-500 hover:shadow-card-hover hover:border-primary/30 hover:-translate-y-1`}>
                   {/* Top gradient accent */}
@@ -166,10 +178,8 @@ export const ApproachSection = () => {
                   </p>
                 </div>
               </div>
-            </AnimatedSection>
-          ))}
+            </AnimatedSection>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
