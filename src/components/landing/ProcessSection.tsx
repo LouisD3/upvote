@@ -199,7 +199,7 @@ const StepCard = ({ step, index }: { step: ProcessStep; index: number }) => {
 
 export const ProcessSection = () => {
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="pt-12 pb-24 px-6 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
       
