@@ -14,7 +14,7 @@ export const translations = {
   "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
   "hero.headline4": { en: "SaaS", fr: "SaaS" },
   "hero.subline": {
-    en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI systems like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
+    en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
     fr: "Nous gérons de A à Z ton marketing Reddit. Du contenu qui se positionne sur Google, est cité par les IA comme ChatGPT, Perplexity et Claude, et génère des leads qualifiés chaque mois.",
   },
   "hero.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
