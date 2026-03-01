@@ -8,20 +8,15 @@ export const translations = {
   "header.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
 
   // Hero
-  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Fait confiance par des startups YC" },
+  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Trusted by YC startups" },
   "hero.headline1": { en: "Turn ", fr: "Transforme " },
   "hero.headline2": { en: "Reddit", fr: "Reddit" },
   "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
   "hero.headline4": { en: "SaaS", fr: "SaaS" },
   "hero.subline": {
-    en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI, and drives qualified leads — every month.",
-    fr: "Nous gérons de A à Z ton marketing Reddit. Du contenu qui se positionne sur Google, est cité par les IA, et génère des leads qualifiés — chaque mois.",
+    en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI systems like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
+    fr: "Nous gérons de A à Z ton marketing Reddit. Du contenu qui se positionne sur Google, est cité par les IA comme ChatGPT, Perplexity et Claude, et génère des leads qualifiés chaque mois.",
   },
-  "hero.bonus": {
-    en: "Reddit content is increasingly used as a source by LLMs (ChatGPT, Perplexity, Claude).",
-    fr: "Le contenu Reddit est de plus en plus utilisé comme source par les LLMs (ChatGPT, Perplexity, Claude).",
-  },
-  "hero.bonusLabel": { en: "Bonus:", fr: "Bonus:" },
   "hero.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
   "hero.limitedSpots": { en: "Limited spots available", fr: "Places très limitées" },
   "hero.logoBannerTitle": {
@@ -80,7 +75,7 @@ export const translations = {
   // Pricing Section
   "pricing.badge": { en: "Pricing", fr: "Tarifs" },
   "pricing.title1": { en: "Simple, transparent ", fr: "Simple, transparent " },
-  "pricing.title2": { en: "pricing", fr: "et sans engagement" },
+  "pricing.title2": { en: "pricing", fr: "tarifs" },
   "pricing.planName": { en: "Reddit Growth Organic", fr: "Reddit Growth Organic" },
   "pricing.planDesc": {
     en: "The system that turns Reddit into your top acquisition funnel.",
@@ -95,14 +90,14 @@ export const translations = {
   "pricing.feature4": { en: "SEO & GEO optimization", fr: "Optimisation SEO et GEO" },
   "pricing.feature5": { en: "Full monthly reporting", fr: "Reporting mensuel complet" },
   "pricing.cta": { en: "Book a Free Consultation", fr: "Réserver une consultation gratuite" },
-  "pricing.limitedSpots": { en: "⚡ Limited spots — we only take on a few clients at a time", fr: "⚡ Places très limitées — nous n'acceptons que quelques clients à la fois" },
+  "pricing.limitedSpots": { en: "⚡ Limited spots. We only take on a few clients at a time.", fr: "⚡ Places très limitées. Nous n'acceptons que quelques clients à la fois." },
 
   // FAQ Section
   "faq.title": { en: "Everything you need to know.", fr: "Tout ce que vous devez savoir." },
-  "faq.q1": { en: "Should I commit for a long period of time to work with you?", fr: "Dois-je m'engager sur une longue durée pour travailler avec vous ?" },
+  "faq.q1": { en: "What is the minimum commitment to work with you?", fr: "Quel est l'engagement minimum pour travailler avec vous ?" },
   "faq.a1": {
-    en: "No long-term commitment is required. We work on a month-to-month basis. That said, Reddit marketing is a compounding channel — the longer you stay, the bigger the results. Most clients see meaningful traction within 2-3 months and choose to continue.",
-    fr: "Aucun engagement long terme n'est requis. Nous travaillons au mois le mois. Cela dit, le marketing Reddit est un canal qui compound — plus vous restez, plus les résultats sont importants. La plupart des clients voient une traction significative en 2-3 mois et choisissent de continuer.",
+    en: "We require a minimum commitment of 3 months. Reddit marketing is a compounding channel. The longer you stay, the bigger the results. Most clients see meaningful traction within 2-3 months and choose to continue well beyond the initial period.",
+    fr: "Nous demandons un engagement minimum de 3 mois. Le marketing Reddit est un canal qui compound. Plus vous restez, plus les résultats sont importants. La plupart des clients voient une traction significative en 2-3 mois et choisissent de continuer bien au-delà de la période initiale.",
   },
   "faq.q2": { en: "How long do you need to launch a first campaign?", fr: "Combien de temps faut-il pour lancer une première campagne ?" },
   "faq.a2": {
@@ -111,8 +106,8 @@ export const translations = {
   },
   "faq.q3": { en: "How can you write content that resonates with my Ideal Customer Profile (ICP)?", fr: "Comment écrivez-vous du contenu qui parle à mon ICP ?" },
   "faq.a3": {
-    en: "We start with a deep dive into your product, audience, and competitors. We analyze the subreddits where your ICP hangs out, study the language they use, the pain points they discuss, and the solutions they look for. Every post is crafted to sound native and authentic — not promotional.",
-    fr: "Nous commençons par une analyse approfondie de votre produit, votre audience et vos concurrents. Nous étudions les subreddits où votre ICP se trouve, le langage qu'ils utilisent, les problèmes qu'ils abordent et les solutions qu'ils recherchent. Chaque post est conçu pour être natif et authentique — pas promotionnel.",
+    en: "We start with a deep dive into your product, audience, and competitors. We analyze the subreddits where your ICP hangs out, study the language they use, the pain points they discuss, and the solutions they look for. Every post is crafted to sound native and authentic, not promotional.",
+    fr: "Nous commençons par une analyse approfondie de votre produit, votre audience et vos concurrents. Nous étudions les subreddits où votre ICP se trouve, le langage qu'ils utilisent, les problèmes qu'ils abordent et les solutions qu'ils recherchent. Chaque post est conçu pour être natif et authentique, pas promotionnel.",
   },
   "faq.q4": { en: "How many posts should I expect every month?", fr: "Combien de posts par mois dois-je attendre ?" },
   "faq.a4": {
