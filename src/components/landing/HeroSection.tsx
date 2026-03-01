@@ -81,18 +81,6 @@ export const HeroSection = () => {
         </p>
       </AnimatedSection>
 
-      <AnimatedSection delay={350} className="mt-6 max-w-xl mx-auto relative z-10">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-primary/30 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
-          <div className="relative bg-card/80 backdrop-blur-sm border border-primary/20 rounded-xl px-4 py-3">
-            <p className="text-base text-muted-foreground">
-              <span className="font-semibold text-primary">{t("hero.bonusLabel")}</span>{" "}
-              {t("hero.bonus")}
-            </p>
-          </div>
-        </div>
-      </AnimatedSection>
-
       {/* CTA */}
       <AnimatedSection delay={500} className="mt-8 relative z-10">
         <div className="relative group">
