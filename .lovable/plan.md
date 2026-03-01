@@ -1,164 +1,83 @@
 
 
-# Animation CTA + Section Process "Serpent" Ultra Visuelle
+# Refonte complète de la Landing Page
 
-## 1. Animation "Wiggle-Glow" sur le CTA Hero
+## Modifications globales
 
-### Objectif
-Ajouter une animation qui attire l'oeil sur le bouton CTA pour augmenter les clics.
+### 1. Supprimer des composants/sections
+- Supprimer `WaitlistForm` du Hero et de toute la page
+- Supprimer `TestimonialsSection` (avis client)
+- Supprimer la mention "10k de MRR" dans la subline du Hero
+- Nettoyer le CTA du `ProcessSection` (remplacer par "Book free Audit")
 
-### Animation prévue
-Une combinaison subtile de :
-- Légère oscillation (wiggle) de -1deg à 1deg
-- Pulsation du glow orange
-- Boucle infinie, active seulement quand pas en loading
+### 2. Système de traduction (i18n)
+- Creer un fichier `src/lib/i18n.ts` contenant toutes les traductions FR/EN en objet simple
+- Creer un context React `src/contexts/LanguageContext.tsx` avec `useLanguage()` hook
+- Langue par defaut : anglais
+- Drapeau dans le Header pour toggle (emoji drapeaux 🇬🇧/🇫🇷)
+- Wrapper l'app avec le `LanguageProvider`
 
-### Modifications techniques
+### 3. Header refondu
+- Ajouter les liens de navigation : **How it works** (scroll vers ProcessSection), **Pricing** (scroll vers PricingSection), **FAQ** (scroll vers FAQSection)
+- Remplacer le bouton CTA waitlist par **"Book free Audit"** qui ouvre le Calendly
+- Ajouter le toggle drapeau FR/EN
+- Smooth scroll via `document.getElementById().scrollIntoView()`
 
-**Fichier : `tailwind.config.ts`**
-```javascript
-// Nouvelle keyframe
-"wiggle-glow": {
-  "0%, 100%": { 
-    transform: "rotate(-0.5deg)",
-    boxShadow: "0 0 20px 0 hsl(16 100% 50% / 0.3)"
-  },
-  "50%": { 
-    transform: "rotate(0.5deg)",
-    boxShadow: "0 0 30px 5px hsl(16 100% 50% / 0.5)"
-  },
-}
+### 4. Hero refondu
+- Ajouter badge **"Trusted by YC startups"** avec logo YC + lien vers ycombinator.com au-dessus du h1
+- Supprimer la subline "10k de MRR"
+- Réécrire la subline en anglais (par defaut)
+- Remplacer le formulaire waitlist par un bouton **"Book free Audit"** avec animation wiggle-glow + confetti au clic (via canvas-confetti ou implementation CSS legere)
+- Le bouton ouvre `https://calendly.com/drouillard-mateo/audit-reddit` dans un nouvel onglet
+- Mention "Limited spots available" quelque part pres du CTA
+- Garder le `LogoBanner`
 
-// Nouvelle animation
-"wiggle-glow": "wiggle-glow 2s ease-in-out infinite"
-```
+### 5. ProcessSection
+- Remplacer le CTA du bas par "Book free Audit" avec lien Calendly
+- Traduire le contenu via i18n
 
-**Fichier : `src/components/landing/WaitlistForm.tsx`**
-- Ajouter la classe `animate-wiggle-glow` au bouton quand `!isLoading`
+### 6. Nouvelle section Pricing (`src/components/landing/PricingSection.tsx`)
+- Style inspire de la capture : fond clair, carte avec bordure subtile, badge "Founders' choice"
+- Nom du plan : **Reddit Growth Organic**
+- Prix : **3,000€/mo**
+- Description : "The system that turns Reddit into your top funnel."
+- Inclus (avec check icons dorées/orange) :
+  - Account creation & management
+  - 5 posts / month
+  - Strategic social listening setup
+  - SEO & GEO optimization
+  - Full monthly reporting
+- CTA : "Book a Free Consultation" qui ouvre le Calendly
+- Section id="pricing" pour le scroll
 
----
+### 7. Nouvelle section FAQ (`src/components/landing/FAQSection.tsx`)
+- Style copie de la capture : fond clair, titre "Everything you need to know.", accordion items
+- Utiliser le composant Accordion de shadcn/ui deja installe
+- 4 questions adaptees pour Reddit :
+  1. "Should I commit for a long period of time to work with you?"
+  2. "How long do you need to launch a first campaign?"
+  3. "How can you write content that resonates with my Ideal Customer Profile (ICP)?"
+  4. "How many posts should I expect every month?"
+- Reponses pertinentes pour le service Reddit
+- Section id="faq" pour le scroll
 
-## 2. Section Process "Serpent" Descendant
+### 8. Confetti effect
+- Installer `canvas-confetti` ou implementer un confetti CSS leger
+- Declencher au clic sur "Book free Audit" dans le Hero avant d'ouvrir le Calendly
 
-### Concept visuel
-Un layout en zigzag qui descend comme un serpent, alternant gauche-droite pour chaque etape. Chaque etape est connectee par une ligne courbe/diagonale animee.
-
-### Les 5 etapes
-
-| # | Titre | Description | Icone |
-|---|-------|-------------|-------|
-| 1 | Audit | Analyse de ton SaaS, funnel et ICP | ClipboardCheck |
-| 2 | Strategie | Definition de la strategie Reddit sur-mesure | Target |
-| 3 | Setup | Creation des comptes + warm-up | UserPlus |
-| 4 | Execution | Deploiement de la strat + reporting mensuel | Rocket |
-| 5 | Scaling | Scaling du canal pour maximiser les resultats | TrendingUp |
-
-### Design du serpent descendant
-
-```text
-Desktop View (zigzag horizontal):
-
-        ┌─────────────────────────────────────────────────────────────┐
-        │                    Notre process                            │
-        │            5 etapes pour exploser sur Reddit                │
-        │                                                             │
-        │   ┌─────────┐                                               │
-        │   │    1    │  Audit                                        │
-        │   │   📋    │  Analyse de ton SaaS, funnel et ICP           │
-        │   └────┬────┘                                               │
-        │        │                                                    │
-        │        └──────────────────┐                                 │
-        │                           │                                 │
-        │                     ┌─────┴─────┐                           │
-        │                     │     2     │  Strategie                │
-        │                     │    🎯     │  Definition sur-mesure    │
-        │                     └─────┬─────┘                           │
-        │                           │                                 │
-        │        ┌──────────────────┘                                 │
-        │        │                                                    │
-        │   ┌────┴────┐                                               │
-        │   │    3    │  Setup                                        │
-        │   │   👤    │  Creation comptes + warm-up                   │
-        │   └────┬────┘                                               │
-        │        │                                                    │
-        │        └──────────────────┐                                 │
-        │                           │                                 │
-        │                     ┌─────┴─────┐                           │
-        │                     │     4     │  Execution                │
-        │                     │    🚀     │  Deploiement + reporting  │
-        │                     └─────┬─────┘                           │
-        │                           │                                 │
-        │        ┌──────────────────┘                                 │
-        │        │                                                    │
-        │   ┌────┴────┐                                               │
-        │   │    5    │  Scaling                                      │
-        │   │   📈    │  Maximiser les resultats                      │
-        │   └─────────┘                                               │
-        │                                                             │
-        └─────────────────────────────────────────────────────────────┘
-
-Mobile View (vertical stack avec ligne):
-
-        ┌─────────────────────┐
-        │   ┌─────────────┐   │
-        │   │  1  Audit   │   │
-        │   └──────┬──────┘   │
-        │          │          │
-        │   ┌──────┴──────┐   │
-        │   │ 2 Strategie │   │
-        │   └──────┬──────┘   │
-        │          │          │
-        │   ┌──────┴──────┐   │
-        │   │  3  Setup   │   │
-        │   └──────┬──────┘   │
-        │          │          │
-        │   ┌──────┴──────┐   │
-        │   │ 4 Execution │   │
-        │   └──────┬──────┘   │
-        │          │          │
-        │   ┌──────┴──────┐   │
-        │   │  5 Scaling  │   │
-        │   └─────────────┘   │
-        └─────────────────────┘
-```
-
-### Elements de design
-
-| Element | Style |
-|---------|-------|
-| Cartes | `bg-card/80 backdrop-blur-sm border border-primary/20` avec hover effects |
-| Numero | Cercle orange `w-12 h-12 bg-primary text-primary-foreground font-bold` |
-| Icones | `w-8 h-8 text-primary` dans le cercle |
-| Lignes de connexion | SVG avec `stroke-primary/30` et animation au scroll |
-| Alternance | `justify-start` / `justify-end` selon index pair/impair |
-
-### Animations
-- Chaque carte apparait avec un delai croissant (animation slide-up)
-- Les lignes de connexion se dessinent au scroll (stroke-dasharray)
-- Effet glow au hover sur les cercles numerotes
-
-### Structure technique
-
-**Nouveau fichier : `src/components/landing/ProcessSection.tsx`**
-- Import AnimatedSection et icones Lucide
-- Array des 5 etapes avec titre, description, icone
-- Layout responsive :
-  - Desktop : alternance gauche/droite avec lignes diagonales SVG
-  - Mobile : stack vertical avec ligne centrale
-- Utilisation de CSS Grid pour l'alternance
-
-**Modification : `src/pages/Index.tsx`**
-- Importer ProcessSection
-- L'ajouter entre ApproachSection et TestimonialsSection
-
----
-
-## Resume des fichiers
+## Fichiers concernes
 
 | Fichier | Action |
 |---------|--------|
-| `tailwind.config.ts` | Ajouter keyframe + animation `wiggle-glow` |
-| `src/components/landing/WaitlistForm.tsx` | Appliquer animation au CTA |
-| `src/components/landing/ProcessSection.tsx` | Creer (nouveau) |
-| `src/pages/Index.tsx` | Importer et positionner ProcessSection |
+| `src/lib/i18n.ts` | Creer - traductions EN/FR |
+| `src/contexts/LanguageContext.tsx` | Creer - context + hook |
+| `src/components/landing/Header.tsx` | Modifier - nav, CTA, drapeau |
+| `src/components/landing/HeroSection.tsx` | Modifier - badge YC, CTA Calendly, suppr form |
+| `src/components/landing/PricingSection.tsx` | Creer |
+| `src/components/landing/FAQSection.tsx` | Creer |
+| `src/components/landing/ProcessSection.tsx` | Modifier - CTA + traductions |
+| `src/components/landing/ProblemSection.tsx` | Modifier - traductions |
+| `src/pages/Index.tsx` | Modifier - suppr Testimonials, ajouter Pricing + FAQ |
+| `src/App.tsx` | Modifier - wrapper LanguageProvider |
+| `src/components/landing/LogoBanner.tsx` | Modifier - traductions |
 
