@@ -1,4 +1,5 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const logos = [
   {
@@ -52,38 +53,29 @@ const logos = [
 ];
 
 export const LogoBanner = () => {
+  const { t } = useLanguage();
+
   return (
     <AnimatedSection delay={600} className="w-full mt-16 mb-8 relative z-10">
       <p className="text-base text-muted-foreground mb-8 text-center font-medium">
-        Rejoignez les SaaS qui utilisent Reddit comme canal d'acquisition
+        {t("hero.logoBannerTitle")}
       </p>
       
-      {/* Gradient fade edges */}
       <div className="relative overflow-hidden w-full">
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
         <div className="flex animate-scroll py-4">
-          {/* First set of logos */}
           <div className="flex items-center gap-16 px-8 shrink-0">
             {logos.map((logo) => (
-              <div 
-                key={logo.name} 
-                className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" 
-                title={logo.name}
-              >
+              <div key={logo.name} className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" title={logo.name}>
                 {logo.svg}
               </div>
             ))}
           </div>
-          {/* Duplicate for seamless loop */}
           <div className="flex items-center gap-16 px-8 shrink-0">
             {logos.map((logo) => (
-              <div 
-                key={`${logo.name}-dup`}
-                className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" 
-                title={logo.name}
-              >
+              <div key={`${logo.name}-dup`} className="flex items-center justify-center text-muted-foreground/50 hover:text-primary transition-all duration-300 hover:scale-125 [&_svg]:h-8 [&_svg]:w-auto" title={logo.name}>
                 {logo.svg}
               </div>
             ))}
