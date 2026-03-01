@@ -1,18 +1,34 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { WaitlistForm } from "./WaitlistForm";
 import { LogoBanner } from "./LogoBanner";
+import { Button } from "@/components/ui/button";
+import { Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
+import confetti from "canvas-confetti";
 
-const FloatingRedditLogo = ({
-  className
-}: {
-  className?: string;
-}) => (
+const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
+
+const FloatingRedditLogo = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
   </svg>
 );
 
+const handleBookAudit = () => {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  });
+  setTimeout(() => {
+    window.open(CALENDLY_URL, "_blank");
+  }, 600);
+};
+
 export const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-[100vh] flex flex-col items-center justify-start px-6 pt-28 pb-0 text-center relative overflow-hidden bg-gradient-hero">
       {/* Gradient orbs background */}
@@ -32,24 +48,36 @@ export const HeroSection = () => {
         <FloatingRedditLogo className="absolute top-[60%] right-[25%] w-6 h-6 text-primary/8 animate-[float1_7s_ease-in-out_infinite_2s]" />
       </div>
 
+      {/* YC Trust Badge */}
+      <AnimatedSection delay={50} className="relative z-10 mb-6">
+        <a
+          href="https://www.ycombinator.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-primary">
+            <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
+          </svg>
+          <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+            {t("hero.trustedBy")}
+          </span>
+        </a>
+      </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-          <span className="text-foreground">Transforme </span>
-          <span className="text-gradient">Reddit</span>
-          <span className="text-foreground"> en canal d'acquisition récurrent pour ton </span>
-          <span className="text-gradient">SaaS</span>
+          <span className="text-foreground">{t("hero.headline1")}</span>
+          <span className="text-gradient">{t("hero.headline2")}</span>
+          <span className="text-foreground">{t("hero.headline3")}</span>
+          <span className="text-gradient">{t("hero.headline4")}</span>
           <span className="text-foreground">.</span>
         </h1>
       </AnimatedSection>
       
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-          Nous gérons de A à Z ton marketing Reddit si ton SaaS génère plus de{" "}
-          <span className="font-bold text-foreground inline-flex items-center gap-1">
-            10k de MRR
-            <span className="inline-block w-2 h-2 rounded-full bg-primary animate-bounce-soft" />
-          </span>
+          {t("hero.subline")}
         </p>
       </AnimatedSection>
 
@@ -58,14 +86,34 @@ export const HeroSection = () => {
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-primary/30 rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
           <div className="relative bg-card/80 backdrop-blur-sm border border-primary/20 rounded-xl px-4 py-3">
             <p className="text-base text-muted-foreground">
-              <span className="font-semibold text-primary">Bonus:</span> Le contenu Reddit est de plus en plus utilisé comme source par les LLMs (ChatGPT, Perplexity, Claude).
+              <span className="font-semibold text-primary">{t("hero.bonusLabel")}</span>{" "}
+              {t("hero.bonus")}
             </p>
           </div>
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={500} className="mt-8 w-full max-w-xl mx-auto relative z-10">
-        <WaitlistForm variant="hero" />
+      {/* CTA */}
+      <AnimatedSection delay={500} className="mt-8 relative z-10">
+        <div className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/70 rounded-xl blur opacity-40 group-hover:opacity-60 transition duration-500" />
+          <Button
+            onClick={handleBookAudit}
+            size="lg"
+            className={cn(
+              "relative h-14 px-8 text-base font-bold rounded-xl",
+              "hover:scale-[1.02] active:scale-[0.98]",
+              "transition-all duration-300",
+              "shadow-lg shadow-primary/30 animate-wiggle-glow"
+            )}
+          >
+            <Sparkles className="w-5 h-5 mr-2" />
+            {t("hero.cta")}
+          </Button>
+        </div>
+        <p className="mt-4 text-sm text-muted-foreground font-medium animate-pulse">
+          🔥 {t("hero.limitedSpots")}
+        </p>
       </AnimatedSection>
 
       <LogoBanner />

@@ -2,10 +2,15 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import logo from "@/assets/logo_reddit_agence.png";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
 
 export const Header = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const { lang, setLang, t } = useLanguage();
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -21,26 +26,46 @@ export const Header = () => {
                 className="relative w-11 h-11 rounded-xl transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
-            <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+            <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300 hidden sm:inline">
               RedditPartners
             </span>
           </a>
         </AnimatedSection>
+
+        {/* Nav links - hidden on mobile */}
+        <nav className="hidden md:flex items-center gap-6">
+          <button onClick={() => scrollTo("process")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            {t("nav.howItWorks")}
+          </button>
+          <button onClick={() => scrollTo("pricing")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            {t("nav.pricing")}
+          </button>
+          <button onClick={() => scrollTo("faq")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            {t("nav.faq")}
+          </button>
+        </nav>
         
-        <AnimatedSection delay={100}>
-          <Button 
-            onClick={scrollToTop} 
-            size="sm" 
-            className="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+        <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <button
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            className="text-lg hover:scale-110 transition-transform duration-200 px-1"
+            aria-label="Toggle language"
           >
-            <Sparkles className="w-4 h-4 flex-shrink-0" />
-            <span className="text-sm sm:text-base">Rejoindre</span>
-            <span className="hidden sm:inline text-sm sm:text-base">la waitlist</span>
-            <span className="hidden md:inline bg-background/20 text-primary-foreground text-xs font-bold px-2 py-0.5 rounded-full">
-              7 places
-            </span>
-          </Button>
-        </AnimatedSection>
+            {lang === "en" ? "🇫🇷" : "🇬🇧"}
+          </button>
+
+          <AnimatedSection delay={100}>
+            <Button 
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              size="sm" 
+              className="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+            >
+              <Sparkles className="w-4 h-4 flex-shrink-0" />
+              <span className="text-sm sm:text-base">{t("header.cta")}</span>
+            </Button>
+          </AnimatedSection>
+        </div>
       </div>
     </header>
   );
