@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 
-const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
 export const PricingSection = () => {
   const { t } = useLanguage();

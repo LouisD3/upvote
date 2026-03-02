@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import confetti from "canvas-confetti";
 
-const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
 const FloatingRedditLogo = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

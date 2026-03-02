@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import confetti from "canvas-confetti";
 
-const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
 const icons: LucideIcon[] = [ClipboardCheck, Target, UserPlus, Rocket, TrendingUp];
 
