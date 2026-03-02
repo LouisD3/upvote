@@ -4,7 +4,7 @@ import { Sparkles } from "lucide-react";
 import logo from "@/assets/logo_reddit_agence.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const CALENDLY_URL = "https://calendly.com/drouillard-mateo/audit-reddit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
 export const Header = () => {
   const { lang, setLang, t } = useLanguage();

@@ -73,7 +73,7 @@ export const ProblemSection = () => {
             <div className="group h-full">
               <div className="relative h-full">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 to-primary/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500" />
-                <div className="relative h-full bg-card shadow-card rounded-2xl p-8 border border-primary/30 transition-all duration-500 hover:shadow-card-hover overflow-hidden">
+                <div className="relative h-full bg-card shadow-card rounded-2xl p-8 border-2 border-primary/50 transition-all duration-500 hover:shadow-card-hover overflow-hidden">
                   <div className="absolute top-0 right-0 overflow-hidden">
                     <div className="bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5">
                       {t("problem.withBadge")}
