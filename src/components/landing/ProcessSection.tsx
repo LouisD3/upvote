@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import confetti from "canvas-confetti";
+import { trackCTAClick } from "@/lib/posthog";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
@@ -68,6 +69,7 @@ const StepCard = ({ step, index }: { step: { number: number; title: string; desc
 };
 
 const handleBookAudit = () => {
+  trackCTAClick("process");
   confetti({
     particleCount: 100,
     spread: 70,
