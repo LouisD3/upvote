@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import logo from "@/assets/logo_reddit_agence.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackCTAClick } from "@/lib/posthog";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
@@ -57,7 +58,7 @@ export const Header = () => {
 
           <AnimatedSection delay={100}>
             <Button 
-              onClick={() => window.open(CALENDLY_URL, "_blank")}
+              onClick={() => { trackCTAClick("header"); window.open(CALENDLY_URL, "_blank"); }}
               size="sm" 
               className="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
             >

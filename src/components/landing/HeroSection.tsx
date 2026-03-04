@@ -5,6 +5,7 @@ import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import confetti from "canvas-confetti";
+import { trackCTAClick } from "@/lib/posthog";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
 
@@ -15,6 +16,7 @@ const FloatingRedditLogo = ({ className }: { className?: string }) => (
 );
 
 const handleBookAudit = () => {
+  trackCTAClick("hero");
   confetti({
     particleCount: 100,
     spread: 70,
