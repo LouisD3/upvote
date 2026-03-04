@@ -1,11 +1,11 @@
 import posthog from "posthog-js";
 
 // PostHog public API key - safe to expose client-side
-const POSTHOG_KEY = "__POSTHOG_KEY__";
+const POSTHOG_KEY = "phc_WF5weDF1O62oYKRnKwsNCGLLSN6pQcPxUvu7GxJKwZB";
 const POSTHOG_HOST = "https://us.i.posthog.com";
 
 export const initPostHog = () => {
-  if (POSTHOG_KEY === "__POSTHOG_KEY__") {
+  if (!POSTHOG_KEY) {
     console.warn("[PostHog] No API key configured. Analytics disabled.");
     return;
   }
