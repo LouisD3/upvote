@@ -1,5 +1,5 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { Check, Sparkles, Zap } from "lucide-react";
+import { Check, Sparkles, Zap, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
@@ -40,11 +40,11 @@ export const PricingSection = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 rounded-3xl blur-lg opacity-50 group-hover:opacity-80 transition duration-500" />
 
             <div className="relative bg-card border border-primary/20 rounded-3xl p-8 md:p-10 overflow-hidden">
-              {/* Badge */}
+              {/* Badge Founders' choice */}
               <div className="flex justify-center mb-6">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                  <Sparkles className="w-3 h-3" />
+                <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/5 text-foreground text-sm font-semibold border border-primary/10 shadow-sm">
                   {t("pricing.foundersChoice")}
+                  <Award className="w-5 h-5 text-primary" />
                 </span>
               </div>
 
@@ -64,12 +64,9 @@ export const PricingSection = () => {
                 <span className="text-xl text-muted-foreground ml-1">
                   {t("pricing.period")}
                 </span>
-                <div className="mt-3 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium border border-border/50">
-                    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    {t("pricing.commitment")}
-                  </span>
-                </div>
+                <p className="mt-2 text-sm text-muted-foreground italic">
+                  {t("pricing.commitment")}
+                </p>
               </div>
 
               {/* Features */}
