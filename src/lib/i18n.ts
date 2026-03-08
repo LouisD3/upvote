@@ -94,6 +94,11 @@ export const translations = {
 
   // FAQ Section
   "faq.title": { en: "Everything you need to know.", fr: "Tout ce que vous devez savoir." },
+  "faq.q0": { en: "How do you know if Reddit is the right channel for us?", fr: "Comment savez-vous que Reddit est le bon canal pour nous ?" },
+  "faq.a0": {
+    en: "Before anything, we run a thorough audit together. We analyze: existing communities (active subreddits where your ICP hangs out, member count, engagement level), whether your ICP is actually on Reddit (founders, devs, product managers, growth marketers are; Fortune 500 CMOs, not so much), existing discussions (threads about the problem you solve, people actively looking for solutions like yours), and your competitors' presence on Reddit. If we see Reddit isn't the right channel for you, we'll tell you upfront and point you toward what would work better.",
+    fr: "Avant toute chose, on fait un audit approfondi ensemble. On analyse : les communautés existantes (subreddits actifs où votre ICP traîne, nombre de membres, niveau d'engagement), si votre ICP est réellement sur Reddit (founders, devs, product managers, growth marketers oui ; CMO de Fortune 500, pas vraiment), les discussions existantes (threads sur la problématique que vous résolvez, personnes qui cherchent activement des solutions comme la vôtre), et la présence de vos concurrents sur Reddit. Si on voit que Reddit n'est pas le bon canal pour vous, on vous le dit clairement et on vous oriente vers ce qui marcherait mieux.",
+  },
   "faq.q1": { en: "What is the minimum commitment to work with you?", fr: "Quel est l'engagement minimum pour travailler avec vous ?" },
   "faq.a1": {
     en: "We require a minimum commitment of 3 months. Reddit marketing is a compounding channel. The longer you stay, the bigger the results. Most clients see meaningful traction within 2-3 months and choose to continue well beyond the initial period.",
