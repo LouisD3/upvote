@@ -64,12 +64,9 @@ export const PricingSection = () => {
                 <span className="text-xl text-muted-foreground ml-1">
                   {t("pricing.period")}
                 </span>
-                <div className="mt-3 flex items-center justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-muted text-muted-foreground text-xs font-medium border border-border/50">
-                    <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    {t("pricing.commitment")}
-                  </span>
-                </div>
+                <p className="mt-2 text-sm text-muted-foreground italic">
+                  {t("pricing.commitment")}
+                </p>
               </div>
 
               {/* Features */}
