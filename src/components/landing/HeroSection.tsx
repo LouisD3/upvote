@@ -40,7 +40,7 @@ export const HeroSection = () => {
       </div>
       
       {/* Floating Reddit logos background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
         <FloatingRedditLogo className="absolute top-[10%] left-[5%] w-12 h-12 text-primary/10 animate-[float1_8s_ease-in-out_infinite]" />
         <FloatingRedditLogo className="absolute top-[20%] right-[10%] w-8 h-8 text-primary/8 animate-[float2_10s_ease-in-out_infinite]" />
         <FloatingRedditLogo className="absolute top-[50%] left-[8%] w-16 h-16 text-primary/5 animate-[float3_12s_ease-in-out_infinite]" />
