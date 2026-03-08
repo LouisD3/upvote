@@ -114,8 +114,12 @@ export const translations = {
     en: "Our plan includes 5 high-quality posts per month, strategically placed across the most relevant subreddits for your ICP. Quality over quantity is key on Reddit: one well-crafted post can generate more leads than 50 spammy ones. We also engage in strategic commenting to amplify reach.",
     fr: "Notre offre inclut 5 posts de haute qualité par mois, placés stratégiquement dans les subreddits les plus pertinents pour votre ICP. La qualité prime sur la quantité sur Reddit : un post bien rédigé peut générer plus de leads que 50 posts spam. Nous faisons aussi du commentaire stratégique pour amplifier la portée.",
   },
+  "faq.q5": { en: "What's included in the monthly report?", fr: "Que contient le reporting mensuel ?" },
+  "faq.a5": {
+    en: "Each report includes: published posts and their performance, product feedback collected from comments and DMs, SEO growth, your brand's presence in LLMs, and key learnings to improve the following month. In collaboration with your team, we also track signups and demo calls coming from Reddit.",
+    fr: "Chaque rapport inclut : les posts publiés et leur performance, les retours produit récoltés dans les commentaires ou en DM, la croissance SEO, votre présence dans les LLM, et les apprentissages clés pour faire mieux le mois suivant. En collaboration avec votre équipe, on suit aussi le nombre de sign-ups et d'appels démo venant de Reddit.",
+  },
 
-  // Footer
   "footer.madeWith": { en: "Made with", fr: "Fait avec" },
   "footer.forSaaS": { en: "for ambitious SaaS", fr: "pour les SaaS ambitieux" },
 } as const;
