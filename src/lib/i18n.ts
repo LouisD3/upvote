@@ -101,8 +101,8 @@ export const translations = {
   },
   "faq.q2": { en: "How long do you need to launch a first campaign?", fr: "Combien de temps faut-il pour lancer une première campagne ?" },
   "faq.a2": {
-    en: "We typically launch within 2 weeks. The first week is dedicated to the audit, ICP deep dive, and strategy. The second week covers account setup, warm-up, and the first posts going live. You'll receive your first report within 30 days.",
-    fr: "Nous lançons généralement en 2 semaines. La première semaine est dédiée à l'audit, l'analyse approfondie de l'ICP et la stratégie. La deuxième semaine couvre le setup des comptes, le warm-up et la publication des premiers posts. Vous recevrez votre premier rapport sous 30 jours.",
+    en: "We launch the first posts within 21 days. During this period, we handle onboarding, strategy, and account warm-up in parallel. You'll receive your first report within 30 days.",
+    fr: "Nous lançons les premiers posts à partir de 21 jours. Avant cela, nous gérons en parallèle l'onboarding, la stratégie et le warm-up des comptes. Vous recevrez votre premier rapport sous 30 jours.",
   },
   "faq.q3": { en: "How can you write content that resonates with my Ideal Customer Profile (ICP)?", fr: "Comment écrivez-vous du contenu qui parle à mon ICP ?" },
   "faq.a3": {
