@@ -8,7 +8,7 @@ export const translations = {
   "header.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
 
   // Hero
-  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Trusted by YC startups" },
+  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Approuvé par des startups YC" },
   "hero.headline1": { en: "Turn ", fr: "Transforme " },
   "hero.headline2": { en: "Reddit", fr: "Reddit" },
   "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
