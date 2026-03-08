@@ -111,8 +111,8 @@ export const translations = {
   },
   "faq.q4": { en: "How many posts should I expect every month?", fr: "Combien de posts par mois dois-je attendre ?" },
   "faq.a4": {
-    en: "Our plan includes 5 high-quality posts per month, strategically placed across the most relevant subreddits for your ICP. Quality over quantity is key on Reddit — one well-crafted post can generate more leads than 50 spammy ones. We also engage in strategic commenting to amplify reach.",
-    fr: "Notre offre inclut 5 posts de haute qualité par mois, placés stratégiquement dans les subreddits les plus pertinents pour votre ICP. La qualité prime sur la quantité sur Reddit — un post bien rédigé peut générer plus de leads que 50 posts spam. Nous faisons aussi du commentaire stratégique pour amplifier la portée.",
+    en: "Our plan includes 5 high-quality posts per month, strategically placed across the most relevant subreddits for your ICP. Quality over quantity is key on Reddit: one well-crafted post can generate more leads than 50 spammy ones. We also engage in strategic commenting to amplify reach.",
+    fr: "Notre offre inclut 5 posts de haute qualité par mois, placés stratégiquement dans les subreddits les plus pertinents pour votre ICP. La qualité prime sur la quantité sur Reddit : un post bien rédigé peut générer plus de leads que 50 posts spam. Nous faisons aussi du commentaire stratégique pour amplifier la portée.",
   },
 
   // Footer
