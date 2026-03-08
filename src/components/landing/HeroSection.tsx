@@ -52,19 +52,14 @@ export const HeroSection = () => {
 
       {/* YC Trust Badge */}
       <AnimatedSection delay={50} className="relative z-10 mb-6">
-        <a
-          href="https://www.ycombinator.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 group"
-        >
+        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border/50">
           <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-primary">
             <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
           </svg>
-          <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+          <span className="text-sm font-medium text-muted-foreground">
             {t("hero.trustedBy")}
           </span>
-        </a>
+        </div>
       </AnimatedSection>
 
       <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
