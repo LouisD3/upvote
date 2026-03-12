@@ -36,8 +36,8 @@ const Index = () => {
               {/* Left: logo, socials, email */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="RedditPartners" className="h-7 w-7 rounded-lg" />
-                  <span className="text-foreground font-semibold text-lg">RedditPartners</span>
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <a href="https://x.com/mateodr_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
