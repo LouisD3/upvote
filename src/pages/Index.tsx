@@ -47,9 +47,9 @@ const Index = () => {
                     <LinkedInIcon className="w-4 h-4" />
                   </a>
                 </div>
-                <a href="mailto:contact@redditpartners.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:contact@upvotepartners.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="w-3.5 h-3.5" />
-                  contact@redditpartners.com
+                  contact@upvotepartners.com
                 </a>
               </div>
 
