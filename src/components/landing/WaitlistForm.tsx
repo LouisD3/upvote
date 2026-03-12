@@ -93,7 +93,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
         return;
       }
 
-      trackWaitlistSubmit(validatedData.email);
+      
       setIsSubmitted(true);
     } catch (err) {
       setError("Une erreur est survenue. Réessaie plus tard.");
