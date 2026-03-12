@@ -76,7 +76,7 @@ const Index = () => {
 
             {/* Bottom: copyright */}
             <p className="text-xs text-muted-foreground">
-              Copyright ©RedditPartners. {t("footer.allRights")}
+              Copyright ©UpvotePartners. {t("footer.allRights")}
             </p>
           </div>
         </div>
