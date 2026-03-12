@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { Language, TranslationKey, t as translate } from "@/lib/i18n";
-import { trackLanguageChange } from "@/lib/posthog";
+
 
 interface LanguageContextType {
   lang: Language;
