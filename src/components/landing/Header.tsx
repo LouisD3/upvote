@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import logo from "@/assets/logo_reddit_agence.png";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { trackCTAClick } from "@/lib/posthog";
 
-const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 export const Header = () => {
   const { lang, setLang, t } = useLanguage();
@@ -23,12 +22,12 @@ export const Header = () => {
               <div className="absolute -inset-1 bg-primary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
                 src={logo} 
-                alt="RedditPartners" 
+                alt="UpvotePartners" 
                 className="relative w-11 h-11 rounded-xl transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
             <span className="font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300 hidden sm:inline">
-              RedditPartners
+              UpvotePartners
             </span>
           </a>
         </AnimatedSection>
@@ -58,7 +57,7 @@ export const Header = () => {
 
           <AnimatedSection delay={100}>
             <Button 
-              onClick={() => { trackCTAClick("header"); window.open(CALENDLY_URL, "_blank"); }}
+              onClick={() => window.open(CALENDLY_URL, "_blank")}
               size="sm" 
               className="flex items-center gap-1.5 sm:gap-2 h-9 sm:h-10 px-3 sm:px-4 font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
             >

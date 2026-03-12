@@ -36,8 +36,8 @@ const Index = () => {
               {/* Left: logo, socials, email */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="RedditPartners" className="h-7 w-7 rounded-lg" />
-                  <span className="text-foreground font-semibold text-lg">RedditPartners</span>
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <a href="https://x.com/mateodr_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
@@ -47,9 +47,9 @@ const Index = () => {
                     <LinkedInIcon className="w-4 h-4" />
                   </a>
                 </div>
-                <a href="mailto:contact@redditpartners.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:contact@upvotepartners.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="w-3.5 h-3.5" />
-                  contact@redditpartners.com
+                  contact@upvotepartners.com
                 </a>
               </div>
 
@@ -76,7 +76,7 @@ const Index = () => {
 
             {/* Bottom: copyright */}
             <p className="text-xs text-muted-foreground">
-              Copyright ©RedditPartners. {t("footer.allRights")}
+              Copyright ©UpvotePartners. {t("footer.allRights")}
             </p>
           </div>
         </div>

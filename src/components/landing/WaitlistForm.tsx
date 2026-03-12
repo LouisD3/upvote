@@ -7,7 +7,7 @@ import { Phone, CheckCircle2, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
-import { trackWaitlistSubmit } from "@/lib/posthog";
+
 
 // Zod validation schema for waitlist form
 const waitlistSchema = z.object({
@@ -93,7 +93,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
         return;
       }
 
-      trackWaitlistSubmit(validatedData.email);
+      
       setIsSubmitted(true);
     } catch (err) {
       setError("Une erreur est survenue. Réessaie plus tard.");

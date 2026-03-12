@@ -1,46 +1,29 @@
 
 
-# Rebranding RedditPartners → UpvotePartners + changements techniques
+## Setup PostHog Analytics
 
-## Résumé des changements
+### Ce qu'on va faire
+Intégrer PostHog dans l'application pour tracker le trafic, les événements (clics CTA, soumission formulaire waitlist), et avoir accès aux session replays.
 
-### 1. Domaine & URLs
-Remplacer `redditpartners.com` → `upvotepartners.com` partout :
-- **`index.html`** : canonical, hreflang, OG, Twitter, JSON-LD (`url`, `name`, `og:site_name`, `og:title`, `twitter:title`, `<title>`)
+### Étapes
 
-### 2. Calendly
-Remplacer `https://calendly.com/mateo-drouillard-redditpartners/audit` → `https://calendly.com/mateo-drouillard-upvotepartners/audit` dans :
-- `src/components/landing/Header.tsx` (ligne 8)
-- `src/components/landing/HeroSection.tsx` (ligne 10)
-- `src/components/landing/ProcessSection.tsx` (ligne 9)
-- `src/components/landing/PricingSection.tsx` (ligne 8)
+1. **Installer le package `posthog-js`**
 
-### 3. Analytics : PostHog → Hotjar (Contentsquare)
-- **`index.html`** : ajouter `<script src="https://t.contentsquare.net/uxa/fe3725e302c65.js"></script>` dans le `<head>`
-- **Supprimer** `src/lib/posthog.ts`
-- **Supprimer** `src/components/PostHogProvider.tsx`
-- **Mettre à jour** tous les imports de `trackCTAClick` dans Header, HeroSection, ProcessSection, PricingSection → retirer les appels PostHog (ou les remplacer par des no-op)
-- **`src/main.tsx`** ou **`src/App.tsx`** : retirer le `PostHogProvider` s'il y est
-- Note : la dépendance `posthog-js` peut rester dans package.json sans impact
+2. **Créer un provider PostHog** (`src/components/PostHogProvider.tsx`)
+   - Initialiser PostHog avec la clé API publique
+   - Wrapper l'app avec le provider
 
-### 4. Email de contact
-`contact@redditpartners.com` → `contact@upvotepartners.com` dans :
-- `src/pages/Index.tsx` (lignes 50-52)
+3. **Intégrer le provider dans `src/App.tsx`**
 
-### 5. Nom de marque dans le front
-`RedditPartners` → `UpvotePartners` dans :
-- `src/components/landing/Header.tsx` (alt + texte, lignes 27, 31)
-- `src/pages/Index.tsx` (alt, texte, copyright — lignes 39, 40, 79)
-- `index.html` (title, meta author, og:site_name, JSON-LD name)
+4. **Ajouter des événements custom** sur les actions clés :
+   - Clic sur les CTA Calendly (dans Header, HeroSection, PricingSection, ProcessSection)
+   - Soumission du formulaire waitlist (WaitlistForm)
+   - Changement de langue (LanguageContext)
 
-### Fichiers impactés
-1. `index.html`
-2. `src/components/landing/Header.tsx`
-3. `src/components/landing/HeroSection.tsx`
-4. `src/components/landing/ProcessSection.tsx`
-5. `src/components/landing/PricingSection.tsx`
-6. `src/pages/Index.tsx`
-7. `src/lib/posthog.ts` (suppression)
-8. `src/components/PostHogProvider.tsx` (suppression ou vidage)
-9. `src/App.tsx` (retirer PostHogProvider si utilisé)
+### Ce dont tu auras besoin
+- Un compte PostHog (gratuit jusqu'à 1M events/mois) sur [posthog.com](https://posthog.com)
+- Ta **clé API publique** PostHog (c'est une clé publique, donc on peut la mettre directement dans le code)
+
+### Note
+La clé API PostHog est **publique** (elle est exposée côté client de toute façon), donc pas besoin de la stocker en secret. On la mettra directement dans le code.
 

@@ -3,9 +3,8 @@ import { Check, Sparkles, Zap, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
-import { trackCTAClick } from "@/lib/posthog";
 
-const CALENDLY_URL = "https://calendly.com/mateo-drouillard-redditpartners/audit";
+const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 export const PricingSection = () => {
   const { t } = useLanguage();
@@ -84,7 +83,7 @@ export const PricingSection = () => {
               {/* CTA */}
               <div className="text-center">
                 <Button
-                  onClick={() => { trackCTAClick("pricing"); window.open(CALENDLY_URL, "_blank"); }}
+                  onClick={() => window.open(CALENDLY_URL, "_blank")}
                   size="lg"
                   className={cn(
                     "h-12 px-8 text-sm font-bold rounded-xl",

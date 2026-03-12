@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { Language, TranslationKey, t as translate } from "@/lib/i18n";
-import { trackLanguageChange } from "@/lib/posthog";
+
 
 interface LanguageContextType {
   lang: Language;
@@ -14,7 +14,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Language>("en");
 
   const setLang = (newLang: Language) => {
-    trackLanguageChange(lang, newLang);
     setLangState(newLang);
   };
 
