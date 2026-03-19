@@ -12,7 +12,7 @@ export const translations = {
   "hero.headline1": { en: "Turn ", fr: "Transforme " },
   "hero.headline2": { en: "Reddit", fr: "Reddit" },
   "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
-  "hero.headline4": { en: "SaaS", fr: "SaaS" },
+  "hero.headline4": { en: "Startup", fr: "Startup" },
   "hero.subline": {
     en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
     fr: "Nous gérons de A à Z ton marketing Reddit. Du contenu qui se positionne sur Google, est cité par les IA comme ChatGPT, Perplexity et Claude, et génère des leads qualifiés chaque mois.",
