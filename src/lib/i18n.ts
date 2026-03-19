@@ -33,7 +33,7 @@ export const translations = {
     fr: "Reddit n'est pas Twitter. Ni LinkedIn. Les règles sont différentes. Voici ce qui sépare ceux qui réussissent de ceux qui se font bannir.",
   },
   "problem.withoutTitle": { en: "Without strategy", fr: "Sans stratégie" },
-  "problem.withoutSubtitle": { en: "What happens to 95% of SaaS", fr: "Ce qui arrive à 95% des SaaS" },
+  "problem.withoutSubtitle": { en: "What happens to 95% of Startups", fr: "Ce qui arrive à 95% des Startups" },
   "problem.withTitle": { en: "With our system", fr: "Avec notre système" },
   "problem.withSubtitle": { en: "Guaranteed results", fr: "Résultats garantis" },
   "problem.withBadge": { en: "✨ Our system", fr: "✨ Notre système" },
