@@ -61,7 +61,7 @@ export const translations = {
     fr: "Un process éprouvé, done-for-you, pour transformer Reddit en machine à leads",
   },
   "process.step1Title": { en: "Audit", fr: "Audit" },
-  "process.step1Desc": { en: "Analysis of your SaaS, funnel and ICP", fr: "Analyse de ton SaaS, funnel et ICP" },
+  "process.step1Desc": { en: "Analysis of your Startup, funnel and ICP", fr: "Analyse de ta Startup, funnel et ICP" },
   "process.step2Title": { en: "Strategy", fr: "Stratégie" },
   "process.step2Desc": { en: "Custom Reddit strategy definition", fr: "Définition de la stratégie Reddit sur-mesure" },
   "process.step3Title": { en: "Setup", fr: "Setup" },
