@@ -8,10 +8,10 @@ export const translations = {
   "header.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
 
   // Hero
-  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Approuvé par des startups YC" },
+  "hero.trustedBy": { en: "Trusted by YC startups", fr: "Approuvé par les startups de YC" },
   "hero.headline1": { en: "Turn ", fr: "Transforme " },
   "hero.headline2": { en: "Reddit", fr: "Reddit" },
-  "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
+  "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ta " },
   "hero.headline4": { en: "Startup", fr: "Startup" },
   "hero.subline": {
     en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
