@@ -126,7 +126,7 @@ export const translations = {
   },
 
   "footer.madeWith": { en: "Made with", fr: "Fait avec" },
-  "footer.forSaaS": { en: "for ambitious SaaS", fr: "pour les SaaS ambitieux" },
+  "footer.forSaaS": { en: "for ambitious Startups", fr: "pour les Startups ambitieuses" },
   "footer.allRights": { en: "All rights reserved.", fr: "Tous droits réservés." },
   "pricing.commitment": { en: "3-month minimum commitment", fr: "Engagement minimum de 3 mois" },
 } as const;
