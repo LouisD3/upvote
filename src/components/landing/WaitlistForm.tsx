@@ -250,7 +250,7 @@ export const WaitlistForm = ({ variant = "section" }: WaitlistFormProps) => {
         <AnimatedSection>
           <p className="text-center text-lg text-muted-foreground mb-8 leading-relaxed">
             Rejoins la waitlist privée. Je te contacterai personnellement pour comprendre si
-            Reddit a du sens pour ton SaaS.
+            Reddit a du sens pour ta Startup.
           </p>
         </AnimatedSection>
 

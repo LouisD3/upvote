@@ -12,7 +12,7 @@ export const translations = {
   "hero.headline1": { en: "Turn ", fr: "Transforme " },
   "hero.headline2": { en: "Reddit", fr: "Reddit" },
   "hero.headline3": { en: " into a recurring acquisition channel for your ", fr: " en canal d'acquisition récurrent pour ton " },
-  "hero.headline4": { en: "SaaS", fr: "SaaS" },
+  "hero.headline4": { en: "Startup", fr: "Startup" },
   "hero.subline": {
     en: "We manage your entire Reddit marketing strategy end-to-end. Content that ranks on Google, gets cited by AI like ChatGPT, Perplexity and Claude, and drives qualified leads every month.",
     fr: "Nous gérons de A à Z ton marketing Reddit. Du contenu qui se positionne sur Google, est cité par les IA comme ChatGPT, Perplexity et Claude, et génère des leads qualifiés chaque mois.",
@@ -20,20 +20,20 @@ export const translations = {
   "hero.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
   "hero.limitedSpots": { en: "Limited spots available", fr: "Places très limitées" },
   "hero.logoBannerTitle": {
-    en: "Join the SaaS companies using Reddit as an acquisition channel",
-    fr: "Rejoignez les SaaS qui utilisent Reddit comme canal d'acquisition",
+    en: "Join the Startups using Reddit as an acquisition channel",
+    fr: "Rejoignez les Startups qui utilisent Reddit comme canal d'acquisition",
   },
 
   // Problem Section
   "problem.badge": { en: "The problem", fr: "Le problème" },
-  "problem.title1": { en: "Most SaaS fail on Reddit. ", fr: "La plupart des SaaS échouent sur Reddit. " },
+  "problem.title1": { en: "Most Startups fail on Reddit. ", fr: "La plupart des Startups échouent sur Reddit. " },
   "problem.title2": { en: "Not us.", fr: "Pas nous." },
   "problem.subtitle": {
     en: "Reddit is not Twitter. Not LinkedIn. The rules are different. Here's what separates those who succeed from those who get banned.",
     fr: "Reddit n'est pas Twitter. Ni LinkedIn. Les règles sont différentes. Voici ce qui sépare ceux qui réussissent de ceux qui se font bannir.",
   },
   "problem.withoutTitle": { en: "Without strategy", fr: "Sans stratégie" },
-  "problem.withoutSubtitle": { en: "What happens to 95% of SaaS", fr: "Ce qui arrive à 95% des SaaS" },
+  "problem.withoutSubtitle": { en: "What happens to 95% of Startups", fr: "Ce qui arrive à 95% des Startups" },
   "problem.withTitle": { en: "With our system", fr: "Avec notre système" },
   "problem.withSubtitle": { en: "Guaranteed results", fr: "Résultats garantis" },
   "problem.withBadge": { en: "✨ Our system", fr: "✨ Notre système" },
@@ -61,7 +61,7 @@ export const translations = {
     fr: "Un process éprouvé, done-for-you, pour transformer Reddit en machine à leads",
   },
   "process.step1Title": { en: "Audit", fr: "Audit" },
-  "process.step1Desc": { en: "Analysis of your SaaS, funnel and ICP", fr: "Analyse de ton SaaS, funnel et ICP" },
+  "process.step1Desc": { en: "Analysis of your Startup, funnel and ICP", fr: "Analyse de ta Startup, funnel et ICP" },
   "process.step2Title": { en: "Strategy", fr: "Stratégie" },
   "process.step2Desc": { en: "Custom Reddit strategy definition", fr: "Définition de la stratégie Reddit sur-mesure" },
   "process.step3Title": { en: "Setup", fr: "Setup" },
@@ -126,7 +126,7 @@ export const translations = {
   },
 
   "footer.madeWith": { en: "Made with", fr: "Fait avec" },
-  "footer.forSaaS": { en: "for ambitious SaaS", fr: "pour les SaaS ambitieux" },
+  "footer.forSaaS": { en: "for ambitious Startups", fr: "pour les Startups ambitieuses" },
   "footer.allRights": { en: "All rights reserved.", fr: "Tous droits réservés." },
   "pricing.commitment": { en: "3-month minimum commitment", fr: "Engagement minimum de 3 mois" },
 } as const;

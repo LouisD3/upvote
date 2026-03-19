@@ -34,7 +34,7 @@ const blurredChartData = [{
 }];
 const credibilityPillars = [{
   icon: Users,
-  quote: "On a construit et marketé nos propres produits SaaS.",
+  quote: "On a construit et marketé nos propres Startups.",
   meaning: "On vous comprend. On est un partenaire, pas un prestataire.",
   gradient: "from-blue-500/20 to-cyan-500/20"
 }, {
