@@ -26,7 +26,7 @@ export const translations = {
 
   // Problem Section
   "problem.badge": { en: "The problem", fr: "Le problème" },
-  "problem.title1": { en: "Most SaaS fail on Reddit. ", fr: "La plupart des SaaS échouent sur Reddit. " },
+  "problem.title1": { en: "Most Startups fail on Reddit. ", fr: "La plupart des Startups échouent sur Reddit. " },
   "problem.title2": { en: "Not us.", fr: "Pas nous." },
   "problem.subtitle": {
     en: "Reddit is not Twitter. Not LinkedIn. The rules are different. Here's what separates those who succeed from those who get banned.",
