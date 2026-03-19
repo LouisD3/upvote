@@ -20,8 +20,8 @@ export const translations = {
   "hero.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
   "hero.limitedSpots": { en: "Limited spots available", fr: "Places très limitées" },
   "hero.logoBannerTitle": {
-    en: "Join the SaaS companies using Reddit as an acquisition channel",
-    fr: "Rejoignez les SaaS qui utilisent Reddit comme canal d'acquisition",
+    en: "Join the Startups using Reddit as an acquisition channel",
+    fr: "Rejoignez les Startups qui utilisent Reddit comme canal d'acquisition",
   },
 
   // Problem Section
