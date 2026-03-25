@@ -141,6 +141,9 @@ export const translations = {
     en: "Click a button and find out why Reddit can (or can't) be a great acquisition channel for your startup.",
     fr: "Cliquez sur un bouton et découvrez pourquoi Reddit peut (ou non) être un bon canal d'acquisition pour votre startup.",
   },
+  "askAI.askChatGPT": { en: "Ask ChatGPT", fr: "Demander à ChatGPT" },
+  "askAI.askClaude": { en: "Ask Claude", fr: "Demander à Claude" },
+  "askAI.askPerplexity": { en: "Ask Perplexity", fr: "Demander à Perplexity" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
