@@ -1,27 +1,22 @@
 
 
-# Corrections section Ask AI
+# Corrections Ask AI — Planète + Logo Claude
 
-## 3 changements demandés
+## Changements
 
-### 1. Logo Claude — Remplacer par l'image uploadée
-- Copier `user-uploads://claude-ai.png` vers `src/assets/claude-ai.png`
-- Dans `AskAISection.tsx`, remplacer le SVG inline de Claude par un `<img>` importé depuis `@/assets/claude-ai.png`
-- Appliquer un filtre CSS `invert` pour que le logo blanc soit visible sur fond noir du bouton (ou inversement selon le thème)
+### 1. Réduire la taille de la planète
+- Passer le SVG de `width="1100" height="1100"` à `width="800" height="800"` et ajuster le viewBox proportionnellement
+- Garder le `translate-y-[55%]` pour que seul le haut de l'arc soit visible
 
-### 2. Liens — Corriger ChatGPT
-- Le lien fourni par l'utilisateur est en fait pour Claude (`claude.ai/new?q=...`) et fonctionne déjà.
-- Le vrai problème est le lien **ChatGPT**. L'URL `chatgpt.com/?hints=search&q=` ne fonctionne pas de manière fiable. Remplacer par `https://chatgpt.com/?q=${encodedPrompt}` sans le `hints=search`, ou utiliser `https://chat.openai.com/?q=${encodedPrompt}`.
-- Vérifier que l'encodage du prompt est correct (le `encodeURIComponent` actuel devrait suffire).
+### 2. Traits plus lumineux + glow animé
+- Augmenter les `strokeOpacity` des ellipses latitude (passer de 0.08-0.25 à 0.15-0.5)
+- Augmenter les `strokeWidth` des traits principaux
+- Ajouter une animation CSS `@keyframes` de pulsation (glow) sur le contour principal du cercle (opacity oscillant entre 0.3 et 0.7)
+- Ajouter un filtre SVG `feGaussianBlur` pour un effet de lueur sur le bord
 
-### 3. Arc décoratif — Effet "planète" avec traits orange
-- Remplacer le simple cercle CSS par un SVG plus élaboré simulant une planète :
-  - Un grand demi-cercle (la planète) en bas de la section
-  - Plusieurs lignes courbes horizontales (les "traits") traversant le cercle en orange avec différentes opacités
-  - Effet similaire à une planète gazeuse avec des bandes
-- Utiliser des `<ellipse>` et `<path>` SVG avec `stroke` en `hsl(var(--primary))` et opacités variées (0.1 à 0.3)
+### 3. Logo Claude blanc
+- Le filtre `invert` devrait déjà rendre le logo blanc sur fond noir. Le problème vient probablement du fait que l'image uploadée est déjà blanche/claire. Retirer le `invert` si le logo est déjà blanc, ou ajuster avec `brightness(0) invert(1)` pour forcer le blanc quel que soit la couleur d'origine.
 
-### Fichiers impactés
-- `src/assets/claude-ai.png` (nouveau — copie)
-- `src/components/landing/AskAISection.tsx` (logo Claude, lien ChatGPT, arc planète)
+### Fichier impacté
+- `src/components/landing/AskAISection.tsx`
 
