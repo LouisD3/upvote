@@ -134,6 +134,13 @@ export const translations = {
   "footer.forSaaS": { en: "for ambitious Startups", fr: "pour les Startups ambitieuses" },
   "footer.allRights": { en: "All rights reserved.", fr: "Tous droits réservés." },
   "pricing.commitment": { en: "3-month minimum commitment", fr: "Engagement minimum de 3 mois" },
+
+  // Ask AI
+  "askAI.title": { en: "Still not sure Reddit is right for you?", fr: "Toujours pas sûr que Reddit soit fait pour vous ?" },
+  "askAI.subtitle": {
+    en: "Click a button and find out why Reddit can (or can't) be a great acquisition channel for your startup.",
+    fr: "Cliquez sur un bouton et découvrez pourquoi Reddit peut (ou non) être un bon canal d'acquisition pour votre startup.",
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
