@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ProcessSection } from "@/components/landing/ProcessSection";
 import { PricingSection } from "@/components/landing/PricingSection";
+import { AskAISection } from "@/components/landing/AskAISection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Heart, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -25,6 +26,7 @@ const Index = () => {
         <ProblemSection />
         <ProcessSection />
         <PricingSection />
+        <AskAISection />
         <FAQSection />
       </div>
       
