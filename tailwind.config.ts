@@ -144,6 +144,10 @@ export default {
           "0%": { strokeDashoffset: "100" },
           "100%": { strokeDashoffset: "0" },
         },
+        "planetPulse": {
+          "0%, 100%": { strokeOpacity: "0.3" },
+          "50%": { strokeOpacity: "0.7" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -162,6 +166,7 @@ export default {
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
         "wiggle-glow": "wiggle-glow 2s ease-in-out infinite",
         "draw-line": "draw-line 1s ease-out forwards",
+        "planetPulse": "planetPulse 3s ease-in-out infinite",
       },
     },
   },
