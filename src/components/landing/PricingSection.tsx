@@ -116,7 +116,7 @@ export const PricingSection = () => {
                         <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                           <Check className="w-3.5 h-3.5 text-primary" />
                         </div>
-                        <span className="text-sm text-foreground font-semibold">{t(key)}</span>
+                        <span className="text-sm text-foreground font-semibold">{t(key as TranslationKey)}</span>
                       </li>
                     ))}
                     {/* Shared features */}
