@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import claudeLogo from "@/assets/claude-ai.png";
+import claudeLogo from "@/assets/claude-logo.png";
+import perplexityLogo from "@/assets/perplexity-logo.png";
 
 const PROMPT = "Pourquoi Reddit peut être un puissant canal d'acquisition pour ma startup ?";
 const encodedPrompt = encodeURIComponent(PROMPT);
@@ -26,9 +27,7 @@ const aiPlatforms = [
     nameKey: "askAI.askPerplexity" as const,
     url: `https://www.perplexity.ai/search?q=${encodedPrompt}`,
     icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-        <path d="M7.38 3v5.69L3 5.44v7.76l4.38-2.25V18H3v3h18v-3h-4.38V10.93L21 13.18V5.44l-4.38 3.25V3h-3.24v6.31L12 7.5l-1.38 1.81V3H7.38zM12 11.24l2.62 3.45V18H9.38v-3.31L12 11.24z" />
-      </svg>
+      <img src={perplexityLogo} alt="Perplexity" className="w-5 h-5 invert" />
     ),
   },
 ];
@@ -38,28 +37,98 @@ export const AskAISection = () => {
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
-      {/* Planet-style SVG arc with orange stripes */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[60%] pointer-events-none">
-        <svg width="900" height="900" viewBox="0 0 900 900" fill="none" className="opacity-100">
-          {/* Main planet circle */}
-          <circle cx="450" cy="450" r="440" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.15" fill="none" />
-          <circle cx="450" cy="450" r="440" fill="hsl(var(--primary))" fillOpacity="0.03" />
+      {/* Wireframe planet arc — inspired by polygonal globe */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[55%] pointer-events-none">
+        <svg width="1100" height="1100" viewBox="0 0 1100 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="planetClip">
+              <circle cx="550" cy="550" r="520" />
+            </clipPath>
+            <radialGradient id="planetGlow" cx="50%" cy="30%" r="60%">
+              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.08" />
+              <stop offset="60%" stopColor="hsl(var(--primary))" stopOpacity="0.03" />
+              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="atmosphereGlow" cx="50%" cy="0%" r="80%">
+              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.15" />
+              <stop offset="40%" stopColor="hsl(var(--primary))" stopOpacity="0.05" />
+              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+
+          {/* Atmosphere glow */}
+          <circle cx="550" cy="550" r="540" fill="url(#atmosphereGlow)" />
+
+          {/* Planet body with inner glow */}
+          <circle cx="550" cy="550" r="520" fill="url(#planetGlow)" />
           
-          {/* Horizontal stripes across the planet */}
-          <clipPath id="planetClip">
-            <circle cx="450" cy="450" r="438" />
-          </clipPath>
+          {/* Main planet outline — bright edge */}
+          <circle cx="550" cy="550" r="520" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.4" fill="none" />
+          
+          {/* Inner thin ring for depth */}
+          <circle cx="550" cy="550" r="516" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.15" fill="none" />
+
           <g clipPath="url(#planetClip)">
-            {/* Curved stripe lines */}
-            <ellipse cx="450" cy="250" rx="500" ry="20" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.12" fill="none" />
-            <ellipse cx="450" cy="320" rx="520" ry="25" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.18" fill="none" />
-            <ellipse cx="450" cy="380" rx="510" ry="18" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.1" fill="none" />
-            <ellipse cx="450" cy="430" rx="530" ry="22" stroke="hsl(var(--primary))" strokeWidth="2.5" strokeOpacity="0.25" fill="none" />
-            <ellipse cx="450" cy="480" rx="500" ry="15" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.15" fill="none" />
-            <ellipse cx="450" cy="540" rx="520" ry="28" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.2" fill="none" />
-            <ellipse cx="450" cy="610" rx="490" ry="20" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.12" fill="none" />
-            <ellipse cx="450" cy="680" rx="510" ry="24" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.16" fill="none" />
+            {/* Latitude lines — curved bands across the planet */}
+            <ellipse cx="550" cy="180" rx="580" ry="30" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.08" fill="none" />
+            <ellipse cx="550" cy="250" rx="600" ry="35" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.12" fill="none" />
+            <ellipse cx="550" cy="330" rx="620" ry="28" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.1" fill="none" />
+            <ellipse cx="550" cy="400" rx="610" ry="40" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.2" fill="none" />
+            <ellipse cx="550" cy="460" rx="590" ry="22" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.08" fill="none" />
+            <ellipse cx="550" cy="520" rx="630" ry="35" stroke="hsl(var(--primary))" strokeWidth="2" strokeOpacity="0.25" fill="none" />
+            <ellipse cx="550" cy="580" rx="600" ry="28" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.15" fill="none" />
+            <ellipse cx="550" cy="650" rx="580" ry="32" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.12" fill="none" />
+            <ellipse cx="550" cy="720" rx="610" ry="26" stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.18" fill="none" />
+            <ellipse cx="550" cy="800" rx="570" ry="30" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.1" fill="none" />
+            <ellipse cx="550" cy="880" rx="590" ry="24" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.06" fill="none" />
+
+            {/* Longitude / meridian lines for wireframe globe feel */}
+            <ellipse cx="550" cy="550" rx="520" ry="520" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.06" fill="none" />
+            <ellipse cx="550" cy="550" rx="120" ry="520" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.1" fill="none" />
+            <ellipse cx="550" cy="550" rx="250" ry="520" stroke="hsl(var(--primary))" strokeWidth="1" strokeOpacity="0.08" fill="none" />
+            <ellipse cx="550" cy="550" rx="380" ry="520" stroke="hsl(var(--primary))" strokeWidth="0.8" strokeOpacity="0.07" fill="none" />
+            <ellipse cx="550" cy="550" rx="480" ry="520" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.05" fill="none" />
+
+            {/* Diagonal wireframe lines for polygonal effect */}
+            <line x1="100" y1="200" x2="700" y2="900" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.06" />
+            <line x1="300" y1="100" x2="900" y2="800" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.05" />
+            <line x1="400" y1="900" x2="1000" y2="200" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.06" />
+            <line x1="200" y1="800" x2="800" y2="100" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.05" />
+
+            {/* Bright accent nodes — small dots at intersections */}
+            <circle cx="350" cy="320" r="2" fill="hsl(var(--primary))" fillOpacity="0.3" />
+            <circle cx="680" cy="400" r="2.5" fill="hsl(var(--primary))" fillOpacity="0.4" />
+            <circle cx="450" cy="500" r="2" fill="hsl(var(--primary))" fillOpacity="0.25" />
+            <circle cx="600" cy="580" r="3" fill="hsl(var(--primary))" fillOpacity="0.35" />
+            <circle cx="500" cy="650" r="2" fill="hsl(var(--primary))" fillOpacity="0.2" />
+            <circle cx="700" cy="700" r="2.5" fill="hsl(var(--primary))" fillOpacity="0.3" />
+            <circle cx="380" cy="750" r="2" fill="hsl(var(--primary))" fillOpacity="0.15" />
+            <circle cx="550" cy="400" r="3" fill="hsl(var(--primary))" fillOpacity="0.5" />
+            <circle cx="420" cy="440" r="1.5" fill="hsl(var(--primary))" fillOpacity="0.2" />
+            <circle cx="650" cy="520" r="2" fill="hsl(var(--primary))" fillOpacity="0.3" />
+            <circle cx="300" cy="600" r="2.5" fill="hsl(var(--primary))" fillOpacity="0.2" />
+            <circle cx="780" cy="620" r="2" fill="hsl(var(--primary))" fillOpacity="0.25" />
+
+            {/* Connection lines between nodes */}
+            <line x1="350" y1="320" x2="550" y2="400" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.12" />
+            <line x1="550" y1="400" x2="680" y2="400" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.1" />
+            <line x1="450" y1="500" x2="600" y2="580" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.1" />
+            <line x1="600" y1="580" x2="700" y2="700" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.08" />
+            <line x1="420" y1="440" x2="450" y2="500" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.1" />
+            <line x1="650" y1="520" x2="780" y2="620" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.08" />
+            <line x1="300" y1="600" x2="380" y2="750" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.08" />
+            <line x1="350" y1="320" x2="420" y2="440" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.1" />
+            <line x1="680" y1="400" x2="650" y2="520" stroke="hsl(var(--primary))" strokeWidth="0.5" strokeOpacity="0.1" />
           </g>
+
+          {/* Top atmosphere edge highlight */}
+          <path
+            d="M 150 550 A 400 400 0 0 1 950 550"
+            stroke="hsl(var(--primary))"
+            strokeWidth="1.5"
+            strokeOpacity="0.2"
+            fill="none"
+          />
         </svg>
       </div>
 
