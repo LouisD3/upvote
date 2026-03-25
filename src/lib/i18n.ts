@@ -93,6 +93,7 @@ export const translations = {
   "pricing.shared2": { en: "Social listening & monitoring tools setup", fr: "Setup outils de social listening & monitoring" },
   "pricing.shared3": { en: "SEO & LLM visibility optimization (GEO)", fr: "Optimisation SEO & visibilité LLM (GEO)" },
   "pricing.shared4": { en: "Monthly reporting", fr: "Reporting mensuel" },
+  "pricing.period": { en: "/mo", fr: "/mois" },
   "pricing.cta": { en: "Book a Free Consultation", fr: "Réserver une consultation gratuite" },
   "pricing.limitedSpots": { en: "⚡ Limited spots. We only take on a few clients at a time.", fr: "⚡ Places très limitées. Nous n'acceptons que quelques clients à la fois." },
 
