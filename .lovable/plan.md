@@ -1,29 +1,27 @@
 
 
-# Refonte section "Ask AI" pour copier le design de référence
+# Corrections section Ask AI
 
-## Problemes identifiés
-1. **Design** : ne correspond pas à l'image de référence (manque l'arc décoratif, le badge logo en haut)
-2. **Logos Claude et Perplexity** : SVG incorrects, ne correspondent pas aux vrais logos
-3. **Liens ChatGPT et Claude** : les URLs `chatgpt.com/?q=` et `claude.ai/new?q=` sont valides selon la doc, le problème vient peut-être de l'encodage des caractères spéciaux français (apostrophes). A investiguer et corriger.
-4. **Labels boutons** : l'image montre "Demander à ChatGPT" / "Demander à Claude" / "Demander à Perplexity", pas juste le nom
+## 3 changements demandés
 
-## Changements
+### 1. Logo Claude — Remplacer par l'image uploadée
+- Copier `user-uploads://claude-ai.png` vers `src/assets/claude-ai.png`
+- Dans `AskAISection.tsx`, remplacer le SVG inline de Claude par un `<img>` importé depuis `@/assets/claude-ai.png`
+- Appliquer un filtre CSS `invert` pour que le logo blanc soit visible sur fond noir du bouton (ou inversement selon le thème)
 
-### 1. `src/components/landing/AskAISection.tsx` — Refonte complète
-- Ajouter un **grand arc décoratif** en arrière-plan (SVG ou CSS border-radius) en **orange** (couleur brand) au lieu du vert de l'image de référence
-- Ajouter un **petit badge logo** UpvotePartners centré en haut de la section
-- Fond avec un léger pattern de grille (dots ou grid subtil) comme sur l'image
-- Labels boutons : "Demander à ChatGPT", "Demander à Claude", "Demander à Perplexity" (FR) / "Ask ChatGPT", "Ask Claude", "Ask Perplexity" (EN)
-- **Remplacer les SVG** de Claude et Perplexity par leurs vrais logos officiels
-- Vérifier l'encodage du prompt dans les URLs (tester avec `encodeURIComponent` sur les caractères spéciaux français)
+### 2. Liens — Corriger ChatGPT
+- Le lien fourni par l'utilisateur est en fait pour Claude (`claude.ai/new?q=...`) et fonctionne déjà.
+- Le vrai problème est le lien **ChatGPT**. L'URL `chatgpt.com/?hints=search&q=` ne fonctionne pas de manière fiable. Remplacer par `https://chatgpt.com/?q=${encodedPrompt}` sans le `hints=search`, ou utiliser `https://chat.openai.com/?q=${encodedPrompt}`.
+- Vérifier que l'encodage du prompt est correct (le `encodeURIComponent` actuel devrait suffire).
 
-### 2. `src/lib/i18n.ts` — Ajout clés boutons
-- `askAI.askChatGPT` : "Demander à ChatGPT" / "Ask ChatGPT"
-- `askAI.askClaude` : "Demander à Claude" / "Ask Claude"  
-- `askAI.askPerplexity` : "Demander à Perplexity" / "Ask Perplexity"
+### 3. Arc décoratif — Effet "planète" avec traits orange
+- Remplacer le simple cercle CSS par un SVG plus élaboré simulant une planète :
+  - Un grand demi-cercle (la planète) en bas de la section
+  - Plusieurs lignes courbes horizontales (les "traits") traversant le cercle en orange avec différentes opacités
+  - Effet similaire à une planète gazeuse avec des bandes
+- Utiliser des `<ellipse>` et `<path>` SVG avec `stroke` en `hsl(var(--primary))` et opacités variées (0.1 à 0.3)
 
 ### Fichiers impactés
-- `src/components/landing/AskAISection.tsx` (refonte)
-- `src/lib/i18n.ts` (ajout clés)
+- `src/assets/claude-ai.png` (nouveau — copie)
+- `src/components/landing/AskAISection.tsx` (logo Claude, lien ChatGPT, arc planète)
 
