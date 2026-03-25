@@ -3,6 +3,7 @@ import { Check, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
+import type { TranslationKey } from "@/lib/i18n";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
