@@ -12,7 +12,7 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import logo from "@/assets/logo_reddit_agence.png";
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -64,6 +64,9 @@ const Index = () => {
                   <button onClick={() => scrollTo("pricing")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     {t("nav.pricing")}
                   </button>
+                  <a href="/partners" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                    {lang === "fr" ? "Partenaires" : "Partners"}
+                  </a>
                 </div>
                 <div className="flex flex-col gap-3">
                   <button onClick={() => scrollTo("faq")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
