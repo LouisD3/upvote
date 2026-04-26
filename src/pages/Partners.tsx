@@ -35,7 +35,7 @@ const Partners = () => {
                 Devenons <span className="text-primary">partenaires</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
-                Tu travailles avec des fondateurs de startups ? On gère leur acquisition sur Reddit. Si le fit est là, tu touches 10% à vie sur chaque client que tu nous envoies.
+                Tu as du réseau dans l'univers des startups ? On s'occupe de leur acquisition sur Reddit. Si tu penses que ça peut les intéresser, mets-nous en relation ! Tu touches 10% à vie, chaque mois, sur chacun des clients que tu nous apportes.
               </p>
             </AnimatedSection>
           </div>
