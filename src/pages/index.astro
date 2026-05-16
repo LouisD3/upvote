@@ -1,0 +1,71 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Index from '@/react-pages/Index.tsx';
+import '@/index.css';
+---
+
+<Layout
+  title="UpvotePartners — Agence Marketing Reddit & GEO pour Startups | Leads Qualifiés"
+  description="UpvotePartners gère votre stratégie Reddit de A à Z. Génération de leads qualifiés, visibilité SEO, citations par les IA (ChatGPT, Claude, Perplexity). Approuvé par des startups YC. Audit gratuit."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment savoir si Reddit est le bon canal d'acquisition pour ma startup ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avant toute chose, on fait un audit approfondi ensemble. On analyse les subreddits actifs où votre ICP se trouve, les discussions existantes et la présence de vos concurrents. Si Reddit n'est pas le bon canal, on vous le dit clairement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est l'engagement minimum pour travailler avec UpvotePartners ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous demandons un engagement minimum de 3 mois. Le marketing Reddit est un canal qui compound dans le temps. La plupart des clients voient une traction significative en 2-3 mois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour lancer une première campagne Reddit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous lançons les premiers posts à partir de 21 jours. Pendant cette période, nous gérons en parallèle l'onboarding, la stratégie et le warm-up des comptes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de posts Reddit par mois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selon le plan choisi, entre 4 et 8 posts de haute qualité par mois, placés stratégiquement dans les subreddits les plus pertinents pour votre audience cible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment mesurez-vous les résultats du marketing Reddit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous mesurons les impressions, les upvotes, les commentaires, le trafic généré vers votre site, les leads qualifiés obtenus et les citations par les IA génératives. Un reporting mensuel détaillé vous est envoyé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Reddit fonctionne-t-il pour le B2B ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolument. Reddit est l'un des canaux B2B les plus sous-estimés. Les décideurs et les développeurs y sont très actifs dans des subreddits spécialisés. Nos clients B2B SaaS obtiennent des leads ultra-qualifiés car les conversations Reddit attirent des prospects en phase de recherche active."
+          }
+        }
+      ]
+    }
+    </script>
+  </Fragment>
+
+  <Index client:load />
+</Layout>

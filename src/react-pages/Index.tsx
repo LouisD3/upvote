@@ -6,12 +6,12 @@ import { PricingSection } from "@/components/landing/PricingSection";
 import { AskAISection } from "@/components/landing/AskAISection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { Heart, Mail } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import logo from "@/assets/logo_reddit_agence.png";
 
-const Index = () => {
+const IndexContent = () => {
   const { t, lang } = useLanguage();
 
   const scrollTo = (id: string) => {
@@ -89,5 +89,11 @@ const Index = () => {
     </div>
   );
 };
+
+const Index = () => (
+  <LanguageProvider>
+    <IndexContent />
+  </LanguageProvider>
+);
 
 export default Index;

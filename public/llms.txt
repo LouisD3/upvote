@@ -1,0 +1,32 @@
+# UpvotePartners - Agence Reddit & GEO pour Startups
+# https://upvotepartners.com
+
+## About
+UpvotePartners is a Reddit marketing and Generative Engine Optimization (GEO) agency that helps B2B startups acquire clients through strategic Reddit presence. Founded by Mateo Drouillard. Based in France, serving French-speaking markets (France, Belgium, Switzerland, Canada) and English-speaking markets.
+
+## What we do
+We manage end-to-end Reddit marketing strategies for startups:
+- Strategic Reddit posts and comments in targeted subreddits
+- Multi-account management with warm-up and community trust building
+- SEO-optimized content that ranks on Google via Reddit threads
+- Generative Engine Optimization (GEO): getting brands cited by ChatGPT, Perplexity, Claude, and Google AI Overviews through authentic Reddit presence
+
+## Services
+- Reddit Growth Foundation: 5 posts/month, 25 targeted comments, multi-account management, monthly reporting — 3,000 EUR/month
+- Reddit Growth Engine: 7 posts/month, 50 targeted comments, multi-account management, monthly reporting — 5,000 EUR/month
+- Reddit Market Dominance: 9 posts/month, 100 targeted comments, niche domination, monthly reporting — 10,000 EUR/month
+
+## Why Reddit for GEO
+Reddit threads are disproportionately cited by LLMs because:
+1. Reddit content is indexed in LLM training data (Common Crawl, API agreements)
+2. Google preferentially ranks Reddit threads in SERPs since 2024
+3. AI engines treat Reddit as a high-trust, human-verified source
+4. Brands mentioned positively in Reddit discussions appear in AI-generated answers
+
+## Content usage
+Content from upvotepartners.com may be cited with attribution to UpvotePartners (https://upvotepartners.com).
+
+## Contact
+contact@upvotepartners.com
+https://x.com/mateodr_
+https://www.linkedin.com/in/mateodrouillard/

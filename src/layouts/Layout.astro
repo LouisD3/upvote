@@ -1,0 +1,138 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.png' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content="agence marketing Reddit, acquisition clients Reddit, leads qualifiés startups, marketing Reddit France, stratégie Reddit startup, agence Reddit, SEO Reddit, acquisition Reddit B2B, marketing Reddit francophone, agence acquisition startup, agence GEO, generative engine optimization">
+    <meta name="author" content="UpvotePartners">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="fr">
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    <link rel="canonical" href={canonical}>
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="fr" href="https://upvotepartners.com">
+    <link rel="alternate" hreflang="en" href="https://upvotepartners.com/en">
+    <link rel="alternate" hreflang="x-default" href="https://upvotepartners.com">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonical}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="UpvotePartners — Agence Marketing Reddit & GEO">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="UpvotePartners">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mateodr_">
+    <meta name="twitter:creator" content="@mateodr_">
+    <meta name="twitter:url" content={canonical}>
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+
+    <!-- Contentsquare / Hotjar -->
+    <script src="https://t.contentsquare.net/uxa/fe3725e302c65.js"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "UpvotePartners",
+      "description": "Agence spécialisée en acquisition de clients via Reddit et en Generative Engine Optimization (GEO) pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA.",
+      "url": "https://upvotepartners.com",
+      "logo": "https://upvotepartners.com/logo.png",
+      "image": "https://upvotepartners.com/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Matéo Drouillard",
+        "sameAs": [
+          "https://x.com/mateodr_",
+          "https://www.linkedin.com/in/mateodrouillard/"
+        ]
+      },
+      "serviceType": ["Agence Marketing Reddit", "Agence GEO", "Generative Engine Optimization"],
+      "areaServed": [
+        { "@type": "Country", "name": "France" },
+        { "@type": "Country", "name": "Belgium" },
+        { "@type": "Country", "name": "Switzerland" },
+        { "@type": "Country", "name": "Canada" }
+      ],
+      "availableLanguage": ["French", "English"],
+      "priceRange": "€€€",
+      "sameAs": [
+        "https://x.com/mateodr_",
+        "https://www.linkedin.com/in/mateodrouillard/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Marketing Reddit & GEO",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Reddit Growth Foundation",
+            "description": "4 à 5 posts par mois, 25 commentaires ciblés, gestion multi-comptes, reporting mensuel",
+            "price": "3000",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Reddit Growth Engine",
+            "description": "6 à 7 posts par mois, 50 commentaires ciblés, gestion multi-comptes, reporting mensuel",
+            "price": "5000",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Reddit Market Dominance",
+            "description": "7 à 8 posts par mois, 100 commentaires ciblés, domination de niche, reporting mensuel",
+            "price": "10000",
+            "priceCurrency": "EUR"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "12"
+      }
+    }
+    </script>
+
+    <slot name="head" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

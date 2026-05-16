@@ -1,5 +1,6 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, LucideIcon, Sparkles } from "lucide-react";
+import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, Sparkles } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";

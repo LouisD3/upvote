@@ -1,5 +1,7 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-import { Language, TranslationKey, t as translate } from "@/lib/i18n";
+import { createContext, useContext, useState } from "react";
+import type { ReactNode } from "react";
+import type { Language, TranslationKey } from "@/lib/i18n";
+import { t as translate } from "@/lib/i18n";
 
 
 interface LanguageContextType {

@@ -5,6 +5,7 @@ import { Mail, Check, X, Handshake, DollarSign, Eye, FileText, TrendingUp } from
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { cn } from "@/lib/utils";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo_reddit_agence.png";
 
 const TWITTER_URL = "https://x.com/mateodr_";
@@ -13,7 +14,7 @@ const AVG_BASKET = 5000;
 const COMMISSION_RATE = 0.10;
 const PER_CLIENT_MONTHLY = AVG_BASKET * COMMISSION_RATE;
 
-const Partners = () => {
+const PartnersContent = () => {
   const [clientCount, setClientCount] = useState(3);
   const monthlyEarnings = clientCount * PER_CLIENT_MONTHLY;
 
@@ -386,5 +387,11 @@ const Partners = () => {
     </div>
   );
 };
+
+const Partners = () => (
+  <LanguageProvider>
+    <PartnersContent />
+  </LanguageProvider>
+);
 
 export default Partners;
