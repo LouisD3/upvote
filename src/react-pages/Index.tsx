@@ -27,6 +27,19 @@ const IndexContent = () => {
         <ProcessSection />
         <PricingSection />
         <AskAISection />
+
+        <section className="py-12 px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Notre approche combine le marketing Reddit avec le{" "}
+              <a href="/" className="text-primary hover:underline font-medium">
+                GEO (Generative Engine Optimization)
+              </a>{" "}
+              pour maximiser vos citations dans les réponses de ChatGPT, Perplexity et Claude.
+            </p>
+          </div>
+        </section>
+
         <FAQSection />
       </div>
       

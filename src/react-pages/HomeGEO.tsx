@@ -48,9 +48,9 @@ const HeroGEO = () => {
 
       <AnimatedSection delay={100} className="max-w-4xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-          <span className="text-foreground">Faites </span>
-          <span className="text-gradient">citer votre marque</span>
-          <span className="text-foreground"> par ChatGPT, Perplexity et Claude</span>
+          <span className="text-foreground">Agence GEO : </span>
+          <span className="text-gradient">Faites apparaître votre marque</span>
+          <span className="text-foreground"> dans les réponses IA</span>
         </h1>
       </AnimatedSection>
 
@@ -180,7 +180,7 @@ const MechanismSection = () => (
           Résultat : double visibilité
         </p>
         <p className="text-muted-foreground">
-          Vos threads Reddit se positionnent sur Google <strong className="text-foreground">(SEO)</strong> ET sont cités par les IA <strong className="text-foreground">(GEO)</strong>. Un seul canal, deux leviers de croissance.
+          Vos threads Reddit se positionnent sur Google <strong className="text-foreground">(SEO)</strong> ET sont cités par les IA <strong className="text-foreground">(GEO)</strong>. Un seul canal, deux leviers de croissance. Découvrez comment fonctionne notre <a href="/agence-reddit" className="text-primary hover:underline font-medium">stratégie d'agence Reddit</a>.
         </p>
       </AnimatedSection>
 
