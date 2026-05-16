@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SEO audit notes & memory
+MEMORY.md
+seo-audit-details.md
+.astro/
