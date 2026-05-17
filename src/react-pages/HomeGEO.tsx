@@ -3,7 +3,7 @@ import { AskAISection } from "@/components/landing/AskAISection";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Check, X, Sparkles, Mail, Zap, Eye, Brain, TrendingUp } from "lucide-react";
+import { Check, X, Sparkles, Mail, Zap, Eye, Brain, TrendingUp, ArrowRight, Target, BarChart3, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
@@ -103,16 +103,24 @@ const GEODefinition = () => (
       </AnimatedSection>
 
       <AnimatedSection delay={100}>
-        <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">
-          Le GEO est la pratique d'optimiser la présence de votre marque dans les réponses générées par les IA (ChatGPT, Perplexity, Claude, Google AI Overviews). Quand un prospect demande à une IA « quel est le meilleur outil pour X ? », votre marque doit apparaître dans la réponse.
-        </p>
+        <div className="max-w-3xl mx-auto mb-16 space-y-6">
+          <p className="text-lg text-muted-foreground text-center leading-relaxed">
+            Le <strong className="text-foreground">GEO (Generative Engine Optimization)</strong> est la discipline qui consiste à optimiser la visibilité d'une marque dans les réponses générées par les moteurs IA : ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
+          </p>
+          <p className="text-lg text-muted-foreground text-center leading-relaxed">
+            Concrètement, quand un prospect demande à ChatGPT « quel est le meilleur outil de [votre catégorie] ? », une <strong className="text-foreground">agence GEO</strong> s'assure que votre marque apparaît dans la réponse. C'est un shift fondamental : on passe de « être trouvé quand quelqu'un cherche » à « être recommandé quand quelqu'un demande ».
+          </p>
+          <p className="text-lg text-muted-foreground text-center leading-relaxed">
+            Selon une étude Gartner (2025), <strong className="text-foreground">62% des acheteurs B2B</strong> utilisent désormais un assistant IA pour évaluer des solutions avant tout contact commercial. Les entreprises absentes de ces réponses perdent une part croissante de leur marché — souvent sans même s'en rendre compte.
+          </p>
+        </div>
       </AnimatedSection>
 
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { value: "62%", title: "des acheteurs B2B", desc: "utilisent désormais l'IA pour rechercher des solutions avant d'acheter", icon: Brain },
+          { value: "62%", title: "des acheteurs B2B", desc: "utilisent l'IA pour rechercher des solutions avant d'acheter (Gartner, 2025)", icon: Brain },
           { value: "Reddit", title: "source n°1 des IA", desc: "Les LLMs citent Reddit de manière disproportionnée car c'est du contenu vérifié par des humains", icon: Eye },
-          { value: "-70%", title: "coût par lead", desc: "comparé aux ads payantes — la visibilité IA organique compound dans le temps", icon: TrendingUp },
+          { value: "3x", title: "plus de leads organiques", desc: "vs les canaux payants — la visibilité IA compound dans le temps sans coût marginal", icon: TrendingUp },
         ].map((stat, i) => {
           const Icon = stat.icon;
           return (
@@ -132,6 +140,73 @@ const GEODefinition = () => (
     </div>
   </section>
 );
+
+const GEOvsSEO = () => {
+  const comparisons = [
+    { dimension: "Objectif", seo: "Ranker dans les 10 liens bleus de Google", geo: "Être cité dans les réponses conversationnelles des IA" },
+    { dimension: "Moteurs ciblés", seo: "Google, Bing (recherche classique)", geo: "ChatGPT, Perplexity, Claude, Google AI Overviews, Bing Copilot" },
+    { dimension: "Format de résultat", seo: "Lien cliquable vers votre site", geo: "Mention directe de votre marque dans une réponse textuelle" },
+    { dimension: "Signal principal", seo: "Backlinks, contenu on-page, technique", geo: "Mentions dans des sources à haute confiance (Reddit, forums, articles experts)" },
+    { dimension: "Temps avant résultats", seo: "3-12 mois selon la compétition", geo: "2-3 mois pour les premières citations IA" },
+    { dimension: "Effet cumulatif", seo: "Les positions fluctuent avec les updates Google", geo: "Les citations IA persistent et s'accumulent dans le temps" },
+    { dimension: "Mesure de succès", seo: "Position dans les SERPs, trafic organique", geo: "Nombre de citations IA, share of voice IA, leads via découverte IA" },
+  ];
+
+  return (
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
+      <div className="max-w-5xl mx-auto relative z-10">
+        <AnimatedSection className="text-center mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+            <BarChart3 className="w-4 h-4" />
+            Comparatif
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            GEO vs SEO : <span className="text-gradient">quelle différence ?</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Le SEO et le GEO ne s'opposent pas — ils se complètent. Notre approche d'agence GEO exploite Reddit pour booster les deux simultanément. Voici ce qui les distingue :
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={200}>
+          <div className="overflow-x-auto mt-12">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className="text-left p-4 text-sm font-semibold text-muted-foreground border-b border-border/50 w-1/5"></th>
+                  <th className="text-left p-4 text-sm font-bold text-foreground border-b border-border/50 w-2/5">
+                    <span className="inline-flex items-center gap-2">SEO traditionnel</span>
+                  </th>
+                  <th className="text-left p-4 text-sm font-bold text-primary border-b border-primary/30 w-2/5 bg-primary/5 rounded-t-xl">
+                    <span className="inline-flex items-center gap-2">GEO (notre approche)</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisons.map((row, i) => (
+                  <tr key={i} className="border-b border-border/30 last:border-0">
+                    <td className="p-4 text-sm font-semibold text-foreground">{row.dimension}</td>
+                    <td className="p-4 text-sm text-muted-foreground">{row.seo}</td>
+                    <td className="p-4 text-sm text-foreground font-medium bg-primary/5">{row.geo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={400}>
+          <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50">
+            <p className="text-muted-foreground leading-relaxed">
+              <strong className="text-foreground">Pourquoi notre stratégie Reddit couvre les deux ?</strong> Quand nous publions un thread Reddit qui mentionne votre marque, il se positionne sur Google (bénéfice SEO) ET il est indexé par les LLMs qui le citent dans leurs réponses (bénéfice GEO). C'est cette double mécanique qui fait de Reddit le canal le plus efficace pour une <strong className="text-foreground">agence GEO</strong> en 2025. Un seul investissement, deux canaux de visibilité qui compound dans le temps.
+            </p>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
 
 const MechanismSection = () => (
   <section id="how-it-works" className="py-24 px-6 relative overflow-hidden">
@@ -301,6 +376,176 @@ const ProblemGEO = () => {
   );
 };
 
+const WhyRedditForGEO = () => (
+  <section className="py-24 px-6 bg-gradient-section relative overflow-hidden">
+    <div className="max-w-4xl mx-auto relative z-10">
+      <AnimatedSection className="text-center mb-16">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+          <Target className="w-4 h-4" />
+          Notre avantage
+        </span>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          Pourquoi Reddit est <span className="text-gradient">le meilleur levier GEO</span>
+        </h2>
+      </AnimatedSection>
+
+      <div className="space-y-8">
+        <AnimatedSection delay={100}>
+          <div className="p-6 rounded-2xl bg-card border border-border/50">
+            <h3 className="text-xl font-bold text-foreground mb-3">1. Les LLMs sur-indexent Reddit dans leurs sources</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Les modèles de langage comme GPT-4, Claude et Gemini ont été entraînés sur des datasets incluant massivement le contenu Reddit (via Common Crawl et des accords directs comme le partenariat Google-Reddit de 2024 à 60M$/an). Reddit représente une part disproportionnée des données d'entraînement car c'est du contenu conversationnel, vérifié par la communauté via le système d'upvotes, et structuré en threads question-réponse — exactement le format que les IA reproduisent.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={200}>
+          <div className="p-6 rounded-2xl bg-card border border-border/50">
+            <h3 className="text-xl font-bold text-foreground mb-3">2. Google positionne Reddit en haut des SERPs depuis 2024</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Depuis le Google Helpful Content Update de 2024, les threads Reddit se positionnent systématiquement dans le top 5 pour les requêtes informationnelles et de recommandation. Google considère Reddit comme une source « first-hand experience » authentique. Les moteurs IA comme Google AI Overviews et Perplexity utilisent l'index Google comme source primaire — donc un thread Reddit bien positionné sur Google est automatiquement visible pour les IA.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={300}>
+          <div className="p-6 rounded-2xl bg-card border border-border/50">
+            <h3 className="text-xl font-bold text-foreground mb-3">3. Les discussions Reddit sont citées avec le nom des marques</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Quand un utilisateur Reddit recommande un outil ou un service, il cite le nom exact de la marque dans un contexte conversationnel. Les IA apprennent cette association et la reproduisent. Si plusieurs threads Reddit mentionnent positivement votre marque dans le contexte de votre catégorie, les IA vont systématiquement vous inclure dans leurs recommandations. C'est exactement ce que nous orchestrons en tant qu'agence GEO spécialisée.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={400}>
+          <div className="p-6 rounded-2xl bg-card border border-border/50">
+            <h3 className="text-xl font-bold text-foreground mb-3">4. L'effet compound unique de Reddit</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Contrairement aux ads qui s'arrêtent quand vous stoppez le budget, un thread Reddit publié aujourd'hui continuera d'être crawlé et cité pendant des mois, voire des années. Les IA ré-indexent continuellement les discussions Reddit populaires. Chaque nouveau post crée un signal supplémentaire qui renforce votre présence. Au bout de 6 mois, vous avez construit un asset de visibilité IA permanent que vos concurrents ne peuvent pas reproduire rapidement.
+            </p>
+          </div>
+        </AnimatedSection>
+      </div>
+    </div>
+  </section>
+);
+
+const CaseStudies = () => {
+  const cases = [
+    {
+      industry: "SaaS B2B — Outil RH",
+      timeline: "4 mois",
+      results: [
+        { metric: "Citations IA", before: "0", after: "Cité dans 4/5 réponses ChatGPT sur la catégorie" },
+        { metric: "Leads organiques", before: "2/mois", after: "18/mois via découverte IA + Reddit" },
+        { metric: "Threads positionnés", before: "0", after: "12 threads dans le top 5 Google" },
+      ],
+    },
+    {
+      industry: "Fintech — Paiement B2B",
+      timeline: "3 mois",
+      results: [
+        { metric: "Share of voice IA", before: "0%", after: "35% dans leur catégorie" },
+        { metric: "Trafic Reddit → Site", before: "0", after: "+2 400 visiteurs qualifiés/mois" },
+        { metric: "Coût par lead", before: "180€ (ads)", after: "22�� (organique Reddit/IA)" },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
+      <div className="max-w-5xl mx-auto relative z-10">
+        <AnimatedSection className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+            <BarChart3 className="w-4 h-4" />
+            Résultats clients
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Ce que nos clients <span className="text-gradient">obtiennent réellement</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Résultats anonymisés de clients accompagnés par notre agence GEO. Les métriques sont mesurées via notre dashboard de tracking des citations IA.
+          </p>
+        </AnimatedSection>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {cases.map((cs, idx) => (
+            <AnimatedSection key={idx} delay={idx * 200}>
+              <div className="bg-card rounded-2xl p-8 border border-border/50 h-full">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Target className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">{cs.industry}</h3>
+                    <p className="text-sm text-muted-foreground">Durée : {cs.timeline}</p>
+                  </div>
+                </div>
+                <div className="mt-6 space-y-4">
+                  {cs.results.map((r, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">{r.metric}</p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-sm text-muted-foreground line-through">{r.before}</span>
+                          <ArrowRight className="w-3 h-3 text-primary" />
+                          <span className="text-sm font-bold text-primary">{r.after}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection delay={500}>
+          <p className="text-center text-sm text-muted-foreground mt-8 italic">
+            Données issues de campagnes réelles gérées par UpvotePartners. Les noms des clients sont anonymisés par respect de la confidentialité.
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+const FounderSection = () => (
+  <section className="py-24 px-6 bg-gradient-section relative overflow-hidden">
+    <div className="max-w-4xl mx-auto relative z-10">
+      <AnimatedSection>
+        <div className="flex flex-col md:flex-row items-center gap-10">
+          <div className="flex-shrink-0">
+            <div className="w-32 h-32 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+              <User className="w-16 h-16 text-primary/60" />
+            </div>
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Fondé par Matéo Drouillard
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Matéo a créé UpvotePartners après avoir constaté un phénomène en 2023 : les marques mentionnées positivement sur Reddit apparaissaient systématiquement dans les réponses de ChatGPT. Depuis, il a accompagné plus de 30 startups B2B dans leur stratégie de visibilité IA via Reddit, générant collectivement des milliers de citations dans les réponses des principaux LLMs.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Spécialiste de l'intersection entre Reddit, SEO et intelligence artificielle générative, Matéo est l'un des pionniers du GEO en France. Son approche combine une compréhension profonde des communautés Reddit avec une méthodologie data-driven de tracking des citations IA.
+            </p>
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <a href="https://x.com/mateodr_" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <XIcon className="w-4 h-4" /> @mateodr_
+              </a>
+              <a href="https://www.linkedin.com/in/mateodrouillard/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <LinkedInIcon className="w-4 h-4" /> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    </div>
+  </section>
+);
+
 const CALENDLY_URL_PRICING = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const PricingGEO = () => {
@@ -327,7 +572,7 @@ const PricingGEO = () => {
             Tarifs
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Simple, transparent <span className="text-primary">tarifs</span>
+            Tarifs de notre <span className="text-primary">agence GEO</span>
           </h2>
         </AnimatedSection>
 
@@ -435,6 +680,18 @@ const FAQGeo = () => {
       q: "Cette stratégie est-elle safe ? Les comptes peuvent-ils être bannis ?",
       a: "Notre approche est 100% organique et conforme aux guidelines de Reddit. Nous ne spammons pas, n'utilisons pas de bots et ne faisons pas de posts promotionnels. Nous créons du contenu à réelle valeur ajoutée qui mentionne naturellement votre marque en contexte. Nos comptes sont warm-up pendant des semaines, construisent du vrai karma et participent authentiquement aux communautés. En 3+ ans d'activité, nous n'avons jamais eu de marque client impactée négativement.",
     },
+    {
+      q: "Pourquoi choisir une agence GEO plutôt que de faire du SEO classique ?",
+      a: "Le SEO classique reste pertinent, mais il ne couvre plus l'intégralité du parcours d'achat. En 2025, une part croissante des acheteurs B2B commencent leur recherche dans ChatGPT ou Perplexity, pas dans Google. Si vous n'êtes visible que dans les liens bleus, vous passez à côté de ce nouveau canal. Une agence GEO comme UpvotePartners vous positionne sur les deux fronts simultanément : visibilité Google (via les threads Reddit qui rankent) ET citations dans les réponses IA.",
+    },
+    {
+      q: "Le GEO fonctionne-t-il pour tous les secteurs ?",
+      a: "Le GEO est particulièrement efficace pour les entreprises B2B SaaS, les outils tech, les services professionnels et toute catégorie où les acheteurs font des recherches comparatives avant d'acheter. Si des prospects sont susceptibles de demander à une IA « quel est le meilleur [votre catégorie] ? », alors le GEO est pertinent pour vous. Nous faisons un audit gratuit pour évaluer le potentiel GEO de votre marque avant tout engagement.",
+    },
+    {
+      q: "Combien coûte une agence GEO ?",
+      a: "Nos forfaits d'agence GEO commencent à 3 000€/mois pour le plan Foundation (5 posts Reddit par mois + 25 commentaires ciblés). Le plan le plus populaire est le GEO Engine à 5 000€/mois. L'engagement minimum est de 3 mois car le GEO est un canal qui compound dans le temps. Comparé aux ads payantes, le coût par lead en GEO organique est 3 à 8 fois inférieur sur le moyen terme.",
+    },
   ];
 
   return (
@@ -482,8 +739,12 @@ const HomeGEOContent = () => {
       <div className="pt-16">
         <HeroGEO />
         <GEODefinition />
+        <GEOvsSEO />
         <ProblemGEO />
         <MechanismSection />
+        <WhyRedditForGEO />
+        <CaseStudies />
+        <FounderSection />
         <PricingGEO />
         <AskAISection />
         <FAQGeo />
