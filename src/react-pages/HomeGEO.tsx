@@ -111,14 +111,14 @@ const GEODefinition = () => (
             Concrètement, quand un prospect demande à ChatGPT « quel est le meilleur outil de [votre catégorie] ? », une <strong className="text-foreground">agence GEO</strong> s'assure que votre marque apparaît dans la réponse. C'est un shift fondamental : on passe de « être trouvé quand quelqu'un cherche » à « être recommandé quand quelqu'un demande ».
           </p>
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
-            Selon une étude Gartner (2025), <strong className="text-foreground">62% des acheteurs B2B</strong> utilisent désormais un assistant IA pour évaluer des solutions avant tout contact commercial. Les entreprises absentes de ces réponses perdent une part croissante de leur marché — souvent sans même s'en rendre compte.
+            Selon une étude Gartner (2026), <strong className="text-foreground">62% des acheteurs B2B</strong> utilisent désormais un assistant IA pour évaluer des solutions avant tout contact commercial. Les entreprises absentes de ces réponses perdent une part croissante de leur marché — souvent sans même s'en rendre compte.
           </p>
         </div>
       </AnimatedSection>
 
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { value: "62%", title: "des acheteurs B2B", desc: "utilisent l'IA pour rechercher des solutions avant d'acheter (Gartner, 2025)", icon: Brain },
+          { value: "62%", title: "des acheteurs B2B", desc: "utilisent l'IA pour rechercher des solutions avant d'acheter (Gartner, 2026)", icon: Brain },
           { value: "Reddit", title: "source n°1 des IA", desc: "Les LLMs citent Reddit de manière disproportionnée car c'est du contenu vérifié par des humains", icon: Eye },
           { value: "3x", title: "plus de leads organiques", desc: "vs les canaux payants — la visibilité IA compound dans le temps sans coût marginal", icon: TrendingUp },
         ].map((stat, i) => {
@@ -199,7 +199,7 @@ const GEOvsSEO = () => {
         <AnimatedSection delay={400}>
           <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50">
             <p className="text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Pourquoi notre stratégie Reddit couvre les deux ?</strong> Quand nous publions un thread Reddit qui mentionne votre marque, il se positionne sur Google (bénéfice SEO) ET il est indexé par les LLMs qui le citent dans leurs réponses (bénéfice GEO). C'est cette double mécanique qui fait de Reddit le canal le plus efficace pour une <strong className="text-foreground">agence GEO</strong> en 2025. Un seul investissement, deux canaux de visibilité qui compound dans le temps.
+              <strong className="text-foreground">Pourquoi notre stratégie Reddit couvre les deux ?</strong> Quand nous publions un thread Reddit qui mentionne votre marque, il se positionne sur Google (bénéfice SEO) ET il est indexé par les LLMs qui le citent dans leurs réponses (bénéfice GEO). C'est cette double mécanique qui fait de Reddit le canal le plus efficace pour une <strong className="text-foreground">agence GEO</strong> en 2026. Un seul investissement, deux canaux de visibilité qui compound dans le temps.
             </p>
           </div>
         </AnimatedSection>
@@ -682,7 +682,7 @@ const FAQGeo = () => {
     },
     {
       q: "Pourquoi choisir une agence GEO plutôt que de faire du SEO classique ?",
-      a: "Le SEO classique reste pertinent, mais il ne couvre plus l'intégralité du parcours d'achat. En 2025, une part croissante des acheteurs B2B commencent leur recherche dans ChatGPT ou Perplexity, pas dans Google. Si vous n'êtes visible que dans les liens bleus, vous passez à côté de ce nouveau canal. Une agence GEO comme UpvotePartners vous positionne sur les deux fronts simultanément : visibilité Google (via les threads Reddit qui rankent) ET citations dans les réponses IA.",
+      a: "Le SEO classique reste pertinent, mais il ne couvre plus l'intégralité du parcours d'achat. En 2026, une part croissante des acheteurs B2B commencent leur recherche dans ChatGPT ou Perplexity, pas dans Google. Si vous n'êtes visible que dans les liens bleus, vous passez à côté de ce nouveau canal. Une agence GEO comme UpvotePartners vous positionne sur les deux fronts simultanément : visibilité Google (via les threads Reddit qui rankent) ET citations dans les réponses IA.",
     },
     {
       q: "Le GEO fonctionne-t-il pour tous les secteurs ?",

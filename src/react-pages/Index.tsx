@@ -88,9 +88,9 @@ const HeroReddit = () => (
 );
 
 /* ============================================================
-   WHY REDDIT IN 2025
+   WHY REDDIT IN 2026
    ============================================================ */
-const WhyReddit2025 = () => (
+const WhyReddit2026 = () => (
   <section className="py-24 px-6 bg-gradient-section relative overflow-hidden">
     <div className="max-w-5xl mx-auto relative z-10">
       <AnimatedSection>
@@ -100,7 +100,7 @@ const WhyReddit2025 = () => (
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-4 leading-tight">
-          Reddit est devenu <span className="text-gradient">incontournable</span> en 2025
+          Reddit est devenu <span className="text-gradient">incontournable</span> en 2026
         </h2>
       </AnimatedSection>
 
@@ -117,7 +117,7 @@ const WhyReddit2025 = () => (
 
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { value: "23M", title: "utilisateurs actifs/jour", desc: "Reddit est le 6ème site le plus visité en France (Similarweb, 2025)", icon: Users },
+          { value: "23M", title: "utilisateurs actifs/jour", desc: "Reddit est le 6ème site le plus visité en France (Similarweb, 2026)", icon: Users },
           { value: "Top 3", title: "dans les SERPs Google", desc: "Les threads Reddit se positionnent dans le top 3 pour les requêtes de recommandation", icon: Search },
           { value: "+300%", title: "trafic organique Reddit", desc: "Croissance du trafic SEO des pages Reddit depuis le partenariat Google-Reddit 2024", icon: TrendingUp },
         ].map((stat, i) => {
@@ -630,7 +630,7 @@ const IndexContent = () => {
       <Header />
       <div className="pt-16">
         <HeroReddit />
-        <WhyReddit2025 />
+        <WhyReddit2026 />
         <ProblemReddit />
         <MethodologyReddit />
         <OrganicVsAds />
