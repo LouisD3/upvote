@@ -9,7 +9,8 @@ import { Heart, Mail } from "lucide-react";
 import { useLanguage, LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
-import logo from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.png";
+const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const IndexContent = () => {
   const { t, lang } = useLanguage();

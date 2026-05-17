@@ -9,7 +9,8 @@ import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { LogoBanner } from "@/components/landing/LogoBanner";
-import logo from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.png";
+const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 import confetti from "canvas-confetti";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
@@ -46,13 +47,13 @@ const HeroGEO = () => {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={100} className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           <span className="text-foreground">Agence GEO : </span>
           <span className="text-gradient">Faites apparaître votre marque</span>
           <span className="text-foreground"> dans les réponses IA</span>
         </h1>
-      </AnimatedSection>
+      </div>
 
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

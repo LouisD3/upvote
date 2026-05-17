@@ -60,15 +60,15 @@ export const HeroSection = () => {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
+      <div className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-          <span className="text-foreground">{t("hero.headline1")}</span>
-          <span className="text-gradient">{t("hero.headline2")}</span>
-          <span className="text-foreground">{t("hero.headline3")}</span>
-          <span className="text-gradient">{t("hero.headline4")}</span>
+          <span className="text-foreground">L'</span>
+          <span className="text-gradient">Agence Reddit</span>
+          <span className="text-foreground"> qui génère des leads qualifiés pour ta </span>
+          <span className="text-gradient">Startup</span>
           <span className="text-foreground">.</span>
         </h1>
-      </AnimatedSection>
+      </div>
       
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

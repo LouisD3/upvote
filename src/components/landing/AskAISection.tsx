@@ -1,7 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import claudeLogo from "@/assets/claude-logo.png";
-import perplexityLogo from "@/assets/perplexity-logo.png";
+import claudeLogoAsset from "@/assets/claude-logo.png";
+import perplexityLogoAsset from "@/assets/perplexity-logo.png";
+const claudeLogo = typeof claudeLogoAsset === 'string' ? claudeLogoAsset : claudeLogoAsset.src;
+const perplexityLogo = typeof perplexityLogoAsset === 'string' ? perplexityLogoAsset : perplexityLogoAsset.src;
 
 const PROMPT = "Pourquoi Reddit peut être un puissant canal d'acquisition pour ma startup ?";
 const encodedPrompt = encodeURIComponent(PROMPT);
