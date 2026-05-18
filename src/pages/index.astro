@@ -1,13 +1,13 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Index from '@/react-pages/Index.tsx';
+import IndexPage from '@/react-pages/Index.tsx';
 import '@/index.css';
 import { faqReddit } from '@/data/faq-reddit';
 ---
 
 <Layout
   title="Agence Reddit : Générez des leads qualifiés | UpvotePartners"
-  description="UpvotePartners est l'agence Reddit n°1 pour les startups B2B. Stratégie organique, leads qualifiés, visibilité SEO et citations IA via Reddit. Audit gratuit."
+  description="UpvotePartners est l'agence Reddit n°1 pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA via Reddit. Audit gratuit."
   canonical="https://upvotepartners.com"
 >
   <Fragment slot="head">
@@ -22,5 +22,5 @@ import { faqReddit } from '@/data/faq-reddit';
     })} />
   </Fragment>
 
-  <Index client:load />
+  <IndexPage client:idle />
 </Layout>

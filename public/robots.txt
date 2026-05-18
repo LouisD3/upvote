@@ -25,4 +25,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://upvotepartners.com/sitemap.xml
+Sitemap: https://upvotepartners.com/sitemap-index.xml

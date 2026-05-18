@@ -21,7 +21,7 @@ const SocialLandingContent = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header showLangToggle={true} />
       <div className="pt-16">
         <HeroSection />
         <ProblemSection />
