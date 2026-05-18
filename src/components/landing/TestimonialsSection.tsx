@@ -1,7 +1,7 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote, Star } from "lucide-react";
-import mateoAvatarAsset from "@/assets/mateo-avatar.png";
+import mateoAvatarAsset from "@/assets/mateo-avatar.webp";
 const mateoAvatar = typeof mateoAvatarAsset === 'string' ? mateoAvatarAsset : mateoAvatarAsset.src;
 export const TestimonialsSection = () => {
   return <section className="py-24 px-6 relative overflow-hidden">

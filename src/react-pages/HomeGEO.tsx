@@ -11,7 +11,7 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { LogoBanner } from "@/components/landing/LogoBanner";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
-import mateoAvatarAsset from "@/assets/mateo-avatar.png";
+import mateoAvatarAsset from "@/assets/mateo-avatar.webp";
 const mateoAvatar = typeof mateoAvatarAsset === 'string' ? mateoAvatarAsset : mateoAvatarAsset.src;
 import confetti from "canvas-confetti";
 

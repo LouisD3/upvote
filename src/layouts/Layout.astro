@@ -7,7 +7,7 @@ interface Props {
   robots?: string;
 }
 
-const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.png', robots = 'index, follow' } = Astro.props;
+const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.webp', robots = 'index, follow' } = Astro.props;
 ---
 
 <!doctype html>
@@ -50,8 +50,8 @@ const { title, description, canonical = 'https://upvotepartners.com', ogImage = 
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/logo.png">
-    <link rel="apple-touch-icon" href="/logo.png">
+    <link rel="icon" type="image/webp" href="/logo.webp">
+    <link rel="apple-touch-icon" href="/logo.webp">
 
     <!-- Preconnect for third-party scripts -->
     <link rel="preconnect" href="https://t.contentsquare.net">
@@ -68,8 +68,8 @@ const { title, description, canonical = 'https://upvotepartners.com', ogImage = 
       "name": "UpvotePartners",
       "description": "Agence spécialisée en acquisition de clients via Reddit et en Generative Engine Optimization (GEO) pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA.",
       "url": "https://upvotepartners.com",
-      "logo": "https://upvotepartners.com/logo.png",
-      "image": "https://upvotepartners.com/logo.png",
+      "logo": "https://upvotepartners.com/logo.webp",
+      "image": "https://upvotepartners.com/logo.webp",
       "founder": {
         "@type": "Person",
         "name": "Matéo Drouillard",

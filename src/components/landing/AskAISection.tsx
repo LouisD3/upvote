@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import claudeLogoAsset from "@/assets/claude-logo.png";
-import perplexityLogoAsset from "@/assets/perplexity-logo.png";
+import claudeLogoAsset from "@/assets/claude-logo.webp";
+import perplexityLogoAsset from "@/assets/perplexity-logo.webp";
 const claudeLogo = typeof claudeLogoAsset === 'string' ? claudeLogoAsset : claudeLogoAsset.src;
 const perplexityLogo = typeof perplexityLogoAsset === 'string' ? perplexityLogoAsset : perplexityLogoAsset.src;
 
