@@ -2,7 +2,7 @@ import { Header } from "@/components/landing/Header";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Check, X, Sparkles, Mail, Zap, Shield, TrendingUp, Users, MessageSquare, Search, ArrowRight, Target, Eye } from "lucide-react";
+import { Check, X, Sparkles, Mail, Zap, Shield, TrendingUp, Users, MessageSquare, Search, ArrowRight, Target, Eye, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
@@ -40,17 +40,17 @@ const HeroReddit = () => (
     <AnimatedSection delay={50} className="relative z-10 mb-6">
       <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border/50">
         <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 text-primary">
-          <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701z" />
+          <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
         </svg>
         <span className="text-sm font-medium text-muted-foreground">
-          L'agence Reddit n°1 en France
+          Approuvé par les startups de YC
         </span>
       </div>
     </AnimatedSection>
 
     <AnimatedSection className="max-w-4xl mx-auto relative z-10">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-        <span className="text-foreground">Agence Reddit : </span>
+        <span className="text-foreground">Agence Reddit n°1 en France : </span>
         <span className="text-gradient">Générez des leads qualifiés</span>
         <span className="text-foreground"> pour votre Startup</span>
       </h1>
@@ -58,7 +58,7 @@ const HeroReddit = () => (
 
     <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
       <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-        UpvotePartners est une <strong className="text-foreground">agence Reddit</strong> spécialisée dans l'acquisition organique pour les startups B2B. Nous créons du contenu stratégique sur Reddit qui se positionne sur Google, génère des leads, et fait citer votre marque par les IA.
+        UpvotePartners est une <strong className="text-foreground">agence Reddit</strong> spécialisée dans l'acquisition organique pour les startups. Nous créons du contenu stratégique sur Reddit qui se positionne sur Google, génère des leads, et fait citer votre marque par les IA.
       </p>
     </AnimatedSection>
 
@@ -440,6 +440,90 @@ const RedditGEOLink = () => (
 );
 
 /* ============================================================
+   CASE STUDIES
+   ============================================================ */
+const CaseStudiesReddit = () => {
+  const cases = [
+    {
+      industry: "SaaS, Outil de productivité",
+      timeline: "4 mois",
+      results: [
+        { metric: "Leads générés via Reddit", before: "2/mois", after: "23/mois" },
+        { metric: "Threads positionnés sur Google", before: "0", after: "14 threads dans le top 5" },
+        { metric: "Coût par lead", before: "150€ (paid social)", after: "28€ (Reddit organique)" },
+      ],
+    },
+    {
+      industry: "Fintech, Paiement en ligne",
+      timeline: "3 mois",
+      results: [
+        { metric: "Trafic Reddit → site", before: "0", after: "+3 200 visiteurs qualifiés/mois" },
+        { metric: "Mentions organiques de marque", before: "0/mois", after: "45+/mois dans des discussions Reddit" },
+        { metric: "Posts encore actifs après 3 mois", before: "—", after: "87% génèrent encore du trafic" },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none" />
+      <div className="max-w-5xl mx-auto relative z-10">
+        <AnimatedSection className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+            <BarChart3 className="w-4 h-4" />
+            Résultats clients
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Ce que nos clients <span className="text-gradient">obtiennent réellement</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Résultats anonymisés de startups accompagnées par notre agence Reddit. Métriques mesurées via notre dashboard de tracking Reddit + citations IA.
+          </p>
+        </AnimatedSection>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {cases.map((cs, idx) => (
+            <AnimatedSection key={idx} delay={idx * 200}>
+              <div className="bg-card rounded-2xl p-8 border border-border/50 h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Target className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">{cs.industry}</h3>
+                    <p className="text-sm text-muted-foreground">Durée : {cs.timeline}</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {cs.results.map((r, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground">{r.metric}</p>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-sm text-muted-foreground line-through">{r.before}</span>
+                          <ArrowRight className="w-3 h-3 text-primary" />
+                          <span className="text-sm font-bold text-primary">{r.after}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection delay={500}>
+          <p className="text-center text-sm text-muted-foreground mt-8 italic">
+            Données issues de campagnes réelles gérées par UpvotePartners. Les noms des clients sont anonymisés par respect de la confidentialité.
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
+/* ============================================================
    PRICING
    ============================================================ */
 const PricingReddit = () => {
@@ -600,6 +684,7 @@ const IndexContent = () => {
         <MethodologyReddit />
         <OrganicVsAds />
         <RedditGEOLink />
+        <CaseStudiesReddit />
         <PricingReddit />
         <FAQReddit />
       </div>

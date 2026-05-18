@@ -7,7 +7,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
-export const Header = () => {
+export const Header = ({ showLangToggle = false }: { showLangToggle?: boolean }) => {
   const { lang, setLang, t } = useLanguage();
 
   const scrollTo = (id: string) => {
@@ -48,13 +48,15 @@ export const Header = () => {
         
         <div className="flex items-center gap-3">
           {/* Language toggle */}
-          <button
-            onClick={() => setLang(lang === "en" ? "fr" : "en")}
-            className="text-lg hover:scale-110 transition-transform duration-200 px-1"
-            aria-label="Toggle language"
-          >
-            {lang === "en" ? "🇫🇷" : "🇬🇧"}
-          </button>
+          {showLangToggle && (
+            <button
+              onClick={() => setLang(lang === "en" ? "fr" : "en")}
+              className="text-lg hover:scale-110 transition-transform duration-200 px-1"
+              aria-label="Toggle language"
+            >
+              {lang === "en" ? "🇫🇷" : "🇬🇧"}
+            </button>
+          )}
 
           <AnimatedSection delay={100}>
             <Button 
