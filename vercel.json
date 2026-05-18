@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/agence-reddit",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import confetti from "canvas-confetti";
-
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const FloatingRedditLogo = ({ className }: { className?: string }) => (
@@ -15,11 +13,13 @@ const FloatingRedditLogo = ({ className }: { className?: string }) => (
 );
 
 const handleBookAudit = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  import("canvas-confetti").then(({ default: confetti }) => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+    });
   });
   setTimeout(() => {
     window.open(CALENDLY_URL, "_blank");
@@ -60,7 +60,7 @@ export const HeroSection = () => {
         </div>
       </AnimatedSection>
 
-      <div className="max-w-3xl mx-auto relative z-10">
+      <AnimatedSection className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           <span className="text-foreground">{t("hero.headline1")}</span>
           <span className="text-gradient">{t("hero.headline2")}</span>
@@ -68,7 +68,7 @@ export const HeroSection = () => {
           <span className="text-gradient">{t("hero.headline4")}</span>
           <span className="text-foreground">.</span>
         </h1>
-      </div>
+      </AnimatedSection>
       
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

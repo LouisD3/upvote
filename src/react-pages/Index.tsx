@@ -8,18 +8,19 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { LogoBanner } from "@/components/landing/LogoBanner";
+import { faqReddit } from "@/data/faq-reddit";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
-import confetti from "canvas-confetti";
-
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const handleBookAudit = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  import("canvas-confetti").then(({ default: confetti }) => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+    });
   });
   setTimeout(() => {
     window.open(CALENDLY_URL, "_blank");
@@ -47,13 +48,13 @@ const HeroReddit = () => (
       </div>
     </AnimatedSection>
 
-    <div className="max-w-4xl mx-auto relative z-10">
+    <AnimatedSection className="max-w-4xl mx-auto relative z-10">
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
         <span className="text-foreground">Agence Reddit : </span>
         <span className="text-gradient">Générez des leads qualifiés</span>
         <span className="text-foreground"> pour votre Startup</span>
       </h1>
-    </div>
+    </AnimatedSection>
 
     <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
       <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -76,7 +77,7 @@ const HeroReddit = () => (
         Réserver un audit Reddit gratuit
       </Button>
       <p className="mt-4 text-sm text-muted-foreground font-medium animate-pulse">
-        🔥 Places très limitées — nous n'acceptons que quelques clients à la fois
+        🔥 Places très limitées, nous n'acceptons que quelques clients à la fois
       </p>
     </AnimatedSection>
 
@@ -107,7 +108,7 @@ const WhyReddit2026 = () => (
             En 2024, Google a signé un partenariat à 60M$/an avec Reddit pour intégrer ses discussions dans les résultats de recherche. Résultat : les threads Reddit dominent désormais les SERPs pour les requêtes de recommandation. Parallèlement, les moteurs IA (ChatGPT, Perplexity, Claude) citent Reddit de manière disproportionnée dans leurs réponses car c'est du contenu authentique, vérifié par la communauté.
           </p>
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
-            Pour les startups B2B, c'est une opportunité unique : une <strong className="text-foreground">agence Reddit</strong> comme UpvotePartners peut positionner votre marque là où vos prospects cherchent activement des recommandations — dans les discussions Reddit qui apparaissent sur Google ET dans les réponses des IA génératives.
+            Pour les startups B2B, c'est une opportunité unique : une <strong className="text-foreground">agence Reddit</strong> comme UpvotePartners peut positionner votre marque là où vos prospects cherchent activement des recommandations : dans les discussions Reddit qui apparaissent sur Google ET dans les réponses des IA génératives.
           </p>
         </div>
       </AnimatedSection>
@@ -356,7 +357,7 @@ const OrganicVsAds = () => {
             Reddit organique vs <span className="text-gradient">Reddit Ads</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Notre agence Reddit se spécialise dans le marketing organique — pas les publicités. Voici pourquoi c'est plus rentable pour les startups B2B :
+            Notre agence Reddit se spécialise dans le marketing organique, pas les publicités. Voici pourquoi c'est plus rentable pour les startups B2B :
           </p>
         </AnimatedSection>
 
@@ -390,7 +391,7 @@ const OrganicVsAds = () => {
         <AnimatedSection delay={400}>
           <div className="mt-12 p-6 rounded-2xl bg-card border border-border/50">
             <p className="text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">L'avantage compound du Reddit organique :</strong> chaque thread que nous publions continue de générer du trafic, des leads, et des citations IA pendant des mois après sa publication. Au bout de 6 mois de campagne, vous avez construit un asset marketing permanent qui travaille pour vous 24h/24 — sans coût publicitaire récurrent.
+              <strong className="text-foreground">L'avantage compound du Reddit organique :</strong> chaque thread que nous publions continue de générer du trafic, des leads, et des citations IA pendant des mois après sa publication. Au bout de 6 mois de campagne, vous avez construit un asset marketing permanent qui travaille pour vous 24h/24, sans coût publicitaire récurrent.
             </p>
           </div>
         </AnimatedSection>
@@ -418,19 +419,19 @@ const RedditGEOLink = () => (
       <AnimatedSection delay={100}>
         <div className="space-y-6 max-w-3xl mx-auto">
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Ce qui rend UpvotePartners unique par rapport aux autres agences Reddit : nous ne faisons pas juste du marketing Reddit — nous exploitons Reddit comme <strong className="text-foreground">levier de visibilité IA</strong>. Chaque post est optimisé pour être indexé par les moteurs de recherche IA (ChatGPT, Perplexity, Claude).
+            Ce qui rend UpvotePartners unique par rapport aux autres agences Reddit : nous ne faisons pas juste du marketing Reddit, nous exploitons Reddit comme <strong className="text-foreground">levier de visibilité IA</strong>. Chaque post est optimisé pour être indexé par les moteurs de recherche IA (ChatGPT, Perplexity, Claude).
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            C'est ce qu'on appelle le <a href="/" className="text-primary hover:underline font-medium">GEO (Generative Engine Optimization)</a> : faire en sorte que votre marque soit citée quand un prospect demande à une IA « quel est le meilleur outil de [votre catégorie] ? ». Reddit est le canal n°1 pour y parvenir car les LLMs sur-indexent les discussions Reddit dans leurs sources.
+            C'est ce qu'on appelle le <a href="/agence-geo" className="text-primary hover:underline font-medium">GEO (Generative Engine Optimization)</a> : faire en sorte que votre marque soit citée quand un prospect demande à une IA « quel est le meilleur outil de [votre catégorie] ? ». Reddit est le canal n°1 pour y parvenir car les LLMs sur-indexent les discussions Reddit dans leurs sources.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Résultat : en travaillant avec notre agence Reddit, vous obtenez une <strong className="text-foreground">triple visibilité</strong> — leads directs via Reddit, positionnement Google des threads, et citations dans les réponses IA. Trois canaux, un seul investissement.
+            Résultat : en travaillant avec notre agence Reddit, vous obtenez une <strong className="text-foreground">triple visibilité</strong> : leads directs via Reddit, positionnement Google des threads, et citations dans les réponses IA. Trois canaux, un seul investissement.
           </p>
         </div>
       </AnimatedSection>
 
       <AnimatedSection delay={300} className="mt-10 text-center">
-        <a href="/" className="inline-flex items-center gap-2 text-primary hover:underline font-medium text-lg">
+        <a href="/agence-geo" className="inline-flex items-center gap-2 text-primary hover:underline font-medium text-lg">
           En savoir plus sur notre offre GEO <ArrowRight className="w-4 h-4" />
         </a>
       </AnimatedSection>
@@ -551,40 +552,7 @@ const PricingReddit = () => {
    FAQ
    ============================================================ */
 const FAQReddit = () => {
-  const faqs = [
-    {
-      q: "Comment savoir si Reddit est le bon canal pour ma startup ?",
-      a: "Avant toute chose, on fait un audit gratuit ensemble. On analyse les subreddits actifs où votre ICP se trouve, les discussions existantes autour de votre catégorie, et la présence de vos concurrents. Si Reddit n'est pas le bon canal pour vous, on vous le dit clairement — on ne prend que des clients pour lesquels Reddit a un potentiel réel de ROI.",
-    },
-    {
-      q: "Combien de temps avant de voir des résultats avec votre agence Reddit ?",
-      a: "Les premiers posts sont publiés sous 21 jours (après la phase de warm-up et stratégie). La plupart des clients voient les premiers leads qualifiés en 4-6 semaines. L'effet compound se met en place à partir du 3ème mois : vos threads accumulent de la visibilité, remontent dans Google, et commencent à être cités par les IA. Nous demandons un engagement de 3 mois minimum car le marketing Reddit compound dans le temps.",
-    },
-    {
-      q: "Cette stratégie est-elle safe ? Les comptes peuvent-ils être bannis ?",
-      a: "Notre approche est 100% organique et conforme aux guidelines de Reddit. Nous ne spammons pas, n'utilisons pas de bots et ne faisons pas de posts ouvertement promotionnels. Nos comptes sont warm-up pendant des semaines, accumulent du vrai karma et participent authentiquement aux communautés avant toute mention de marque. En 3+ ans d'activité et 30+ campagnes, nous n'avons jamais eu de marque client impactée négativement.",
-    },
-    {
-      q: "Reddit fonctionne-t-il pour le B2B ?",
-      a: "Absolument — Reddit est l'un des canaux B2B les plus sous-estimés. Les décideurs, développeurs et marketeurs sont extrêmement actifs sur des subreddits spécialisés (r/SaaS, r/startups, r/marketing, r/entrepreneur, etc.). Les conversations Reddit attirent des prospects en phase de recherche active — ils demandent littéralement des recommandations d'outils. Nos clients B2B SaaS obtiennent des leads ultra-qualifiés car ces prospects sont déjà en mode achat.",
-    },
-    {
-      q: "Quelle est la différence entre votre agence Reddit et les autres ?",
-      a: "Trois différenciateurs : (1) Nous sommes spécialisés Reddit uniquement — pas une agence généraliste qui fait du Reddit en plus. (2) Nous optimisons chaque post pour le GEO (Generative Engine Optimization) — vos threads ne génèrent pas juste des leads directs, ils font aussi citer votre marque par ChatGPT et Perplexity. (3) Notre méthodologie de warm-up et notre connaissance des communautés Reddit sont le fruit de 3+ ans d'activité exclusive sur cette plateforme.",
-    },
-    {
-      q: "Combien de posts Reddit par mois ?",
-      a: "Selon le plan choisi : 5 posts/mois (Foundation), 7 posts/mois (Engine), ou 9 posts/mois (Dominance). Chaque post est accompagné de commentaires stratégiques (25 à 100 selon le plan). La qualité prime sur la quantité : un post bien rédigé, publié au bon moment dans le bon subreddit, peut générer plus de leads qu'une dizaine de posts mal ciblés.",
-    },
-    {
-      q: "Comment mesurez-vous les résultats ?",
-      a: "Nous mesurons : les impressions et upvotes de vos posts, le trafic redirigé vers votre site, le nombre de leads qualifiés générés, les positions Google de vos threads Reddit, et les citations de votre marque dans les réponses des IA (ChatGPT, Perplexity, Claude). Un reporting mensuel détaillé vous est envoyé avec toutes ces métriques et des recommandations d'optimisation.",
-    },
-    {
-      q: "Combien coûte une agence Reddit ?",
-      a: "Nos forfaits d'agence Reddit commencent à 3 000€/mois (plan Foundation). Le plan le plus populaire est Reddit Engine à 5 000€/mois. Comparé aux coûts par lead des canaux payants (LinkedIn Ads : 80-200€/lead, Google Ads : 50-150€/lead), le Reddit organique offre un coût par lead 3 à 8 fois inférieur dès le 3ème mois grâce à l'effet compound.",
-    },
-  ];
+  const faqs = faqReddit;
 
   return (
     <section id="faq" className="py-24 px-6 relative overflow-hidden bg-gradient-section">
@@ -642,7 +610,7 @@ const IndexContent = () => {
             <div className="flex flex-col md:flex-row justify-between gap-8">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" loading="lazy" />
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -667,7 +635,7 @@ const IndexContent = () => {
                   <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     Tarifs
                   </a>
-                  <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  <a href="/agence-geo" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     Agence GEO
                   </a>
                 </div>

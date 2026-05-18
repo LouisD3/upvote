@@ -8,11 +8,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => !page.includes('/social'),
-      serialize(item) {
-        item.lastmod = new Date().toISOString();
-        return item;
-      },
+      filter: (page) => !page.includes('/social') && !page.includes('/partners'),
     }),
   ],
   vite: {

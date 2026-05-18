@@ -1,0 +1,116 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import HomeGEO from '@/react-pages/HomeGEO.tsx';
+import '@/index.css';
+---
+
+<Layout
+  title="Agence GEO : Apparaissez dans les réponses IA | UpvotePartners"
+  description="Faites apparaître votre marque dans les réponses de ChatGPT, Perplexity et Claude grâce à Reddit. Audit GEO gratuit."
+  canonical="https://upvotepartners.com/agence-geo"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://upvotepartners.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agence GEO",
+          "item": "https://upvotepartners.com/agence-geo"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le GEO (Generative Engine Optimization) est la pratique d'optimiser la visibilité de votre marque dans les réponses générées par les IA (ChatGPT, Perplexity, Claude et Google AI Overviews). Contrairement au SEO traditionnel qui cible les classements Google, le GEO s'assure que votre marque est citée quand les utilisateurs demandent des recommandations à une IA dans votre catégorie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi Reddit est-il le meilleur levier pour le GEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reddit est la source n°1 que les moteurs IA citent. Les threads Reddit sont des discussions vérifiées par des humains, classées par la communauté. Les LLMs comme ChatGPT et Perplexity citent Reddit de manière disproportionnée. De plus, Google classe les threads Reddit en haut des SERPs, et les IA utilisent l'index Google comme source primaire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps avant de voir des citations IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La plupart des clients commencent à voir leur marque mentionnée dans les réponses IA en 2-3 mois. Les premiers posts sont publiés sous 21 jours. Le contenu Reddit compound dans le temps : un thread publié aujourd'hui peut générer des citations pendant des mois car les IA ré-indexent continuellement les discussions Reddit populaires."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment mesurez-vous la performance GEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous mesurons le nombre de citations IA que votre marque reçoit sur ChatGPT, Perplexity, Claude et Google AI Overviews, votre share of voice dans les réponses IA vs concurrents, la performance des posts Reddit, les positions SEO de vos threads, et les leads qualifiés générés via la découverte IA organique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre le GEO et le SEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le SEO optimise pour les classements Google (liens bleus). Le GEO optimise pour les réponses générées par les IA (ChatGPT, Perplexity, etc.). Notre stratégie Reddit booste les deux simultanément. Les threads Reddit se positionnent sur Google (SEO) ET sont cités par les moteurs IA (GEO). Un seul canal, double visibilité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cette stratégie est-elle safe ? Les comptes peuvent-ils être bannis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre approche est 100% organique et conforme aux guidelines de Reddit. Nous ne spammons pas, n'utilisons pas de bots et ne faisons pas de posts promotionnels. Nous créons du contenu à réelle valeur ajoutée qui mentionne naturellement votre marque en contexte. En 3+ ans d'activité, nous n'avons jamais eu de marque client impactée négativement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi choisir une agence GEO plutôt que de faire du SEO classique ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le SEO classique reste pertinent, mais il ne couvre plus l'intégralité du parcours d'achat. En 2025, une part croissante des acheteurs B2B commencent leur recherche dans ChatGPT ou Perplexity, pas dans Google. Une agence GEO comme UpvotePartners vous positionne sur les deux fronts simultanément : visibilité Google via les threads Reddit qui rankent, ET citations dans les réponses IA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le GEO fonctionne-t-il pour tous les secteurs ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le GEO est particulièrement efficace pour les entreprises B2B SaaS, les outils tech, les services professionnels et toute catégorie où les acheteurs font des recherches comparatives avant d'acheter. Si des prospects sont susceptibles de demander à une IA quel est le meilleur outil de votre catégorie, alors le GEO est pertinent pour vous."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une agence GEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos forfaits d'agence GEO commencent à 3 000 euros par mois pour le plan Foundation (5 posts Reddit par mois + 25 commentaires ciblés). Le plan le plus populaire est le GEO Engine à 5 000 euros par mois. L'engagement minimum est de 3 mois car le GEO est un canal qui compound dans le temps."
+          }
+        }
+      ]
+    }
+    </script>
+  </Fragment>
+
+  <HomeGEO client:load />
+</Layout>

@@ -13,16 +13,16 @@ import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 import mateoAvatarAsset from "@/assets/mateo-avatar.webp";
 const mateoAvatar = typeof mateoAvatarAsset === 'string' ? mateoAvatarAsset : mateoAvatarAsset.src;
-import confetti from "canvas-confetti";
-
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const handleBookAudit = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  import("canvas-confetti").then(({ default: confetti }) => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+    });
   });
   setTimeout(() => {
     window.open(CALENDLY_URL, "_blank");
@@ -49,13 +49,13 @@ const HeroGEO = () => {
         </div>
       </AnimatedSection>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <AnimatedSection className="max-w-4xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           <span className="text-foreground">Agence GEO : </span>
           <span className="text-gradient">Faites apparaître votre marque</span>
           <span className="text-foreground"> dans les réponses IA</span>
         </h1>
-      </div>
+      </AnimatedSection>
 
       <AnimatedSection delay={200} className="mt-6 max-w-2xl mx-auto relative z-10">
         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -104,13 +104,13 @@ const GEODefinition = () => (
       <AnimatedSection delay={100}>
         <div className="max-w-3xl mx-auto mb-16 space-y-6">
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
-            Une <strong className="text-foreground">agence GEO</strong> (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'intelligence artificielle — ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
+            Une <strong className="text-foreground">agence GEO</strong> (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'intelligence artificielle : ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
           </p>
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
             Concrètement, quand un prospect demande à ChatGPT « quel est le meilleur outil de [votre catégorie] ? », une <strong className="text-foreground">agence GEO</strong> s'assure que votre marque apparaît dans la réponse. C'est un shift fondamental : on passe de « être trouvé quand quelqu'un cherche » à « être recommandé quand quelqu'un demande ».
           </p>
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
-            Selon une étude Gartner (2026), <strong className="text-foreground">62% des acheteurs B2B</strong> utilisent désormais un assistant IA pour évaluer des solutions avant tout contact commercial. Les entreprises absentes de ces réponses perdent une part croissante de leur marché — souvent sans même s'en rendre compte.
+            Selon une étude Gartner (2026), <strong className="text-foreground">62% des acheteurs B2B</strong> utilisent désormais un assistant IA pour évaluer des solutions avant tout contact commercial. Les entreprises absentes de ces réponses perdent une part croissante de leur marché, souvent sans même s'en rendre compte.
           </p>
         </div>
       </AnimatedSection>
@@ -119,7 +119,7 @@ const GEODefinition = () => (
         {[
           { value: "62%", title: "des acheteurs B2B", desc: "utilisent l'IA pour rechercher des solutions avant d'acheter (Gartner, 2026)", icon: Brain },
           { value: "Reddit", title: "source n°1 des IA", desc: "Les LLMs citent Reddit de manière disproportionnée car c'est du contenu vérifié par des humains", icon: Eye },
-          { value: "3x", title: "plus de leads organiques", desc: "vs les canaux payants — la visibilité IA compound dans le temps sans coût marginal", icon: TrendingUp },
+          { value: "3x", title: "plus de leads organiques", desc: "vs les canaux payants, la visibilité IA compound dans le temps sans coût marginal", icon: TrendingUp },
         ].map((stat, i) => {
           const Icon = stat.icon;
           return (
@@ -164,7 +164,7 @@ const GEOvsSEO = () => {
             GEO vs SEO : <span className="text-gradient">quelle différence ?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Le SEO et le GEO ne s'opposent pas — ils se complètent. Notre approche d'agence GEO exploite Reddit pour booster les deux simultanément. Voici ce qui les distingue :
+            Le SEO et le GEO ne s'opposent pas, ils se complètent. Notre approche d'agence GEO exploite Reddit pour booster les deux simultanément. Voici ce qui les distingue :
           </p>
         </AnimatedSection>
 
@@ -220,7 +220,7 @@ const MechanismSection = () => (
           Reddit est <span className="text-primary">la source n°1 des moteurs IA</span>
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Les threads Reddit sont du contenu vérifié par des humains, classé par la communauté — exactement ce que les LLMs citent en priorité. Notre méthode exploite ça pour faire entrer votre marque dans les réponses IA.
+          Les threads Reddit sont du contenu vérifié par des humains, classé par la communauté. C'est exactement ce que les LLMs citent en priorité. Notre méthode exploite ça pour faire entrer votre marque dans les réponses IA.
         </p>
       </AnimatedSection>
 
@@ -255,7 +255,7 @@ const MechanismSection = () => (
           Résultat : double visibilité
         </p>
         <p className="text-muted-foreground">
-          Vos threads Reddit se positionnent sur Google <strong className="text-foreground">(SEO)</strong> ET sont cités par les IA <strong className="text-foreground">(GEO)</strong>. Un seul canal, deux leviers de croissance. Découvrez comment fonctionne notre <a href="/agence-reddit" className="text-primary hover:underline font-medium">stratégie d'agence Reddit</a>.
+          Vos threads Reddit se positionnent sur Google <strong className="text-foreground">(SEO)</strong> ET sont cités par les IA <strong className="text-foreground">(GEO)</strong>. Un seul canal, deux leviers de croissance. Découvrez comment fonctionne notre <a href="/" className="text-primary hover:underline font-medium">stratégie d'agence Reddit</a>.
         </p>
       </AnimatedSection>
 
@@ -393,7 +393,7 @@ const WhyRedditForGEO = () => (
           <div className="p-6 rounded-2xl bg-card border border-border/50">
             <h3 className="text-xl font-bold text-foreground mb-3">1. Les LLMs sur-indexent Reddit dans leurs sources</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Les modèles de langage comme GPT-4, Claude et Gemini ont été entraînés sur des datasets incluant massivement le contenu Reddit (via Common Crawl et des accords directs comme le partenariat Google-Reddit de 2024 à 60M$/an). Reddit représente une part disproportionnée des données d'entraînement car c'est du contenu conversationnel, vérifié par la communauté via le système d'upvotes, et structuré en threads question-réponse — exactement le format que les IA reproduisent.
+              Les modèles de langage comme GPT-4, Claude et Gemini ont été entraînés sur des datasets incluant massivement le contenu Reddit (via Common Crawl et des accords directs comme le partenariat Google-Reddit de 2024 à 60M$/an). Reddit représente une part disproportionnée des données d'entraînement car c'est du contenu conversationnel, vérifié par la communauté via le système d'upvotes, et structuré en threads question-réponse. C'est exactement le format que les IA reproduisent.
             </p>
           </div>
         </AnimatedSection>
@@ -402,7 +402,7 @@ const WhyRedditForGEO = () => (
           <div className="p-6 rounded-2xl bg-card border border-border/50">
             <h3 className="text-xl font-bold text-foreground mb-3">2. Google positionne Reddit en haut des SERPs depuis 2024</h3>
             <p className="text-muted-foreground leading-relaxed">
-              Depuis le Google Helpful Content Update de 2024, les threads Reddit se positionnent systématiquement dans le top 5 pour les requêtes informationnelles et de recommandation. Google considère Reddit comme une source « first-hand experience » authentique. Les moteurs IA comme Google AI Overviews et Perplexity utilisent l'index Google comme source primaire — donc un thread Reddit bien positionné sur Google est automatiquement visible pour les IA.
+              Depuis le Google Helpful Content Update de 2024, les threads Reddit se positionnent systématiquement dans le top 5 pour les requêtes informationnelles et de recommandation. Google considère Reddit comme une source « first-hand experience » authentique. Les moteurs IA comme Google AI Overviews et Perplexity utilisent l'index Google comme source primaire, donc un thread Reddit bien positionné sur Google est automatiquement visible pour les IA.
             </p>
           </div>
         </AnimatedSection>
@@ -432,7 +432,7 @@ const WhyRedditForGEO = () => (
 const CaseStudies = () => {
   const cases = [
     {
-      industry: "SaaS B2B — Outil RH",
+      industry: "SaaS B2B, Outil RH",
       timeline: "4 mois",
       results: [
         { metric: "Citations IA", before: "0", after: "Cité dans 4/5 réponses ChatGPT sur la catégorie" },
@@ -441,7 +441,7 @@ const CaseStudies = () => {
       ],
     },
     {
-      industry: "Fintech — Paiement B2B",
+      industry: "Fintech, Paiement B2B",
       timeline: "3 mois",
       results: [
         { metric: "Share of voice IA", before: "0%", after: "35% dans leur catégorie" },
@@ -522,6 +522,7 @@ const FounderSection = () => (
               width={128}
               height={128}
               className="w-32 h-32 rounded-2xl object-cover border border-primary/20"
+              loading="lazy"
             />
           </div>
           <div className="flex-1 text-center md:text-left">
@@ -661,11 +662,11 @@ const FAQGeo = () => {
   const faqs = [
     {
       q: "Qu'est-ce que le GEO (Generative Engine Optimization) ?",
-      a: "Le GEO est la pratique d'optimiser la visibilité de votre marque dans les réponses générées par les IA — ChatGPT, Perplexity, Claude et Google AI Overviews. Contrairement au SEO traditionnel qui cible les classements Google, le GEO s'assure que votre marque est citée quand les utilisateurs demandent des recommandations à une IA dans votre catégorie. C'est la prochaine évolution de la visibilité en ligne.",
+      a: "Le GEO est la pratique d'optimiser la visibilité de votre marque dans les réponses générées par les IA (ChatGPT, Perplexity, Claude et Google AI Overviews). Contrairement au SEO traditionnel qui cible les classements Google, le GEO s'assure que votre marque est citée quand les utilisateurs demandent des recommandations à une IA dans votre catégorie. C'est la prochaine évolution de la visibilité en ligne.",
     },
     {
       q: "Pourquoi Reddit est-il le meilleur levier pour le GEO ?",
-      a: "Reddit est la source n°1 que les moteurs IA citent. Les threads Reddit sont des discussions vérifiées par des humains, classées par la communauté — pas du contenu marketing. Les LLMs comme ChatGPT et Perplexity citent Reddit de manière disproportionnée. De plus, Google classe les threads Reddit en haut des SERPs depuis 2024, et les IA utilisent l'index Google comme source primaire. Une forte présence Reddit = visibilité dans Google ET dans les réponses IA.",
+      a: "Reddit est la source n°1 que les moteurs IA citent. Les threads Reddit sont des discussions vérifiées par des humains, classées par la communauté, pas du contenu marketing. Les LLMs comme ChatGPT et Perplexity citent Reddit de manière disproportionnée. De plus, Google classe les threads Reddit en haut des SERPs depuis 2024, et les IA utilisent l'index Google comme source primaire. Une forte présence Reddit = visibilité dans Google ET dans les réponses IA.",
     },
     {
       q: "Combien de temps avant de voir des citations IA ?",
@@ -759,7 +760,7 @@ const HomeGEOContent = () => {
             <div className="flex flex-col md:flex-row justify-between gap-8">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" loading="lazy" />
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -784,7 +785,7 @@ const HomeGEOContent = () => {
                   <button onClick={() => scrollTo("pricing")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     {t("nav.pricing")}
                   </button>
-                  <a href="/agence-reddit" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  <a href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     Agence Reddit
                   </a>
                 </div>

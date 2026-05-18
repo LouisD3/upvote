@@ -50,7 +50,7 @@ const SocialLandingContent = () => {
             <div className="flex flex-col md:flex-row justify-between gap-8">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" loading="lazy" />
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
