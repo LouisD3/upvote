@@ -7,7 +7,12 @@ export default defineConfig({
   trailingSlash: 'never',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
   ],
   vite: {
     resolve: {

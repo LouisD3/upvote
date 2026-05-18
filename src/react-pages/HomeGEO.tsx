@@ -3,7 +3,7 @@ import { AskAISection } from "@/components/landing/AskAISection";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Check, X, Sparkles, Mail, Zap, Eye, Brain, TrendingUp, ArrowRight, Target, BarChart3, User } from "lucide-react";
+import { Check, X, Sparkles, Mail, Zap, Eye, Brain, TrendingUp, ArrowRight, Target, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
@@ -11,6 +11,8 @@ import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { LogoBanner } from "@/components/landing/LogoBanner";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
+import mateoAvatarAsset from "@/assets/mateo-avatar.png";
+const mateoAvatar = typeof mateoAvatarAsset === 'string' ? mateoAvatarAsset : mateoAvatarAsset.src;
 import confetti from "canvas-confetti";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
@@ -102,7 +104,7 @@ const GEODefinition = () => (
       <AnimatedSection delay={100}>
         <div className="max-w-3xl mx-auto mb-16 space-y-6">
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
-            Le <strong className="text-foreground">GEO (Generative Engine Optimization)</strong> est la discipline qui consiste à optimiser la visibilité d'une marque dans les réponses générées par les moteurs IA : ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
+            Une <strong className="text-foreground">agence GEO</strong> (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'intelligence artificielle — ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
           </p>
           <p className="text-lg text-muted-foreground text-center leading-relaxed">
             Concrètement, quand un prospect demande à ChatGPT « quel est le meilleur outil de [votre catégorie] ? », une <strong className="text-foreground">agence GEO</strong> s'assure que votre marque apparaît dans la réponse. C'est un shift fondamental : on passe de « être trouvé quand quelqu'un cherche » à « être recommandé quand quelqu'un demande ».
@@ -514,9 +516,13 @@ const FounderSection = () => (
       <AnimatedSection>
         <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="flex-shrink-0">
-            <div className="w-32 h-32 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
-              <User className="w-16 h-16 text-primary/60" />
-            </div>
+            <img
+              src={mateoAvatar}
+              alt="Matéo Drouillard, fondateur d'UpvotePartners"
+              width={128}
+              height={128}
+              className="w-32 h-32 rounded-2xl object-cover border border-primary/20"
+            />
           </div>
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
