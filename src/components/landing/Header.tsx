@@ -1,7 +1,8 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
-import logo from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
+const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
@@ -21,7 +22,7 @@ export const Header = () => {
             <div className="relative">
               <div className="absolute -inset-1 bg-primary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
-                src={logo} 
+                src={logo}
                 alt="UpvotePartners" 
                 className="relative w-11 h-11 rounded-xl transition-transform duration-300 group-hover:scale-105" 
               />

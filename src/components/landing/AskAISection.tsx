@@ -1,7 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import claudeLogo from "@/assets/claude-logo.png";
-import perplexityLogo from "@/assets/perplexity-logo.png";
+import claudeLogoAsset from "@/assets/claude-logo.webp";
+import perplexityLogoAsset from "@/assets/perplexity-logo.webp";
+const claudeLogo = typeof claudeLogoAsset === 'string' ? claudeLogoAsset : claudeLogoAsset.src;
+const perplexityLogo = typeof perplexityLogoAsset === 'string' ? perplexityLogoAsset : perplexityLogoAsset.src;
 
 const PROMPT = "Pourquoi Reddit peut être un puissant canal d'acquisition pour ma startup ?";
 const encodedPrompt = encodeURIComponent(PROMPT);
@@ -20,14 +22,14 @@ const aiPlatforms = [
     nameKey: "askAI.askClaude" as const,
     url: `https://claude.ai/new?q=${encodedPrompt}`,
     icon: (
-      <img src={claudeLogo} alt="Claude" className="w-5 h-5 brightness-0 invert" />
+      <img src={claudeLogo} alt="Claude" className="w-5 h-5 brightness-0 invert" loading="lazy" />
     ),
   },
   {
     nameKey: "askAI.askPerplexity" as const,
     url: `https://www.perplexity.ai/search?q=${encodedPrompt}`,
     icon: (
-      <img src={perplexityLogo} alt="Perplexity" className="w-5 h-5 invert" />
+      <img src={perplexityLogo} alt="Perplexity" className="w-5 h-5 invert" loading="lazy" />
     ),
   },
 ];

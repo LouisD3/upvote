@@ -5,7 +5,9 @@ import { Mail, Check, X, Handshake, DollarSign, Eye, FileText, TrendingUp } from
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo_reddit_agence.png";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
+const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const TWITTER_URL = "https://x.com/mateodr_";
 const EMAIL = "contact@upvotepartners.com";
@@ -13,7 +15,7 @@ const AVG_BASKET = 5000;
 const COMMISSION_RATE = 0.10;
 const PER_CLIENT_MONTHLY = AVG_BASKET * COMMISSION_RATE;
 
-const Partners = () => {
+const PartnersContent = () => {
   const [clientCount, setClientCount] = useState(3);
   const monthlyEarnings = clientCount * PER_CLIENT_MONTHLY;
 
@@ -352,7 +354,7 @@ const Partners = () => {
             <div className="flex flex-col md:flex-row justify-between gap-8">
               <div className="flex flex-col gap-4">
                 <a href="/" className="flex items-center gap-2">
-                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" loading="lazy" />
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </a>
                 <div className="flex items-center gap-3">
@@ -386,5 +388,11 @@ const Partners = () => {
     </div>
   );
 };
+
+const Partners = () => (
+  <LanguageProvider>
+    <PartnersContent />
+  </LanguageProvider>
+);
 
 export default Partners;

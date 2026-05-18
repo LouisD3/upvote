@@ -5,13 +5,14 @@ import { ProcessSection } from "@/components/landing/ProcessSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { AskAISection } from "@/components/landing/AskAISection";
 import { FAQSection } from "@/components/landing/FAQSection";
-import { Heart, Mail } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Mail } from "lucide-react";
+import { useLanguage, LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
-import logo from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
+const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
-const Index = () => {
+const SocialLandingContent = () => {
   const { t, lang } = useLanguage();
 
   const scrollTo = (id: string) => {
@@ -27,18 +28,29 @@ const Index = () => {
         <ProcessSection />
         <PricingSection />
         <AskAISection />
+
+        <section className="py-12 px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Notre approche combine le marketing Reddit avec le{" "}
+              <a href="/" className="text-primary hover:underline font-medium">
+                GEO (Generative Engine Optimization)
+              </a>{" "}
+              pour maximiser vos citations dans les réponses de ChatGPT, Perplexity et Claude.
+            </p>
+          </div>
+        </section>
+
         <FAQSection />
       </div>
-      
+
       <footer className="py-12 px-6 border-t border-border/50">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col gap-10">
-            {/* Top: left info + right nav */}
             <div className="flex flex-col md:flex-row justify-between gap-8">
-              {/* Left: logo, socials, email */}
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" />
+                  <img src={logo} alt="UpvotePartners" className="h-7 w-7 rounded-lg" loading="lazy" />
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -55,7 +67,6 @@ const Index = () => {
                 </a>
               </div>
 
-              {/* Right: nav columns */}
               <nav className="flex gap-16">
                 <div className="flex flex-col gap-3">
                   <button onClick={() => scrollTo("how-it-works")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
@@ -76,10 +87,7 @@ const Index = () => {
               </nav>
             </div>
 
-            {/* Divider */}
             <div className="h-px bg-border/50" />
-
-            {/* Bottom: copyright */}
             <p className="text-xs text-muted-foreground">
               Copyright ©UpvotePartners. {t("footer.allRights")}
             </p>
@@ -90,4 +98,10 @@ const Index = () => {
   );
 };
 
-export default Index;
+const SocialLanding = () => (
+  <LanguageProvider>
+    <SocialLandingContent />
+  </LanguageProvider>
+);
+
+export default SocialLanding;

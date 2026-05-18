@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Partners from '@/react-pages/Partners.tsx';
+import '@/index.css';
+---
+
+<Layout
+  title="Programme Partenaires | UpvotePartners | 10% de commission à vie"
+  description="Devenez partenaire UpvotePartners. Référez des startups et touchez 10% de commission à vie sur chaque client signé. Programme réservé aux consultants, agences et VCs."
+  canonical="https://upvotepartners.com/partners"
+  robots="noindex, follow"
+>
+  <Partners client:load />
+</Layout>

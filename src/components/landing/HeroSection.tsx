@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import confetti from "canvas-confetti";
-
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const FloatingRedditLogo = ({ className }: { className?: string }) => (
@@ -15,11 +13,13 @@ const FloatingRedditLogo = ({ className }: { className?: string }) => (
 );
 
 const handleBookAudit = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  import("canvas-confetti").then(({ default: confetti }) => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+    });
   });
   setTimeout(() => {
     window.open(CALENDLY_URL, "_blank");
@@ -60,7 +60,7 @@ export const HeroSection = () => {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection delay={100} className="max-w-3xl mx-auto relative z-10">
+      <AnimatedSection className="max-w-3xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           <span className="text-foreground">{t("hero.headline1")}</span>
           <span className="text-gradient">{t("hero.headline2")}</span>
@@ -78,22 +78,19 @@ export const HeroSection = () => {
 
       {/* CTA */}
       <AnimatedSection delay={500} className="mt-8 relative z-10">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/70 rounded-xl blur opacity-40 group-hover:opacity-60 transition duration-500" />
-          <Button
-            onClick={handleBookAudit}
-            size="lg"
-            className={cn(
-              "relative h-14 px-8 text-base font-bold rounded-xl",
-              "hover:scale-[1.02] active:scale-[0.98]",
-              "transition-all duration-300",
-              "shadow-lg shadow-primary/30 animate-wiggle-glow"
-            )}
-          >
-            <Sparkles className="w-5 h-5 mr-2" />
-            {t("hero.cta")}
-          </Button>
-        </div>
+        <Button
+          onClick={handleBookAudit}
+          size="lg"
+          className={cn(
+            "h-14 px-8 text-base font-bold rounded-xl",
+            "hover:scale-[1.02] active:scale-[0.98]",
+            "transition-all duration-300",
+            "shadow-lg shadow-primary/30 animate-wiggle-glow"
+          )}
+        >
+          <Sparkles className="w-5 h-5 mr-2" />
+          {t("hero.cta")}
+        </Button>
         <p className="mt-4 text-sm text-muted-foreground font-medium animate-pulse">
           🔥 {t("hero.limitedSpots")}
         </p>

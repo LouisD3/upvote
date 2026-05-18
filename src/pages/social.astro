@@ -1,0 +1,102 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SocialLanding from '@/react-pages/SocialLanding.tsx';
+import '@/index.css';
+---
+
+<Layout
+  title="UpvotePartners | Agence Marketing Reddit pour Startups | Leads Qualifiés"
+  description="UpvotePartners gère votre stratégie Reddit de A à Z. Génération de leads qualifiés, visibilité SEO, citations par les IA (ChatGPT, Claude, Perplexity). Approuvé par des startups YC. Audit gratuit."
+  canonical="https://upvotepartners.com/social"
+  robots="noindex, follow"
+>
+  <Fragment slot="head">
+    <meta name="keywords" content="agence marketing Reddit, acquisition clients Reddit, leads qualifiés startups, marketing Reddit France, stratégie Reddit startup, agence Reddit, SEO Reddit, acquisition Reddit B2B, marketing Reddit francophone, agence acquisition startup">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://upvotepartners.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agence Reddit Marketing",
+          "item": "https://upvotepartners.com/social"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment savoir si Reddit est le bon canal d'acquisition pour ma startup ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Avant toute chose, on fait un audit approfondi ensemble. On analyse les subreddits actifs où votre ICP se trouve, les discussions existantes et la présence de vos concurrents. Si Reddit n'est pas le bon canal, on vous le dit clairement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est l'engagement minimum pour travailler avec UpvotePartners ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous demandons un engagement minimum de 3 mois. Le marketing Reddit est un canal qui compound dans le temps. La plupart des clients voient une traction significative en 2-3 mois."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps pour lancer une première campagne Reddit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nous lançons les premiers posts à partir de 21 jours. Pendant cette période, nous gérons en parallèle l'onboarding, la stratégie et le warm-up des comptes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de posts Reddit par mois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Selon le plan choisi, entre 4 et 8 posts de haute qualité par mois, placés stratégiquement dans les subreddits les plus pertinents pour votre audience cible."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cette stratégie est-elle safe ? Les comptes peuvent-ils être bannis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notre approche est 100% organique et conforme aux guidelines de Reddit. Nous ne spammons pas, n'utilisons pas de bots et ne faisons pas de posts ouvertement promotionnels. Nos comptes sont warm-up pendant des semaines et participent authentiquement aux communautés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Reddit fonctionne-t-il pour le B2B ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolument. Reddit est l'un des canaux B2B les plus sous-estimés. Les décideurs, développeurs et marketeurs sont extrêmement actifs sur des subreddits spécialisés. Les conversations Reddit attirent des prospects en phase de recherche active."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien coûte une agence Reddit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos forfaits commencent à 3000 euros par mois (Foundation). Le plan le plus populaire est Reddit Engine à 5000 euros par mois. Comparé aux canaux payants, le Reddit organique offre un coût par lead 3 à 8 fois inférieur dès le 3ème mois."
+          }
+        }
+      ]
+    }
+    </script>
+  </Fragment>
+
+  <SocialLanding client:load />
+</Layout>

@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface AnimatedSectionProps {
@@ -8,70 +7,23 @@ interface AnimatedSectionProps {
   animation?: "fade-up" | "fade-in" | "scale-in" | "slide-up";
 }
 
-export const AnimatedSection = ({ 
-  children, 
-  className, 
+const animationClasses: Record<NonNullable<AnimatedSectionProps["animation"]>, string> = {
+  "fade-up": "animate-fade-up",
+  "fade-in": "animate-fade-in",
+  "scale-in": "animate-scale-in",
+  "slide-up": "animate-slide-up",
+};
+
+export const AnimatedSection = ({
+  children,
+  className,
   delay = 0,
-  animation = "fade-up"
+  animation = "fade-up",
 }: AnimatedSectionProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [delay]);
-
-  const getAnimationStyles = () => {
-    const baseStyles = "transition-all duration-700 ease-out";
-    
-    switch (animation) {
-      case "fade-in":
-        return cn(
-          baseStyles,
-          "opacity-0",
-          isVisible && "opacity-100"
-        );
-      case "scale-in":
-        return cn(
-          baseStyles,
-          "opacity-0 scale-95",
-          isVisible && "opacity-100 scale-100"
-        );
-      case "slide-up":
-        return cn(
-          baseStyles,
-          "duration-500",
-          "opacity-0 translate-y-8",
-          isVisible && "opacity-100 translate-y-0"
-        );
-      case "fade-up":
-      default:
-        return cn(
-          baseStyles,
-          "opacity-0 translate-y-6",
-          isVisible && "opacity-100 translate-y-0"
-        );
-    }
-  };
-
   return (
     <div
-      ref={ref}
-      className={cn(getAnimationStyles(), className)}
+      className={cn(animationClasses[animation], className)}
+      style={{ animationDelay: `${delay}ms`, animationFillMode: "both" }}
     >
       {children}
     </div>

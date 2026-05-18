@@ -1,10 +1,9 @@
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
-import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, LucideIcon, Sparkles } from "lucide-react";
+import { ClipboardCheck, Target, UserPlus, Rocket, TrendingUp, Sparkles } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import confetti from "canvas-confetti";
-
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
 const icons: LucideIcon[] = [ClipboardCheck, Target, UserPlus, Rocket, TrendingUp];
@@ -68,11 +67,13 @@ const StepCard = ({ step, index }: { step: { number: number; title: string; desc
 };
 
 const handleBookAudit = () => {
-  confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.6 },
-    colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+  import("canvas-confetti").then(({ default: confetti }) => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ["#ff6b00", "#ff8c33", "#ffad66", "#ffffff"],
+    });
   });
   setTimeout(() => {
     window.open(CALENDLY_URL, "_blank");
