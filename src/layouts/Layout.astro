@@ -4,9 +4,10 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  robots?: string;
 }
 
-const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.png' } = Astro.props;
+const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.png', robots = 'index, follow' } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,7 +20,7 @@ const { title, description, canonical = 'https://upvotepartners.com', ogImage = 
     <title>{title}</title>
     <meta name="description" content={description}>
     <meta name="author" content="UpvotePartners">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content={robots}>
     <meta name="language" content="fr">
     <meta name="geo.region" content="FR">
     <meta name="geo.placename" content="France">

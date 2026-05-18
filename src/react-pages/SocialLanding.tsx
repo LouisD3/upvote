@@ -9,7 +9,7 @@ import { Mail } from "lucide-react";
 import { useLanguage, LanguageProvider } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
-import logoAsset from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const SocialLandingContent = () => {

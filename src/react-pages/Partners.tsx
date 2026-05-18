@@ -6,7 +6,7 @@ import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { cn } from "@/lib/utils";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import logoAsset from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const TWITTER_URL = "https://x.com/mateodr_";

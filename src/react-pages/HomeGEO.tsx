@@ -9,7 +9,7 @@ import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { LogoBanner } from "@/components/landing/LogoBanner";
-import logoAsset from "@/assets/logo_reddit_agence.png";
+import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 import confetti from "canvas-confetti";
 
@@ -62,22 +62,19 @@ const HeroGEO = () => {
       </AnimatedSection>
 
       <AnimatedSection delay={500} className="mt-8 relative z-10">
-        <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-primary/70 rounded-xl blur opacity-40 group-hover:opacity-60 transition duration-500" />
-          <Button
-            onClick={handleBookAudit}
-            size="lg"
-            className={cn(
-              "relative h-14 px-8 text-base font-bold rounded-xl",
-              "hover:scale-[1.02] active:scale-[0.98]",
-              "transition-all duration-300",
-              "shadow-lg shadow-primary/30 animate-wiggle-glow"
-            )}
-          >
-            <Sparkles className="w-5 h-5 mr-2" />
-            Réserver un audit GEO gratuit
-          </Button>
-        </div>
+        <Button
+          onClick={handleBookAudit}
+          size="lg"
+          className={cn(
+            "h-14 px-8 text-base font-bold rounded-xl",
+            "hover:scale-[1.02] active:scale-[0.98]",
+            "transition-all duration-300",
+            "shadow-lg shadow-primary/30 animate-wiggle-glow"
+          )}
+        >
+          <Sparkles className="w-5 h-5 mr-2" />
+          Réserver un audit GEO gratuit
+        </Button>
         <p className="mt-4 text-sm text-muted-foreground font-medium animate-pulse">
           🔥 {t("hero.limitedSpots")}
         </p>
