@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import '@/index.css';
-import { faqReddit } from '@/data/faq-reddit';
+import { faqRedditEn } from '@/data/faq-reddit-en';
 import { Header } from '@/components/landing/Header';
 import CTAButton from '@/components/islands/CTAButton';
 import FAQAccordion from '@/components/islands/FAQAccordion';
@@ -10,17 +10,17 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
 ---
 
 <Layout
-  title="Agence Reddit : Générez des leads qualifiés | UpvotePartners"
-  description="UpvotePartners est l'agence Reddit n°1 pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA via Reddit. Audit gratuit."
-  canonical="https://upvotepartners.com"
-  lang="fr"
-  alternateUrl="https://upvotepartners.com/en"
+  title="Reddit Agency: Generate Qualified Leads | UpvotePartners"
+  description="UpvotePartners is the #1 Reddit agency for startups. Organic strategy, qualified leads, SEO visibility and AI citations via Reddit. Free audit."
+  canonical="https://upvotepartners.com/en"
+  lang="en"
+  alternateUrl="https://upvotepartners.com"
 >
   <Fragment slot="head">
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqReddit.map(({ q, a }) => ({
+      "mainEntity": faqRedditEn.map(({ q, a }) => ({
         "@type": "Question",
         "name": q,
         "acceptedAnswer": { "@type": "Answer", "text": a }
@@ -31,13 +31,13 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
   <div class="min-h-screen bg-background">
     <Header
       client:load
-      lang="fr"
+      lang="en"
       showLangToggle={true}
-      homePath="/"
-      ctaLabel="Réserver un audit gratuit"
+      homePath="/en"
+      ctaLabel="Book free Audit"
       navItems={[
-        { label: "Notre méthode", sectionId: "how-it-works" },
-        { label: "Tarifs", sectionId: "pricing" },
+        { label: "How it works", sectionId: "how-it-works" },
+        { label: "Pricing", sectionId: "pricing" },
         { label: "FAQ", sectionId: "faq" }
       ]}
     />
@@ -59,33 +59,33 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
               <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
             </svg>
             <span class="text-sm font-medium text-muted-foreground">
-              Approuvé par les startups de YC
+              Trusted by YC startups
             </span>
           </div>
         </div>
 
         <div class="animate-fade-up max-w-4xl mx-auto relative z-10" style="animation-fill-mode: both;">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            <span class="text-foreground">Agence Reddit n°1 en France : </span>
-            <span class="text-gradient">Générez des leads qualifiés</span>
-            <span class="text-foreground"> pour votre Startup</span>
+            <span class="text-foreground">#1 Reddit Agency in France: </span>
+            <span class="text-gradient">Generate qualified leads</span>
+            <span class="text-foreground"> for your Startup</span>
           </h1>
         </div>
 
         <div class="animate-fade-up mt-6 max-w-2xl mx-auto relative z-10" style="animation-delay: 200ms; animation-fill-mode: both;">
           <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            UpvotePartners est une <strong class="text-foreground">agence Reddit</strong> spécialisée dans l'acquisition organique pour les startups. Nous créons du contenu stratégique sur Reddit qui se positionne sur Google, génère des leads, et fait citer votre marque par les IA.
+            UpvotePartners is a <strong class="text-foreground">Reddit agency</strong> specialized in organic acquisition for startups. We create strategic Reddit content that ranks on Google, generates leads, and gets your brand cited by AI engines.
           </p>
         </div>
 
         <div class="animate-fade-up mt-8 relative z-10" style="animation-delay: 500ms; animation-fill-mode: both;">
-          <CTAButton client:visible label="Réserver un audit Reddit gratuit" className="animate-wiggle-glow" />
+          <CTAButton client:visible label="Book free Reddit Audit" className="animate-wiggle-glow" />
           <p class="mt-4 text-sm text-muted-foreground font-medium animate-pulse">
-            🔥 Places très limitées, nous n'acceptons que quelques clients à la fois
+            🔥 Very limited spots, we only accept a few clients at a time
           </p>
         </div>
 
-        <LogoBanner title="Rejoignez les Startups qui utilisent Reddit comme canal d'acquisition" />
+        <LogoBanner title="Join the Startups using Reddit as an acquisition channel" />
       </section>
 
       <!-- ============================================================
@@ -96,21 +96,21 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up" style="animation-fill-mode: both;">
             <div class="text-center mb-4">
               <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                Pourquoi Reddit ?
+                Why Reddit?
               </span>
             </div>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-4 leading-tight">
-              Reddit est devenu <span class="text-gradient">incontournable</span> en 2026
+              Reddit has become <span class="text-gradient">essential</span> in 2026
             </h2>
           </div>
 
           <div class="animate-fade-up" style="animation-delay: 100ms; animation-fill-mode: both;">
             <div class="max-w-3xl mx-auto mb-16 space-y-6">
               <p class="text-lg text-muted-foreground text-center leading-relaxed">
-                En 2024, Google a signé un partenariat à 60M$/an avec Reddit pour intégrer ses discussions dans les résultats de recherche. Résultat : les threads Reddit dominent désormais les SERPs pour les requêtes de recommandation. Parallèlement, les moteurs IA (ChatGPT, Perplexity, Claude) citent Reddit de manière disproportionnée dans leurs réponses car c'est du contenu authentique, vérifié par la communauté.
+                In 2024, Google signed a $60M/year partnership with Reddit to integrate its discussions into search results. The result: Reddit threads now dominate SERPs for recommendation queries. Meanwhile, AI engines (ChatGPT, Perplexity, Claude) disproportionately cite Reddit in their responses because it's authentic, community-verified content.
               </p>
               <p class="text-lg text-muted-foreground text-center leading-relaxed">
-                Pour les startups B2B, c'est une opportunité unique : une <strong class="text-foreground">agence Reddit</strong> comme UpvotePartners peut positionner votre marque là où vos prospects cherchent activement des recommandations : dans les discussions Reddit qui apparaissent sur Google ET dans les réponses des IA génératives.
+                For B2B startups, this is a unique opportunity: a <strong class="text-foreground">Reddit agency</strong> like UpvotePartners can position your brand where your prospects are actively seeking recommendations — in Reddit discussions that appear on Google AND in generative AI responses.
               </p>
             </div>
           </div>
@@ -123,8 +123,8 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-primary mb-2">23M</div>
-                <div class="text-sm font-semibold text-foreground mb-1">utilisateurs actifs/jour</div>
-                <p class="text-sm text-muted-foreground">Reddit est le 6ème site le plus visité en France (Similarweb, 2026)</p>
+                <div class="text-sm font-semibold text-foreground mb-1">active users/day</div>
+                <p class="text-sm text-muted-foreground">Reddit is the 6th most visited site in France (Similarweb, 2026)</p>
               </div>
             </div>
 
@@ -135,8 +135,8 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-primary mb-2">Top 3</div>
-                <div class="text-sm font-semibold text-foreground mb-1">dans les SERPs Google</div>
-                <p class="text-sm text-muted-foreground">Les threads Reddit se positionnent dans le top 3 pour les requêtes de recommandation</p>
+                <div class="text-sm font-semibold text-foreground mb-1">in Google SERPs</div>
+                <p class="text-sm text-muted-foreground">Reddit threads rank in the top 3 for recommendation queries</p>
               </div>
             </div>
 
@@ -147,8 +147,8 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
                 </div>
                 <div class="text-3xl font-bold text-primary mb-2">+300%</div>
-                <div class="text-sm font-semibold text-foreground mb-1">trafic organique Reddit</div>
-                <p class="text-sm text-muted-foreground">Croissance du trafic SEO des pages Reddit depuis le partenariat Google-Reddit 2024</p>
+                <div class="text-sm font-semibold text-foreground mb-1">Reddit organic traffic</div>
+                <p class="text-sm text-muted-foreground">Growth of SEO traffic to Reddit pages since the 2024 Google-Reddit partnership</p>
               </div>
             </div>
           </div>
@@ -163,17 +163,17 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up" style="animation-fill-mode: both;">
             <div class="text-center mb-4">
               <span class="inline-block px-3 py-1 rounded-full bg-destructive/10 text-destructive text-sm font-medium mb-4">
-                Le problème
+                The problem
               </span>
             </div>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-4 leading-tight">
-              La plupart des startups échouent sur Reddit. <span class="text-gradient">Pas nos clients.</span>
+              Most startups fail on Reddit. <span class="text-gradient">Not our clients.</span>
             </h2>
           </div>
 
           <div class="animate-fade-up" style="animation-delay: 100ms; animation-fill-mode: both;">
             <p class="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-2xl mx-auto leading-relaxed">
-              Reddit est un canal ultra-puissant, mais ses communautés détestent le marketing. Sans la bonne approche, vos posts sont supprimés, vos comptes bannis, et vous perdez des mois. Notre agence Reddit a développé une méthode qui contourne ces obstacles.
+              Reddit is an ultra-powerful channel, but its communities hate marketing. Without the right approach, your posts get removed, your accounts get banned, and you waste months. Our Reddit agency has developed a method that overcomes these obstacles.
             </p>
           </div>
 
@@ -187,8 +187,8 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                     </div>
                     <div>
-                      <h3 class="text-xl font-bold text-foreground">Reddit en interne</h3>
-                      <p class="text-sm text-muted-foreground">Ce qui arrive sans expertise Reddit</p>
+                      <h3 class="text-xl font-bold text-foreground">Reddit in-house</h3>
+                      <p class="text-sm text-muted-foreground">What happens without Reddit expertise</p>
                     </div>
                   </div>
                   <ul class="space-y-5">
@@ -196,37 +196,37 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Posts supprimés par les modérateurs</span>
+                      <span class="text-muted-foreground">Posts removed by moderators</span>
                     </li>
                     <li class="flex items-start gap-4">
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Comptes bannis après quelques posts</span>
+                      <span class="text-muted-foreground">Accounts banned after a few posts</span>
                     </li>
                     <li class="flex items-start gap-4">
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Contenus perçus comme du spam</span>
+                      <span class="text-muted-foreground">Content perceived as spam</span>
                     </li>
                     <li class="flex items-start gap-4">
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Aucun résultat après des mois d'efforts</span>
+                      <span class="text-muted-foreground">No results after months of effort</span>
                     </li>
                     <li class="flex items-start gap-4">
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Perte de temps sur les mauvais subreddits</span>
+                      <span class="text-muted-foreground">Time wasted on the wrong subreddits</span>
                     </li>
                     <li class="flex items-start gap-4">
                       <div class="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-destructive"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                       </div>
-                      <span class="text-muted-foreground">Aucune visibilité sur Google ou les IA</span>
+                      <span class="text-muted-foreground">No visibility on Google or AI engines</span>
                     </li>
                   </ul>
                 </div>
@@ -241,7 +241,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <div class="relative h-full bg-card shadow-card rounded-2xl p-8 border-2 border-primary/50 transition-all duration-500 hover:shadow-card-hover overflow-hidden">
                     <div class="absolute top-0 right-0 overflow-hidden">
                       <div class="bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5">
-                        ✨ Avec notre agence Reddit
+                        ✨ With our Reddit agency
                       </div>
                     </div>
                     <div class="flex items-center gap-4 mb-8">
@@ -249,8 +249,8 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
                       <div>
-                        <h3 class="text-xl font-bold text-foreground">Avec UpvotePartners</h3>
-                        <p class="text-sm text-muted-foreground">Résultats mesurables</p>
+                        <h3 class="text-xl font-bold text-foreground">With UpvotePartners</h3>
+                        <p class="text-sm text-muted-foreground">Measurable results</p>
                       </div>
                     </div>
                     <ul class="space-y-5">
@@ -258,37 +258,37 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Contenu approuvé et upvoté par la communauté</span>
+                        <span class="text-foreground font-medium">Content approved and upvoted by the community</span>
                       </li>
                       <li class="flex items-start gap-4">
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Comptes warm-up avec karma authentique</span>
+                        <span class="text-foreground font-medium">Warmed-up accounts with authentic karma</span>
                       </li>
                       <li class="flex items-start gap-4">
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Posts à valeur ajoutée qui mentionnent votre marque naturellement</span>
+                        <span class="text-foreground font-medium">Value-driven posts that naturally mention your brand</span>
                       </li>
                       <li class="flex items-start gap-4">
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Leads qualifiés dès les premières semaines</span>
+                        <span class="text-foreground font-medium">Qualified leads from the first weeks</span>
                       </li>
                       <li class="flex items-start gap-4">
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Ciblage précis des communautés où se trouve votre ICP</span>
+                        <span class="text-foreground font-medium">Precise targeting of communities where your ICP lives</span>
                       </li>
                       <li class="flex items-start gap-4">
                         <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                         </div>
-                        <span class="text-foreground font-medium">Threads positionnés dans Google + cités par les IA</span>
+                        <span class="text-foreground font-medium">Threads ranking on Google + cited by AI engines</span>
                       </li>
                     </ul>
                     <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
@@ -308,13 +308,13 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up text-center mb-16" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-              Notre méthode en 5 étapes
+              Our 5-step method
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Comment notre <span class="text-primary">agence Reddit</span> génère vos leads
+              How our <span class="text-primary">Reddit agency</span> generates your leads
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une méthodologie éprouvée sur 30+ campagnes Reddit B2B. Chaque étape est conçue pour maximiser l'impact tout en respectant les guidelines de Reddit.
+              A proven methodology across 30+ B2B Reddit campaigns. Each step is designed to maximize impact while respecting Reddit's guidelines.
             </p>
           </div>
 
@@ -327,10 +327,10 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Étape 1</span>
-                    <h3 class="text-lg font-bold text-foreground">Audit & stratégie de subreddits</h3>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step 1</span>
+                    <h3 class="text-lg font-bold text-foreground">Audit & subreddit strategy</h3>
                   </div>
-                  <p class="text-muted-foreground leading-relaxed">On identifie les subreddits où votre ICP (Ideal Customer Profile) est actif. On analyse le ton, les règles, les types de posts qui performent, et la présence de vos concurrents. On sélectionne 5 à 15 communautés stratégiques par campagne.</p>
+                  <p class="text-muted-foreground leading-relaxed">We identify the subreddits where your ICP (Ideal Customer Profile) is active. We analyze the tone, rules, top-performing post types, and your competitors' presence. We select 5 to 15 strategic communities per campaign.</p>
                 </div>
               </div>
             </div>
@@ -343,10 +343,10 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Étape 2</span>
-                    <h3 class="text-lg font-bold text-foreground">Warm-up des comptes Reddit</h3>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step 2</span>
+                    <h3 class="text-lg font-bold text-foreground">Reddit account warm-up</h3>
                   </div>
-                  <p class="text-muted-foreground leading-relaxed">Nos comptes sont construits sur plusieurs semaines avec du karma authentique, une activité diversifiée, et une participation réelle aux communautés. Pas de bots, pas de fermes à karma. Chaque compte a un historique crédible avant de publier pour votre marque.</p>
+                  <p class="text-muted-foreground leading-relaxed">Our accounts are built over several weeks with authentic karma, diversified activity, and genuine community participation. No bots, no karma farms. Each account has a credible history before posting for your brand.</p>
                 </div>
               </div>
             </div>
@@ -359,10 +359,10 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Étape 3</span>
-                    <h3 class="text-lg font-bold text-foreground">Création de contenu natif Reddit</h3>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step 3</span>
+                    <h3 class="text-lg font-bold text-foreground">Native Reddit content creation</h3>
                   </div>
-                  <p class="text-muted-foreground leading-relaxed">On rédige des posts et commentaires qui apportent une réelle valeur à la communauté tout en mentionnant naturellement votre marque. Le format varie selon le subreddit : questions, comparatifs, retours d'expérience, recommendations. Chaque contenu est rédigé dans le ton exact de la communauté cible.</p>
+                  <p class="text-muted-foreground leading-relaxed">We write posts and comments that bring real value to the community while naturally mentioning your brand. Formats vary by subreddit: questions, comparisons, experience reports, recommendations. Each piece of content is written in the exact tone of the target community.</p>
                 </div>
               </div>
             </div>
@@ -375,10 +375,10 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Étape 4</span>
-                    <h3 class="text-lg font-bold text-foreground">Publication & engagement stratégique</h3>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step 4</span>
+                    <h3 class="text-lg font-bold text-foreground">Publishing & strategic engagement</h3>
                   </div>
-                  <p class="text-muted-foreground leading-relaxed">On publie aux heures optimales de chaque subreddit (fuseau horaire, jour de la semaine, activité des modérateurs). Nos comptes participent aux discussions générées, répondent aux commentaires, et amplifient la portée via des interactions organiques.</p>
+                  <p class="text-muted-foreground leading-relaxed">We publish at optimal times for each subreddit (timezone, day of the week, moderator activity). Our accounts participate in generated discussions, reply to comments, and amplify reach through organic interactions.</p>
                 </div>
               </div>
             </div>
@@ -391,17 +391,17 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Étape 5</span>
-                    <h3 class="text-lg font-bold text-foreground">Tracking & optimisation continue</h3>
+                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">Step 5</span>
+                    <h3 class="text-lg font-bold text-foreground">Tracking & continuous optimization</h3>
                   </div>
-                  <p class="text-muted-foreground leading-relaxed">On mesure les upvotes, commentaires, trafic vers votre site, positions Google de vos threads, et citations IA de votre marque. Chaque mois, on ajuste la stratégie selon les données : nouveaux subreddits, formats qui convertissent, angles qui résonnent.</p>
+                  <p class="text-muted-foreground leading-relaxed">We measure upvotes, comments, traffic to your site, Google rankings of your threads, and AI citations of your brand. Each month, we adjust the strategy based on data: new subreddits, converting formats, resonating angles.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="animate-fade-up mt-12 text-center" style="animation-delay: 600ms; animation-fill-mode: both;">
-            <CTAButton client:visible label="Réserver un audit Reddit gratuit" className="animate-wiggle-glow" />
+            <CTAButton client:visible label="Book free Reddit Audit" className="animate-wiggle-glow" />
           </div>
         </div>
       </section>
@@ -415,13 +415,13 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up text-center mb-6" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-              Comparatif
+              Comparison
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Reddit organique vs <span class="text-gradient">Reddit Ads</span>
+              Organic Reddit vs <span class="text-gradient">Reddit Ads</span>
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Notre agence Reddit se spécialise dans le marketing organique, pas les publicités. Voici pourquoi c'est plus rentable pour les startups B2B :
+              Our Reddit agency specializes in organic marketing, not ads. Here's why it's more profitable for B2B startups:
             </p>
           </div>
 
@@ -432,7 +432,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <tr>
                     <th class="text-left p-4 text-sm font-semibold text-muted-foreground border-b border-border/50 w-1/5"></th>
                     <th class="text-left p-4 text-sm font-bold text-primary border-b border-primary/30 w-2/5 bg-primary/5 rounded-t-xl">
-                      Reddit organique (notre approche)
+                      Organic Reddit (our approach)
                     </th>
                     <th class="text-left p-4 text-sm font-bold text-foreground border-b border-border/50 w-2/5">
                       Reddit Ads
@@ -441,34 +441,34 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 </thead>
                 <tbody>
                   <tr class="border-b border-border/30">
-                    <td class="p-4 text-sm font-semibold text-foreground">Coût par lead</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">15-40€ (compound dans le temps)</td>
-                    <td class="p-4 text-sm text-muted-foreground">80-200€ (augmente avec la concurrence)</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">Cost per lead</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">$15-40 (compounds over time)</td>
+                    <td class="p-4 text-sm text-muted-foreground">$80-200 (increases with competition)</td>
                   </tr>
                   <tr class="border-b border-border/30">
-                    <td class="p-4 text-sm font-semibold text-foreground">Durée de vie</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Un post Reddit reste visible des mois/années</td>
-                    <td class="p-4 text-sm text-muted-foreground">Visibilité s'arrête quand le budget stop</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">Lifespan</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">A Reddit post stays visible for months/years</td>
+                    <td class="p-4 text-sm text-muted-foreground">Visibility stops when budget runs out</td>
                   </tr>
                   <tr class="border-b border-border/30">
-                    <td class="p-4 text-sm font-semibold text-foreground">Confiance utilisateur</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Recommandation perçue comme authentique</td>
-                    <td class="p-4 text-sm text-muted-foreground">Identifié comme publicité, taux de clic faible</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">User trust</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Recommendation perceived as authentic</td>
+                    <td class="p-4 text-sm text-muted-foreground">Identified as advertising, low click-through rate</td>
                   </tr>
                   <tr class="border-b border-border/30">
-                    <td class="p-4 text-sm font-semibold text-foreground">Impact IA (GEO)</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Les IA citent le contenu organique Reddit</td>
-                    <td class="p-4 text-sm text-muted-foreground">Les ads Reddit ne sont jamais citées par les IA</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">AI impact (GEO)</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">AI engines cite organic Reddit content</td>
+                    <td class="p-4 text-sm text-muted-foreground">Reddit ads are never cited by AI engines</td>
                   </tr>
                   <tr class="border-b border-border/30">
-                    <td class="p-4 text-sm font-semibold text-foreground">Visibilité Google</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Les threads organiques rankent dans les SERPs</td>
-                    <td class="p-4 text-sm text-muted-foreground">Aucun impact SEO</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">Google visibility</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Organic threads rank in Google SERPs</td>
+                    <td class="p-4 text-sm text-muted-foreground">No SEO impact</td>
                   </tr>
                   <tr class="border-b border-border/30 last:border-0">
-                    <td class="p-4 text-sm font-semibold text-foreground">Scalabilité</td>
-                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Chaque post compound la visibilité</td>
-                    <td class="p-4 text-sm text-muted-foreground">Linéaire : plus de budget = plus de reach, pas de compound</td>
+                    <td class="p-4 text-sm font-semibold text-foreground">Scalability</td>
+                    <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Each post compounds visibility</td>
+                    <td class="p-4 text-sm text-muted-foreground">Linear: more budget = more reach, no compounding</td>
                   </tr>
                 </tbody>
               </table>
@@ -478,7 +478,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up" style="animation-delay: 400ms; animation-fill-mode: both;">
             <div class="mt-12 p-6 rounded-2xl bg-card border border-border/50">
               <p class="text-muted-foreground leading-relaxed">
-                <strong class="text-foreground">L'avantage compound du Reddit organique :</strong> chaque thread que nous publions continue de générer du trafic, des leads, et des citations IA pendant des mois après sa publication. Au bout de 6 mois de campagne, vous avez construit un asset marketing permanent qui travaille pour vous 24h/24, sans coût publicitaire récurrent.
+                <strong class="text-foreground">The compound advantage of organic Reddit:</strong> every thread we publish continues to generate traffic, leads, and AI citations for months after publication. After 6 months of campaigns, you've built a permanent marketing asset that works for you 24/7, with no recurring ad spend.
               </p>
             </div>
           </div>
@@ -493,30 +493,30 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up text-center mb-12" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
-              Reddit + IA
+              Reddit + AI
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Notre agence Reddit vous rend <span class="text-gradient">visible dans les IA</span>
+              Our Reddit agency makes you <span class="text-gradient">visible in AI</span>
             </h2>
           </div>
 
           <div class="animate-fade-up" style="animation-delay: 100ms; animation-fill-mode: both;">
             <div class="space-y-6 max-w-3xl mx-auto">
               <p class="text-lg text-muted-foreground leading-relaxed">
-                Ce qui rend UpvotePartners unique par rapport aux autres agences Reddit : nous ne faisons pas juste du marketing Reddit, nous exploitons Reddit comme <strong class="text-foreground">levier de visibilité IA</strong>. Chaque post est optimisé pour être indexé par les moteurs de recherche IA (ChatGPT, Perplexity, Claude).
+                What makes UpvotePartners unique compared to other Reddit agencies: we don't just do Reddit marketing, we leverage Reddit as an <strong class="text-foreground">AI visibility engine</strong>. Every post is optimized to be indexed by AI search engines (ChatGPT, Perplexity, Claude).
               </p>
               <p class="text-lg text-muted-foreground leading-relaxed">
-                C'est ce qu'on appelle le <a href="/agence-geo" class="text-primary hover:underline font-medium">GEO (Generative Engine Optimization)</a> : faire en sorte que votre marque soit citée quand un prospect demande à une IA « quel est le meilleur outil de [votre catégorie] ? ». Reddit est le canal n°1 pour y parvenir car les LLMs sur-indexent les discussions Reddit dans leurs sources.
+                This is what we call <a href="/en/agence-geo" class="text-primary hover:underline font-medium">GEO (Generative Engine Optimization)</a>: getting your brand cited when a prospect asks an AI "what's the best tool for [your category]?" Reddit is the #1 channel for achieving this because LLMs over-index Reddit discussions in their sources.
               </p>
               <p class="text-lg text-muted-foreground leading-relaxed">
-                Résultat : en travaillant avec notre agence Reddit, vous obtenez une <strong class="text-foreground">triple visibilité</strong> : leads directs via Reddit, positionnement Google des threads, et citations dans les réponses IA. Trois canaux, un seul investissement.
+                The result: by working with our Reddit agency, you get <strong class="text-foreground">triple visibility</strong> — direct leads via Reddit, Google ranking of threads, and citations in AI responses. Three channels, one investment.
               </p>
             </div>
           </div>
 
           <div class="animate-fade-up mt-10 text-center" style="animation-delay: 300ms; animation-fill-mode: both;">
-            <a href="/agence-geo" class="inline-flex items-center gap-2 text-primary hover:underline font-medium text-lg">
-              En savoir plus sur notre offre GEO
+            <a href="/en/agence-geo" class="inline-flex items-center gap-2 text-primary hover:underline font-medium text-lg">
+              Learn more about our GEO offering
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
@@ -532,13 +532,13 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up text-center mb-16" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/></svg>
-              Résultats clients
+              Client results
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Ce que nos clients <span class="text-gradient">obtiennent réellement</span>
+              What our clients <span class="text-gradient">actually get</span>
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Résultats anonymisés de startups accompagnées par notre agence Reddit. Métriques mesurées via notre dashboard de tracking Reddit + citations IA.
+              Anonymized results from startups managed by our Reddit agency. Metrics measured via our Reddit tracking dashboard + AI citations.
             </p>
           </div>
 
@@ -551,38 +551,38 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                   </div>
                   <div>
-                    <h3 class="text-lg font-bold text-foreground">SaaS, Outil de productivité</h3>
-                    <p class="text-sm text-muted-foreground">Durée : 4 mois</p>
+                    <h3 class="text-lg font-bold text-foreground">SaaS, Productivity tool</h3>
+                    <p class="text-sm text-muted-foreground">Timeline: 4 months</p>
                   </div>
                 </div>
                 <div class="space-y-4">
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Leads générés via Reddit</p>
+                      <p class="text-sm font-medium text-foreground">Leads generated via Reddit</p>
                       <div class="flex items-center gap-2 mt-1">
-                        <span class="text-sm text-muted-foreground line-through">2/mois</span>
+                        <span class="text-sm text-muted-foreground line-through">2/month</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">23/mois</span>
+                        <span class="text-sm font-bold text-primary">23/month</span>
                       </div>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Threads positionnés sur Google</p>
+                      <p class="text-sm font-medium text-foreground">Threads ranking on Google</p>
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">0</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">14 threads dans le top 5</span>
+                        <span class="text-sm font-bold text-primary">14 threads in top 5</span>
                       </div>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Coût par lead</p>
+                      <p class="text-sm font-medium text-foreground">Cost per lead</p>
                       <div class="flex items-center gap-2 mt-1">
-                        <span class="text-sm text-muted-foreground line-through">150€ (paid social)</span>
+                        <span class="text-sm text-muted-foreground line-through">$150 (paid social)</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">28€ (Reddit organique)</span>
+                        <span class="text-sm font-bold text-primary">$28 (organic Reddit)</span>
                       </div>
                     </div>
                   </div>
@@ -598,38 +598,38 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                   </div>
                   <div>
-                    <h3 class="text-lg font-bold text-foreground">Fintech, Paiement en ligne</h3>
-                    <p class="text-sm text-muted-foreground">Durée : 3 mois</p>
+                    <h3 class="text-lg font-bold text-foreground">Fintech, Online payments</h3>
+                    <p class="text-sm text-muted-foreground">Timeline: 3 months</p>
                   </div>
                 </div>
                 <div class="space-y-4">
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Trafic Reddit → site</p>
+                      <p class="text-sm font-medium text-foreground">Reddit traffic → site</p>
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">0</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">+3 200 visiteurs qualifiés/mois</span>
+                        <span class="text-sm font-bold text-primary">+3,200 qualified visitors/month</span>
                       </div>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Mentions organiques de marque</p>
+                      <p class="text-sm font-medium text-foreground">Organic brand mentions</p>
                       <div class="flex items-center gap-2 mt-1">
-                        <span class="text-sm text-muted-foreground line-through">0/mois</span>
+                        <span class="text-sm text-muted-foreground line-through">0/month</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">45+/mois dans des discussions Reddit</span>
+                        <span class="text-sm font-bold text-primary">45+/month in Reddit discussions</span>
                       </div>
                     </div>
                   </div>
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Posts encore actifs après 3 mois</p>
+                      <p class="text-sm font-medium text-foreground">Posts still active after 3 months</p>
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">—</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">87% génèrent encore du trafic</span>
+                        <span class="text-sm font-bold text-primary">87% still generating traffic</span>
                       </div>
                     </div>
                   </div>
@@ -640,7 +640,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
 
           <div class="animate-fade-up" style="animation-delay: 500ms; animation-fill-mode: both;">
             <p class="text-center text-sm text-muted-foreground mt-8 italic">
-              Données issues de campagnes réelles gérées par UpvotePartners. Les noms des clients sont anonymisés par respect de la confidentialité.
+              Data from real campaigns managed by UpvotePartners. Client names are anonymized for confidentiality.
             </p>
           </div>
         </div>
@@ -655,10 +655,10 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           <div class="animate-fade-up text-center mb-12" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
-              Tarifs
+              Pricing
             </span>
             <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Tarifs de notre <span class="text-primary">agence Reddit</span>
+              Our <span class="text-primary">Reddit agency</span> pricing
             </h2>
           </div>
 
@@ -671,49 +671,49 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <h3 class="text-lg md:text-xl font-bold text-foreground text-center mb-4">Reddit Foundation</h3>
                   <div class="text-center mb-1">
                     <span class="text-3xl md:text-4xl font-bold text-foreground">3 000€</span>
-                    <span class="text-base text-muted-foreground ml-1">/mois</span>
+                    <span class="text-base text-muted-foreground ml-1">/month</span>
                   </div>
-                  <p class="text-center text-xs text-muted-foreground italic mb-6">Engagement minimum de 3 mois</p>
+                  <p class="text-center text-xs text-muted-foreground italic mb-6">Minimum 3-month commitment</p>
                   <ul class="space-y-3 mb-8 flex-1">
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">5 posts / mois</span>
+                      <span class="text-sm text-foreground font-semibold">5 posts / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">25 commentaires ciblés / mois</span>
+                      <span class="text-sm text-foreground font-semibold">25 targeted comments / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Audit et sélection des subreddits cibles</span>
+                      <span class="text-sm text-foreground font-medium">Audit and target subreddit selection</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Warm-up et gestion multi-comptes</span>
+                      <span class="text-sm text-foreground font-medium">Warm-up and multi-account management</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Tracking des positions Google + citations IA</span>
+                      <span class="text-sm text-foreground font-medium">Google rankings + AI citations tracking</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel détaillé</span>
+                      <span class="text-sm text-foreground font-medium">Detailed monthly performance report</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
-                    <CTAButton client:visible label="Réserver une consultation" withConfetti={false} variant="outline" className="w-full h-12 text-sm" />
+                    <CTAButton client:visible label="Book a consultation" withConfetti={false} variant="outline" className="w-full h-12 text-sm" />
                   </div>
                 </div>
               </div>
@@ -726,56 +726,56 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 <div class="relative bg-card rounded-2xl p-6 md:p-8 overflow-hidden h-full flex flex-col border border-primary/20">
                   <div class="flex justify-center mb-4">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold border border-primary/20">
-                      Le plus populaire
+                      Most popular
                     </span>
                   </div>
                   <div class="text-center mb-1"><span class="text-2xl">🥈</span></div>
                   <h3 class="text-lg md:text-xl font-bold text-foreground text-center mb-4">Reddit Engine</h3>
                   <div class="text-center mb-1">
                     <span class="text-3xl md:text-4xl font-bold text-foreground">5 000€</span>
-                    <span class="text-base text-muted-foreground ml-1">/mois</span>
+                    <span class="text-base text-muted-foreground ml-1">/month</span>
                   </div>
-                  <p class="text-center text-xs text-muted-foreground italic mb-6">Engagement minimum de 3 mois</p>
+                  <p class="text-center text-xs text-muted-foreground italic mb-6">Minimum 3-month commitment</p>
                   <ul class="space-y-3 mb-8 flex-1">
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">7 posts / mois</span>
+                      <span class="text-sm text-foreground font-semibold">7 posts / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">50 commentaires ciblés / mois</span>
+                      <span class="text-sm text-foreground font-semibold">50 targeted comments / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Audit et sélection des subreddits cibles</span>
+                      <span class="text-sm text-foreground font-medium">Audit and target subreddit selection</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Warm-up et gestion multi-comptes</span>
+                      <span class="text-sm text-foreground font-medium">Warm-up and multi-account management</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Tracking des positions Google + citations IA</span>
+                      <span class="text-sm text-foreground font-medium">Google rankings + AI citations tracking</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel détaillé</span>
+                      <span class="text-sm text-foreground font-medium">Detailed monthly performance report</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
-                    <CTAButton client:visible label="Réserver une consultation" withConfetti={false} className="w-full h-12 text-sm shadow-lg shadow-primary/30" />
+                    <CTAButton client:visible label="Book a consultation" withConfetti={false} className="w-full h-12 text-sm shadow-lg shadow-primary/30" />
                   </div>
                   <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
                 </div>
@@ -790,49 +790,49 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                   <h3 class="text-lg md:text-xl font-bold text-foreground text-center mb-4">Reddit Dominance</h3>
                   <div class="text-center mb-1">
                     <span class="text-3xl md:text-4xl font-bold text-foreground">10 000€</span>
-                    <span class="text-base text-muted-foreground ml-1">/mois</span>
+                    <span class="text-base text-muted-foreground ml-1">/month</span>
                   </div>
-                  <p class="text-center text-xs text-muted-foreground italic mb-6">Engagement minimum de 3 mois</p>
+                  <p class="text-center text-xs text-muted-foreground italic mb-6">Minimum 3-month commitment</p>
                   <ul class="space-y-3 mb-8 flex-1">
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">9 posts / mois</span>
+                      <span class="text-sm text-foreground font-semibold">9 posts / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-semibold">100 commentaires ciblés / mois</span>
+                      <span class="text-sm text-foreground font-semibold">100 targeted comments / month</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Audit et sélection des subreddits cibles</span>
+                      <span class="text-sm text-foreground font-medium">Audit and target subreddit selection</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Warm-up et gestion multi-comptes</span>
+                      <span class="text-sm text-foreground font-medium">Warm-up and multi-account management</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Tracking des positions Google + citations IA</span>
+                      <span class="text-sm text-foreground font-medium">Google rankings + AI citations tracking</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel détaillé</span>
+                      <span class="text-sm text-foreground font-medium">Detailed monthly performance report</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
-                    <CTAButton client:visible label="Réserver une consultation" withConfetti={false} variant="outline" className="w-full h-12 text-sm" />
+                    <CTAButton client:visible label="Book a consultation" withConfetti={false} variant="outline" className="w-full h-12 text-sm" />
                   </div>
                 </div>
               </div>
@@ -841,7 +841,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
 
           <div class="animate-fade-up" style="animation-delay: 500ms; animation-fill-mode: both;">
             <p class="text-center text-xs text-muted-foreground mt-8">
-              ⚡ Places très limitées. Nous n'acceptons que quelques clients à la fois pour garantir la qualité.
+              ⚡ Very limited spots. We only accept a few clients at a time to guarantee quality.
             </p>
           </div>
         </div>
@@ -854,18 +854,18 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
         <div class="max-w-2xl mx-auto relative z-10">
           <div class="animate-fade-up text-center mb-16" style="animation-fill-mode: both;">
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Questions fréquentes sur notre agence Reddit
+              Frequently asked questions about our Reddit agency
             </h2>
           </div>
 
           <div class="animate-fade-up" style="animation-delay: 200ms; animation-fill-mode: both;">
-            <FAQAccordion client:visible items={faqReddit} />
+            <FAQAccordion client:visible items={faqRedditEn} />
           </div>
         </div>
       </section>
 
     </div>
 
-    <Footer lang="fr" />
+    <Footer lang="en" />
   </div>
 </Layout>
