@@ -5,13 +5,18 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   robots?: string;
+  lang?: 'fr' | 'en';
+  alternateUrl?: string;
 }
 
-const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.webp', robots = 'index, follow' } = Astro.props;
+const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.webp', robots = 'index, follow', lang = 'fr', alternateUrl } = Astro.props;
+
+const ogLocale = lang === 'en' ? 'en_US' : 'fr_FR';
+const metaLanguage = lang === 'en' ? 'en' : 'fr';
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,10 +26,21 @@ const { title, description, canonical = 'https://upvotepartners.com', ogImage = 
     <meta name="description" content={description}>
     <meta name="author" content="UpvotePartners">
     <meta name="robots" content={robots}>
-    <meta name="language" content="fr">
-    <meta name="geo.region" content="FR">
-    <meta name="geo.placename" content="France">
+    <meta name="language" content={metaLanguage}>
+    {lang === 'fr' && <>
+      <meta name="geo.region" content="FR">
+      <meta name="geo.placename" content="France">
+    </>}
     <link rel="canonical" href={canonical}>
+
+    {/* Hreflang tags */}
+    {alternateUrl && (
+      <>
+        <link rel="alternate" hreflang={lang} href={canonical} />
+        <link rel="alternate" hreflang={lang === 'fr' ? 'en' : 'fr'} href={alternateUrl} />
+        <link rel="alternate" hreflang="x-default" href={lang === 'en' ? canonical : alternateUrl} />
+      </>
+    )}
 
 
     <!-- Open Graph -->
@@ -36,7 +52,7 @@ const { title, description, canonical = 'https://upvotepartners.com', ogImage = 
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
     <meta property="og:image:alt" content="UpvotePartners | Agence Marketing Reddit & GEO">
-    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale" content={ogLocale}>
     <meta property="og:site_name" content="UpvotePartners">
 
     <!-- Twitter Card -->

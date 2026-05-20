@@ -13,7 +13,7 @@ import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const SocialLandingContent = () => {
-  const { t, lang } = useLanguage();
+  const { t, lang, localizedHref } = useLanguage();
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -33,7 +33,7 @@ const SocialLandingContent = () => {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground text-lg leading-relaxed">
               Notre approche combine le marketing Reddit avec le{" "}
-              <a href="/" className="text-primary hover:underline font-medium">
+              <a href={localizedHref("/")} className="text-primary hover:underline font-medium">
                 GEO (Generative Engine Optimization)
               </a>{" "}
               pour maximiser vos citations dans les réponses de ChatGPT, Perplexity et Claude.
@@ -75,7 +75,7 @@ const SocialLandingContent = () => {
                   <button onClick={() => scrollTo("pricing")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     {t("nav.pricing")}
                   </button>
-                  <a href="/partners" className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
+                  <a href={localizedHref("/partners")} className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left">
                     {lang === "fr" ? "Partenaires" : "Partners"}
                   </a>
                 </div>

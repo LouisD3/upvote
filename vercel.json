@@ -4,6 +4,11 @@
       "source": "/agence-reddit",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/en/agence-reddit",
+      "destination": "/en",
+      "permanent": true
     }
   ],
   "headers": [
