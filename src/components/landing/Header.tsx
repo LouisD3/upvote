@@ -11,17 +11,19 @@ const SERVICES = [
   {
     label: "Marketing Reddit",
     href: "/",
-    description: "Génération de leads via Reddit",
+    description: "Posts qui ramènent des leads qualifiés pendant des mois, sans budget publicitaire",
     icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-primary flex-shrink-0">
-        <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary flex-shrink-0">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="6"/>
+        <circle cx="12" cy="12" r="2"/>
       </svg>
     ),
   },
   {
     label: "Reddit GEO",
     href: "/agence-geo",
-    description: "Cité par ChatGPT, Perplexity & Claude",
+    description: "Soyez cité par ChatGPT grâce à la source n°1 des LLM Reddit",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary flex-shrink-0">
         <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
@@ -112,7 +114,7 @@ export const Header = ({
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <div className="w-64 rounded-xl bg-card border border-border/60 shadow-xl shadow-black/10 overflow-hidden">
+                <div className="w-80 rounded-xl bg-card border border-border/60 shadow-xl shadow-black/10 overflow-hidden">
                   {SERVICES.map((service) => {
                     const isActive =
                       service.href === "/"
@@ -122,14 +124,16 @@ export const Header = ({
                       <a
                         key={service.href}
                         href={lang === "en" ? `/en${service.href === "/" ? "" : service.href}` : service.href}
-                        className={`flex items-start gap-3 px-4 py-3.5 hover:bg-primary/5 transition-colors duration-150 ${isActive ? "bg-primary/5" : ""}`}
+                        className={`flex items-start gap-4 px-5 py-4 hover:bg-primary/5 transition-colors duration-150 ${isActive ? "bg-primary/5" : ""}`}
                       >
-                        <div className="mt-0.5">{service.icon}</div>
+                        <div className="mt-0.5 w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          {service.icon}
+                        </div>
                         <div>
                           <p className={`text-sm font-semibold ${isActive ? "text-primary" : "text-foreground"}`}>
                             {service.label}
                           </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">{service.description}</p>
+                          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{service.description}</p>
                         </div>
                       </a>
                     );
