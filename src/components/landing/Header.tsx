@@ -11,6 +11,7 @@ const SERVICES = [
   {
     label: "Marketing Reddit",
     href: "/",
+    enHref: "/en",
     description: "Transformez Reddit en canal d'acquisition récurrent",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary flex-shrink-0">
@@ -23,6 +24,7 @@ const SERVICES = [
   {
     label: "Reddit GEO",
     href: "/agence-geo",
+    enHref: "/en/geo-agency",
     description: "Soyez cité par ChatGPT grâce à la source n°1 des LLM Reddit",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary flex-shrink-0">
@@ -33,16 +35,10 @@ const SERVICES = [
   },
 ];
 
-const getAlternateUrl = (lang: string, currentPath: string): string => {
-  if (lang === "en") {
-    return currentPath.replace(/^\/en(\/|$)/, "/");
-  }
-  return `/en${currentPath === "/" ? "" : currentPath}`;
-};
-
 interface HeaderProps {
   lang?: "fr" | "en";
   currentPath?: string;
+  alternatePath?: string;
   showLangToggle?: boolean;
   navItems?: { label: string; sectionId: string }[];
   ctaLabel?: string;
@@ -52,6 +48,7 @@ interface HeaderProps {
 export const Header = ({
   lang = "fr",
   currentPath = "/",
+  alternatePath,
   showLangToggle = false,
   navItems = [],
   ctaLabel = "Réserver un audit gratuit",
@@ -123,7 +120,7 @@ export const Header = ({
                     return (
                       <a
                         key={service.href}
-                        href={lang === "en" ? `/en${service.href === "/" ? "" : service.href}` : service.href}
+                        href={lang === "en" ? service.enHref : service.href}
                         className={`flex items-start gap-4 px-5 py-4 hover:bg-primary/5 transition-colors duration-150 ${isActive ? "bg-primary/5" : ""}`}
                       >
                         <div className="mt-0.5 w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -158,7 +155,7 @@ export const Header = ({
         <div className="flex items-center gap-3">
           {showLangToggle && (
             <a
-              href={getAlternateUrl(lang, currentPath)}
+              href={alternatePath || (lang === "en" ? "/" : "/en")}
               className="text-lg hover:scale-110 transition-transform duration-200 px-1"
               aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
             >
