@@ -106,7 +106,7 @@ const faqGeo = [
       homePath="/"
       ctaLabel="Réserver un audit gratuit"
       navItems={[
-        { label: "GEO vs SEO", sectionId: "how-it-works" },
+        { label: "GEO vs SEO", sectionId: "geo-vs-seo" },
         { label: "Tarifs", sectionId: "pricing" },
         { label: "FAQ", sectionId: "faq" }
       ]}
@@ -172,7 +172,7 @@ const faqGeo = [
           <div class="animate-fade-up" style="animation-delay: 100ms; animation-fill-mode: both;">
             <div class="max-w-3xl mx-auto mb-16 space-y-6">
               <p class="text-lg text-muted-foreground text-center leading-relaxed">
-                Une <strong class="text-foreground">agence GEO</strong> (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'intelligence artificielle : ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les 10 liens bleus de Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
+                Une <strong class="text-foreground">agence GEO</strong> (Generative Engine Optimization) est un prestataire spécialisé dans l'optimisation de la visibilité d'une marque au sein des réponses générées par les moteurs d'intelligence artificielle : ChatGPT, Perplexity, Claude, Google AI Overviews et Bing Copilot. Contrairement au SEO qui cible les résultats de recherche Google, le GEO cible les réponses conversationnelles que les IA fournissent directement aux utilisateurs.
               </p>
               <p class="text-lg text-muted-foreground text-center leading-relaxed">
                 Concrètement, quand un prospect demande à ChatGPT « quel est le meilleur outil de [votre catégorie] ? », une <strong class="text-foreground">agence GEO</strong> s'assure que votre marque apparaît dans la réponse. C'est un shift fondamental : on passe de « être trouvé quand quelqu'un cherche » à « être recommandé quand quelqu'un demande ».
@@ -222,7 +222,7 @@ const faqGeo = [
       </section>
 
       <!-- ═══════════════════════════ GEO vs SEO ═══════════════════════════ -->
-      <section class="py-24 px-6 relative overflow-hidden">
+      <section id="geo-vs-seo" class="py-24 px-6 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background pointer-events-none"></div>
         <div class="max-w-5xl mx-auto relative z-10">
           <div class="animate-fade-up text-center mb-6" style="animation-fill-mode: both;">
@@ -255,7 +255,7 @@ const faqGeo = [
                 <tbody>
                   <tr class="border-b border-border/30">
                     <td class="p-4 text-sm font-semibold text-foreground">Objectif</td>
-                    <td class="p-4 text-sm text-muted-foreground">Ranker dans les 10 liens bleus de Google</td>
+                    <td class="p-4 text-sm text-muted-foreground">Être cité par Google dans les résultats de recherche</td>
                     <td class="p-4 text-sm text-foreground font-medium bg-primary/5">Être cité dans les réponses conversationnelles des IA</td>
                   </tr>
                   <tr class="border-b border-border/30">
@@ -634,7 +634,7 @@ const faqGeo = [
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">0</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">Cité dans 4/5 réponses ChatGPT sur la catégorie</span>
+                        <span class="text-sm font-bold text-primary">Cité plus de 1500 fois par mois par les IA</span>
                       </div>
                     </div>
                   </div>
@@ -644,7 +644,7 @@ const faqGeo = [
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">2/mois</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">18/mois via découverte IA + Reddit</span>
+                        <span class="text-sm font-bold text-primary">50/mois</span>
                       </div>
                     </div>
                   </div>
@@ -671,7 +671,7 @@ const faqGeo = [
                   </div>
                   <div>
                     <h3 class="text-lg font-bold text-foreground">Fintech, Paiement B2C</h3>
-                    <p class="text-sm text-muted-foreground">Durée : 3 mois</p>
+                    <p class="text-sm text-muted-foreground">Durée : 7 mois</p>
                   </div>
                 </div>
                 <div class="mt-6 space-y-4">
@@ -687,11 +687,11 @@ const faqGeo = [
                   </div>
                   <div class="flex items-center gap-3">
                     <div class="flex-1">
-                      <p class="text-sm font-medium text-foreground">Trafic Reddit → Site</p>
+                      <p class="text-sm font-medium text-foreground">Trafic LLM (GEO) → Site</p>
                       <div class="flex items-center gap-2 mt-1">
                         <span class="text-sm text-muted-foreground line-through">0</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-primary"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                        <span class="text-sm font-bold text-primary">+2 400 visiteurs qualifiés/mois</span>
+                        <span class="text-sm font-bold text-primary">+6 300 visiteurs qualifiés/mois</span>
                       </div>
                     </div>
                   </div>
@@ -804,7 +804,13 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Création et modération d'un subreddit dédié (au nom de votre marque ou pas)</span>
+                      <span class="text-sm text-foreground font-medium">Contenus qui ramènent des leads pendant des mois</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
+                      </div>
+                      <span class="text-sm text-foreground font-medium">Positionner votre marque top 1 sur Google</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -822,7 +828,7 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance GEO mensuel</span>
+                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
@@ -860,7 +866,13 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Création et modération d'un subreddit dédié (au nom de votre marque ou pas)</span>
+                      <span class="text-sm text-foreground font-medium">Contenus qui ramènent des leads pendant des mois</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
+                      </div>
+                      <span class="text-sm text-foreground font-medium">Positionner votre marque top 1 sur Google</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -878,7 +890,7 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance GEO mensuel</span>
+                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
@@ -911,7 +923,13 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Création et modération d'un subreddit dédié (au nom de votre marque ou pas)</span>
+                      <span class="text-sm text-foreground font-medium">Contenus qui ramènent des leads pendant des mois</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
+                      </div>
+                      <span class="text-sm text-foreground font-medium">Positionner votre marque top 1 sur Google</span>
                     </li>
                     <li class="flex items-center gap-3">
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -929,7 +947,7 @@ const faqGeo = [
                       <div class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-primary"><path d="M20 6 9 17l-5-5"/></svg>
                       </div>
-                      <span class="text-sm text-foreground font-medium">Rapport de performance GEO mensuel</span>
+                      <span class="text-sm text-foreground font-medium">Rapport de performance mensuel</span>
                     </li>
                   </ul>
                   <div class="text-center mt-auto">
