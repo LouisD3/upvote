@@ -9,6 +9,11 @@
       "source": "/en/agence-reddit",
       "destination": "/en",
       "permanent": true
+    },
+    {
+      "source": "/en/agence-geo",
+      "destination": "/en/geo-agency",
+      "permanent": true
     }
   ],
   "headers": [
