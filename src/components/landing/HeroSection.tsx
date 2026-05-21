@@ -60,7 +60,7 @@ export const HeroSection = () => {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="max-w-3xl mx-auto relative z-10">
+      <AnimatedSection className="max-w-2xl mx-auto relative z-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
           <span className="text-foreground">{t("hero.headline1")}</span>
           <span className="text-gradient">{t("hero.headline2")}</span>

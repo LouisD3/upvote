@@ -6,17 +6,16 @@ const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
 
-const getAlternateUrl = (lang: string): string => {
-  if (typeof window === "undefined") return lang === "en" ? "/" : "/en";
-  const path = window.location.pathname;
+const getAlternateUrl = (lang: string, currentPath: string): string => {
   if (lang === "en") {
-    return path.replace(/^\/en(\/|$)/, "/");
+    return currentPath.replace(/^\/en(\/|$)/, "/");
   }
-  return `/en${path === "/" ? "" : path}`;
+  return `/en${currentPath === "/" ? "" : currentPath}`;
 };
 
 interface HeaderProps {
   lang?: "fr" | "en";
+  currentPath?: string;
   showLangToggle?: boolean;
   navItems?: { label: string; sectionId: string }[];
   ctaLabel?: string;
@@ -25,6 +24,7 @@ interface HeaderProps {
 
 export const Header = ({
   lang = "fr",
+  currentPath = "/",
   showLangToggle = false,
   navItems = [],
   ctaLabel = "Réserver un audit gratuit",
@@ -68,7 +68,7 @@ export const Header = ({
         <div className="flex items-center gap-3">
           {showLangToggle && (
             <a
-              href={getAlternateUrl(lang)}
+              href={getAlternateUrl(lang, currentPath)}
               className="text-lg hover:scale-110 transition-transform duration-200 px-1"
               aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
             >

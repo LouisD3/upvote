@@ -32,6 +32,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
     <Header
       client:load
       lang="en"
+      currentPath="/en"
       showLangToggle={true}
       homePath="/en"
       ctaLabel="Book free Audit"
@@ -47,7 +48,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
       <!-- ============================================================
            HERO
            ============================================================ -->
-      <section class="min-h-[90vh] flex flex-col items-center justify-start px-6 pt-28 pb-0 text-center relative overflow-hidden bg-gradient-hero">
+      <section class="min-h-[90vh] flex flex-col items-center justify-start px-6 pt-16 pb-0 text-center relative overflow-hidden bg-gradient-hero">
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
           <div class="absolute top-[10%] left-[10%] w-[500px] h-[500px] rounded-full bg-primary/5 blur-[100px] animate-pulse"></div>
           <div class="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-primary/3 blur-[80px] animate-pulse" style="animation-delay: 1s;"></div>
@@ -64,9 +65,9 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
           </div>
         </div>
 
-        <div class="animate-fade-up max-w-4xl mx-auto relative z-10" style="animation-fill-mode: both;">
+        <div class="animate-fade-up max-w-3xl mx-auto relative z-10" style="animation-fill-mode: both;">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-            <span class="text-foreground">#1 Reddit Agency in France: </span>
+            <span class="text-foreground">Reddit Agency: </span>
             <span class="text-gradient">Generate qualified leads</span>
             <span class="text-foreground"> for your Startup</span>
           </h1>
@@ -99,7 +100,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 Why Reddit?
               </span>
             </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-4 leading-tight">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-8 leading-tight max-w-3xl mx-auto">
               Reddit has become <span class="text-gradient">essential</span> in 2026
             </h2>
           </div>
@@ -166,7 +167,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
                 The problem
               </span>
             </div>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-4 leading-tight">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground text-center mb-8 leading-tight max-w-3xl mx-auto">
               Most startups fail on Reddit. <span class="text-gradient">Not our clients.</span>
             </h2>
           </div>
@@ -304,13 +305,13 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
            METHODOLOGY
            ============================================================ -->
       <section id="how-it-works" class="py-24 px-6 bg-gradient-section relative overflow-hidden">
-        <div class="max-w-4xl mx-auto relative z-10">
+        <div class="max-w-3xl mx-auto relative z-10">
           <div class="animate-fade-up text-center mb-16" style="animation-fill-mode: both;">
             <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
               Our 5-step method
             </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 max-w-3xl mx-auto">
               How our <span class="text-primary">Reddit agency</span> generates your leads
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -318,7 +319,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
             </p>
           </div>
 
-          <div class="space-y-6">
+          <div class="flex flex-col gap-3">
             <!-- Step 1 -->
             <div class="animate-slide-up" style="animation-delay: 0ms; animation-fill-mode: both;">
               <div class="flex items-start gap-6 p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/30 transition-all duration-300">
@@ -417,7 +418,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
               Comparison
             </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 max-w-3xl mx-auto">
               Organic Reddit vs <span class="text-gradient">Reddit Ads</span>
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -495,7 +496,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
               Reddit + AI
             </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 max-w-3xl mx-auto">
               Our Reddit agency makes you <span class="text-gradient">visible in AI</span>
             </h2>
           </div>
@@ -534,7 +535,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/></svg>
               Client results
             </span>
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 max-w-3xl mx-auto">
               What our clients <span class="text-gradient">actually get</span>
             </h2>
             <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -657,7 +658,7 @@ import LogoBanner from '@/components/sections/LogoBanner.astro';
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
               Pricing
             </span>
-            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-8 max-w-3xl mx-auto">
               Our <span class="text-primary">Reddit agency</span> pricing
             </h2>
           </div>
