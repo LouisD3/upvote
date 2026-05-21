@@ -1,10 +1,35 @@
+import { useState, useRef } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronDown } from "lucide-react";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
 const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit";
+
+const SERVICES = [
+  {
+    label: "Marketing Reddit",
+    href: "/",
+    description: "Génération de leads via Reddit",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-primary flex-shrink-0">
+        <path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Reddit GEO",
+    href: "/agence-geo",
+    description: "Cité par ChatGPT, Perplexity & Claude",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-primary flex-shrink-0">
+        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    ),
+  },
+];
 
 const getAlternateUrl = (lang: string, currentPath: string): string => {
   if (lang === "en") {
@@ -30,8 +55,20 @@ export const Header = ({
   ctaLabel = "Réserver un audit gratuit",
   homePath = "/",
 }: HeaderProps) => {
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+
+  const closeDropdown = () => {
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
   };
 
   return (
@@ -54,6 +91,55 @@ export const Header = ({
         </AnimatedSection>
 
         <nav className="hidden md:flex items-center gap-6">
+          {/* Services dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={openDropdown}
+            onMouseLeave={closeDropdown}
+          >
+            <button
+              className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Services
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-full pt-3"
+                onMouseEnter={openDropdown}
+                onMouseLeave={closeDropdown}
+              >
+                <div className="w-64 rounded-xl bg-card border border-border/60 shadow-xl shadow-black/10 overflow-hidden">
+                  {SERVICES.map((service) => {
+                    const isActive =
+                      service.href === "/"
+                        ? currentPath === "/" || currentPath === ""
+                        : currentPath.startsWith(service.href);
+                    return (
+                      <a
+                        key={service.href}
+                        href={lang === "en" ? `/en${service.href === "/" ? "" : service.href}` : service.href}
+                        className={`flex items-start gap-3 px-4 py-3.5 hover:bg-primary/5 transition-colors duration-150 ${isActive ? "bg-primary/5" : ""}`}
+                      >
+                        <div className="mt-0.5">{service.icon}</div>
+                        <div>
+                          <p className={`text-sm font-semibold ${isActive ? "text-primary" : "text-foreground"}`}>
+                            {service.label}
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-0.5">{service.description}</p>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Scroll-to nav items */}
           {navItems.map((item) => (
             <button
               key={item.sectionId}
