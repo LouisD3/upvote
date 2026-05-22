@@ -23,7 +23,7 @@ export const AnimatedSection = ({
   return (
     <div
       className={cn(animationClasses[animation], className)}
-      style={{ animationDelay: `${delay}ms`, animationFillMode: "both" }}
+      style={{ animationDelay: `${delay}ms`, animationFillMode: animation === "fade-up" ? "none" : "both" }}
     >
       {children}
     </div>

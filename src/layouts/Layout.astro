@@ -73,8 +73,16 @@ const metaLanguage = lang === 'en' ? 'en' : 'fr';
     <link rel="preconnect" href="https://t.contentsquare.net">
     <link rel="dns-prefetch" href="https://t.contentsquare.net">
 
-    <!-- Contentsquare / Hotjar -->
-    <script defer src="https://t.contentsquare.net/uxa/fe3725e302c65.js"></script>
+    <!-- Contentsquare / Hotjar — loaded after main thread is idle -->
+    <script>
+      window.addEventListener('load', function() {
+        requestIdleCallback(function() {
+          var s = document.createElement('script');
+          s.src = 'https://t.contentsquare.net/uxa/fe3725e302c65.js';
+          document.head.appendChild(s);
+        });
+      });
+    </script>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
