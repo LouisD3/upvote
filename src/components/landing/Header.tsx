@@ -80,6 +80,8 @@ export const Header = ({
               <img
                 src={logo}
                 alt="UpvotePartners"
+                width={44}
+                height={44}
                 className="relative w-11 h-11 rounded-xl transition-transform duration-300 group-hover:scale-105"
               />
             </div>
