@@ -918,6 +918,76 @@ const encodedPromptReddit = encodeURIComponent(PROMPT_REDDIT);
            ASK AI
            ============================================================ -->
       <section class="py-20 px-6 relative overflow-hidden">
+        <!-- Wireframe planet arc -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[55%] pointer-events-none">
+          <svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="planetClipIndex">
+                <circle cx="400" cy="400" r="380" />
+              </clipPath>
+              <radialGradient id="planetGlowIndex" cx="50%" cy="30%" r="60%">
+                <stop offset="0%" stop-color="hsl(var(--primary))" stop-opacity="0.1" />
+                <stop offset="60%" stop-color="hsl(var(--primary))" stop-opacity="0.03" />
+                <stop offset="100%" stop-color="hsl(var(--primary))" stop-opacity="0" />
+              </radialGradient>
+              <radialGradient id="atmosphereGlowIndex" cx="50%" cy="0%" r="80%">
+                <stop offset="0%" stop-color="hsl(var(--primary))" stop-opacity="0.2" />
+                <stop offset="40%" stop-color="hsl(var(--primary))" stop-opacity="0.06" />
+                <stop offset="100%" stop-color="hsl(var(--primary))" stop-opacity="0" />
+              </radialGradient>
+              <filter id="glowFilterIndex">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <circle cx="400" cy="400" r="395" fill="url(#atmosphereGlowIndex)" />
+            <circle cx="400" cy="400" r="380" fill="url(#planetGlowIndex)" />
+            <circle cx="400" cy="400" r="380" stroke="hsl(var(--primary))" stroke-width="2" fill="none" filter="url(#glowFilterIndex)" class="animate-[planetPulse_3s_ease-in-out_infinite]" />
+            <circle cx="400" cy="400" r="376" stroke="hsl(var(--primary))" stroke-width="0.5" stroke-opacity="0.2" fill="none" />
+            <g clip-path="url(#planetClipIndex)">
+              <ellipse cx="400" cy="140" rx="420" ry="22" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.2" fill="none" />
+              <ellipse cx="400" cy="200" rx="440" ry="28" stroke="hsl(var(--primary))" stroke-width="2" stroke-opacity="0.3" fill="none" />
+              <ellipse cx="400" cy="260" rx="450" ry="22" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.25" fill="none" />
+              <ellipse cx="400" cy="320" rx="440" ry="32" stroke="hsl(var(--primary))" stroke-width="2.5" stroke-opacity="0.4" fill="none" />
+              <ellipse cx="400" cy="370" rx="430" ry="18" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.2" fill="none" />
+              <ellipse cx="400" cy="420" rx="460" ry="28" stroke="hsl(var(--primary))" stroke-width="2.5" stroke-opacity="0.5" fill="none" />
+              <ellipse cx="400" cy="470" rx="440" ry="22" stroke="hsl(var(--primary))" stroke-width="2" stroke-opacity="0.35" fill="none" />
+              <ellipse cx="400" cy="530" rx="420" ry="26" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.25" fill="none" />
+              <ellipse cx="400" cy="590" rx="440" ry="20" stroke="hsl(var(--primary))" stroke-width="2" stroke-opacity="0.35" fill="none" />
+              <ellipse cx="400" cy="650" rx="410" ry="24" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.2" fill="none" />
+              <ellipse cx="400" cy="720" rx="430" ry="18" stroke="hsl(var(--primary))" stroke-width="1" stroke-opacity="0.15" fill="none" />
+              <ellipse cx="400" cy="400" rx="90" ry="380" stroke="hsl(var(--primary))" stroke-width="1.5" stroke-opacity="0.2" fill="none" />
+              <ellipse cx="400" cy="400" rx="190" ry="380" stroke="hsl(var(--primary))" stroke-width="1.2" stroke-opacity="0.15" fill="none" />
+              <ellipse cx="400" cy="400" rx="290" ry="380" stroke="hsl(var(--primary))" stroke-width="1" stroke-opacity="0.12" fill="none" />
+              <ellipse cx="400" cy="400" rx="360" ry="380" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.1" fill="none" />
+              <line x1="80" y1="160" x2="520" y2="660" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.1" />
+              <line x1="220" y1="80" x2="660" y2="600" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.08" />
+              <line x1="280" y1="660" x2="720" y2="160" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.1" />
+              <line x1="140" y1="600" x2="580" y2="80" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.08" />
+              <circle cx="260" cy="250" r="2.5" fill="hsl(var(--primary))" fill-opacity="0.5" />
+              <circle cx="500" cy="320" r="3" fill="hsl(var(--primary))" fill-opacity="0.6" />
+              <circle cx="340" cy="400" r="2.5" fill="hsl(var(--primary))" fill-opacity="0.4" />
+              <circle cx="450" cy="460" r="3.5" fill="hsl(var(--primary))" fill-opacity="0.55" />
+              <circle cx="380" cy="530" r="2.5" fill="hsl(var(--primary))" fill-opacity="0.35" />
+              <circle cx="520" cy="550" r="3" fill="hsl(var(--primary))" fill-opacity="0.5" />
+              <circle cx="300" cy="600" r="2.5" fill="hsl(var(--primary))" fill-opacity="0.3" />
+              <circle cx="400" cy="320" r="3.5" fill="hsl(var(--primary))" fill-opacity="0.7" />
+              <circle cx="560" cy="420" r="2.5" fill="hsl(var(--primary))" fill-opacity="0.45" />
+              <line x1="260" y1="250" x2="400" y2="320" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.2" />
+              <line x1="400" y1="320" x2="500" y2="320" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.18" />
+              <line x1="340" y1="400" x2="450" y2="460" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.18" />
+              <line x1="450" y1="460" x2="520" y2="550" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.15" />
+              <line x1="500" y1="320" x2="560" y2="420" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.18" />
+              <line x1="260" y1="250" x2="340" y2="400" stroke="hsl(var(--primary))" stroke-width="0.8" stroke-opacity="0.15" />
+            </g>
+            <path d="M 100 400 A 300 300 0 0 1 700 400" stroke="hsl(var(--primary))" stroke-width="2" stroke-opacity="0.3" fill="none" filter="url(#glowFilterIndex)" />
+          </svg>
+        </div>
+
+        <!-- Dot grid pattern -->
         <div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px); background-size: 24px 24px;"></div>
         <div class="max-w-3xl mx-auto relative z-10">
           <div class="animate-fade-up" style="animation-fill-mode: both;">
