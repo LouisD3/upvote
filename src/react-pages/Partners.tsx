@@ -343,9 +343,6 @@ const PartnersContent = () => {
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </a>
                 <div className="flex items-center gap-3">
-                  <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
-                    <XIcon className="w-4 h-4" />
-                  </a>
                   <a href="https://www.linkedin.com/in/mateodrouillard/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                     <LinkedInIcon className="w-4 h-4" />
                   </a>
