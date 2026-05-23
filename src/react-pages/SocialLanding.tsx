@@ -54,9 +54,6 @@ const SocialLandingContent = () => {
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <a href="https://x.com/mateodr_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
-                    <XIcon className="w-4 h-4" />
-                  </a>
                   <a href="https://www.linkedin.com/in/mateodrouillard/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                     <LinkedInIcon className="w-4 h-4" />
                   </a>
