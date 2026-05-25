@@ -9,7 +9,7 @@ const CALENDLY_URL = "https://calendly.com/mateo-drouillard-upvotepartners/audit
 
 const SERVICES = [
   {
-    label: "Marketing Reddit",
+    label: "Reddit Marketing",
     href: "/",
     enHref: "/en",
     description: "Transformez Reddit en canal d'acquisition récurrent",
