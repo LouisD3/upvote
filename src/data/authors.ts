@@ -16,7 +16,7 @@ export const authors = {
     role: "Fondateur d'UpvotePartners",
     bio: "Matéo Drouillard est le fondateur d'UpvotePartners, agence spécialisée en marketing Reddit et en GEO (Generative Engine Optimization). Il accompagne des startups pour transformer Reddit en canal d'acquisition organique et faire citer leur marque par les moteurs d'IA comme ChatGPT et Perplexity.",
     avatar: mateoAvatar,
-    sameAs: ['https://x.com/mateodr_', 'https://www.linkedin.com/in/mateodrouillard/'],
+    sameAs: ['https://www.linkedin.com/in/mateodrouillard/'],
   },
 } as const satisfies Record<string, Author>;
 

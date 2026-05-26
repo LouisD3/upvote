@@ -2,14 +2,12 @@ import { useState } from "react";
 import { Header } from "@/components/landing/Header";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Mail, Check, X, Handshake, DollarSign, Eye, FileText, TrendingUp } from "lucide-react";
-import { XIcon } from "@/components/icons/XIcon";
 import { LinkedInIcon } from "@/components/icons/LinkedInIcon";
 import { cn } from "@/lib/utils";
 import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
-const TWITTER_URL = "https://x.com/mateodr_";
 const EMAIL = "contact@upvotepartners.com";
 const AVG_BASKET = 5000;
 const COMMISSION_RATE = 0.10;
@@ -252,7 +250,7 @@ const PartnersContent = () => {
                   {
                     num: 1,
                     title: "Tu nous contactes",
-                    desc: "Par email ou Twitter. Dis-nous avec qui tu travailles et pourquoi tu penses qu'il y a un fit.",
+                    desc: "Par email. Dis-nous avec qui tu travailles et pourquoi tu penses qu'il y a un fit.",
                   },
                   {
                     num: 2,
@@ -322,20 +320,6 @@ const PartnersContent = () => {
                     <Mail className="w-4 h-4" />
                     {EMAIL}
                   </a>
-                  <a
-                    href={TWITTER_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-center gap-2.5 px-6 py-3 rounded-xl",
-                      "bg-foreground text-background font-semibold text-sm",
-                      "hover:opacity-90 hover:scale-105 transition-all duration-300",
-                      "shadow-lg w-full sm:w-auto justify-center"
-                    )}
-                  >
-                    <XIcon className="w-4 h-4" />
-                    @mateodr_
-                  </a>
                 </div>
 
                 <p className="text-sm text-muted-foreground font-medium">
@@ -359,9 +343,6 @@ const PartnersContent = () => {
                   <span className="text-foreground font-semibold text-lg">UpvotePartners</span>
                 </a>
                 <div className="flex items-center gap-3">
-                  <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
-                    <XIcon className="w-4 h-4" />
-                  </a>
                   <a href="https://www.linkedin.com/in/mateodrouillard/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                     <LinkedInIcon className="w-4 h-4" />
                   </a>
