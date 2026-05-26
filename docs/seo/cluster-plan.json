@@ -1,0 +1,265 @@
+{
+  "meta": {
+    "project": "UpvotePartners — marketing Reddit + GEO",
+    "site": "upvotepartners.com",
+    "market": "France (FR language only)",
+    "generatedDate": "2026-05-26",
+    "method": "SERP-overlap topic clustering (condensed). SERP source: DuckDuckGo HTML (kl=fr-fr) as google.fr proxy. DataForSEO MCP NOT available — all volume + difficulty are ESTIMATES (est.).",
+    "dataQuality": {
+      "serpSource": "DuckDuckGo html/lite endpoint with FR locale; Google blocked by consent wall, Bing unreliable for 'agence' queries (returns real-estate noise).",
+      "volumeAndDifficulty": "ESTIMATED. No live keyword API. Treat all numbers as directional, not measured.",
+      "domainAuthority": "Near-zero (DA ~0, absent Common Crawl). Strategy biases to longest-tail / weakest-SERP queries.",
+      "geoCaveat": "WebSearch is US-only and was unavailable; SERP fidelity to literal google.fr is approximate."
+    },
+    "serpIntentVerdict": {
+      "headTerm": "agence reddit",
+      "dominantIntent": "COMMERCIAL (commercial-investigation, listicle-dominated). 7/10 are 'top agences' listicles, 2-3 are direct agency service pages, 0 Reddit threads, 0 pure-informational.",
+      "implication": "Homepage-as-pillar targeting the commercial head term is the CORRECT play. Do NOT build a separate /agence-reddit page. But note: ranking #1-organic for 'agence reddit' competes against listicles on content-farm domains — getting INTO those listicles (digital PR / outreach) matters as much as the homepage itself.",
+      "serpStrength": "WEAK / winnable. Top results sit on low-authority recycled-content domains (lebigdata.fr, cyber-securite.fr, objetconnecte.com, realite-virtuelle.com, le-blog-techno.fr, publithings.com). Real dedicated competitors are few.",
+      "geoFusion": "Nearly every ranking page fuses 'agence reddit' with GEO/LLM/SEO. The market has already merged Reddit-marketing and GEO — validates UpvotePartners' dual positioning and the /agence-geo internal link strategy."
+    },
+    "competitorsFound": [
+      {"name": "Redd Influence", "url": "https://reddinfluence.com/", "type": "direct agency service page", "notes": "Self-styled '#1 en France'. ~1500€/mo. NO blog — content lane open. Services: SEO/GEO, community mgmt high-karma accounts, Reddit Ads, reporting, e-reputation/veille."},
+      {"name": "Redd Agency", "url": "https://redd-agency.com/", "type": "direct agency service page", "notes": "Agence Reddit + Agence GEO (same dual positioning as UpvotePartners)."},
+      {"name": "Skilfut", "url": "https://www.skilfut.online/", "type": "agency + active blog", "notes": "Has a blog (reddit ads guide, 'top 4 agences' post). A content competitor to watch."},
+      {"name": "Norry (Agence Norry)", "url": "https://www.agencenorry.com/", "type": "agency w/ founder-focused guides", "notes": "Strong FR-native guide 'lancer son acquisition sans se faire bannir' — direct content twin."},
+      {"name": "AdsBack", "url": "https://www.ads-back.com/agence-sea/agence-reddit-ads", "type": "SEA agency, Reddit Ads service page", "notes": "Established paid-media agency."},
+      {"name": "Keyweo", "url": "https://www.keyweo.com/fr/social-ads/reddit-ads/", "type": "social-ads agency, Reddit Ads service page", "notes": "Established social-ads agency."},
+      {"name": "R-Advertising", "url": "https://www.r-advertising.com/blog/publicite-sur-reddit-comment-exploiter-ce-levier-sous-estime-en-acquisition", "type": "agency blog", "notes": "Acquisition-angle Reddit Ads content."},
+      {"name": "Webconversion", "url": "https://www.webconversion.fr/reddit-ads-mode-demploi/", "type": "agency blog (B2B)", "notes": "B2B Reddit Ads how-to."}
+    ],
+    "keywordUniverseSize": 34,
+    "totalClusters": 5,
+    "totalPosts": 13,
+    "startHere": [
+      "Acquérir ses 100 premiers clients SaaS grâce à Reddit (guide fondateurs)",
+      "Comment faire de l'autopromotion sur Reddit sans se faire bannir",
+      "Comment trouver les bons subreddits pour votre marque (méthode + outils)",
+      "Reddit Ads : combien ça coûte vraiment ? (CPC, CPM, budget 2026)",
+      "Reddit pour le B2B : faut-il s'y lancer en 2026 ? (guide stratégique)"
+    ]
+  },
+
+  "pillar": {
+    "title": "Agence Reddit & GEO — UpvotePartners (homepage)",
+    "keyword": "agence reddit",
+    "secondary": ["agence marketing reddit", "agence reddit ads", "agence reddit france", "agence geo reddit"],
+    "intent": "Commercial",
+    "volume": "≈50/mo (est., FR) for 'agence reddit'; +'agence reddit ads' ≈30/mo (est.) — same SERP, same target",
+    "difficulty": "Medium (est.). SERP weak but listicle-gated.",
+    "url": "/",
+    "role": "HUB. Existing commercial page. Every spoke links UP to it. Do NOT duplicate as /agence-reddit."
+  },
+
+  "clusters": [
+    {
+      "name": "Cluster A — Reddit organique : promouvoir sans se faire bannir",
+      "intent": "Informational → Commercial bridge (highest strategic fit; founders/marketers = ICP)",
+      "rationale": "French SERPs here are THIN: dominated by auto-translated content farms + raw Reddit threads. Easiest cluster to win. Anchors strongly to the agency value prop ('on le fait pour vous, sans risque de ban').",
+      "posts": [
+        {
+          "title": "Comment faire de l'autopromotion sur Reddit sans se faire bannir (guide 2026)",
+          "keyword": "autopromotion reddit sans se faire bannir",
+          "secondary": ["promouvoir son contenu sur reddit sans ban", "règles autopromotion reddit", "9:1 rule reddit", "spam reddit règles"],
+          "intent": "Informational",
+          "volume": "est. low-med (200-500/mo aggregate)",
+          "difficulty": "est. low",
+          "template": "how-to",
+          "wordCount": 1600
+        },
+        {
+          "title": "Comment promouvoir son site (ou son produit) sur Reddit en 2026",
+          "keyword": "comment promouvoir son site sur reddit",
+          "secondary": ["promouvoir son produit sur reddit", "marketing reddit organique", "reddit pour le trafic"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. low-med",
+          "template": "ultimate-guide",
+          "wordCount": 1800
+        },
+        {
+          "title": "Karma Reddit : à quoi ça sert et comment en gagner (sans tricher)",
+          "keyword": "comment gagner du karma sur reddit",
+          "secondary": ["karma reddit c'est quoi", "augmenter karma reddit", "minimum karma poster subreddit"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. very low",
+          "template": "explainer",
+          "wordCount": 1200
+        }
+      ]
+    },
+    {
+      "name": "Cluster B — Reddit Ads (publicité payante)",
+      "intent": "Informational → Commercial (BOF). Bridges to the homepage 'Reddit Ads' service.",
+      "rationale": "French-native guides exist (synerweb, datashake, communicant, webconversion) but many top results are English/translated. Beatable with a deep, current, FR-native, example-rich set. 'Prix' and 'exemples' queries are BOF and convert.",
+      "posts": [
+        {
+          "title": "Reddit Ads : combien ça coûte vraiment ? CPC, CPM et budget (2026)",
+          "keyword": "reddit ads prix",
+          "secondary": ["coût publicité reddit", "cpc cpm reddit ads", "budget reddit ads", "reddit ads tarif"],
+          "intent": "Commercial",
+          "volume": "est. low-med",
+          "difficulty": "est. low-med",
+          "template": "explainer",
+          "wordCount": 1500
+        },
+        {
+          "title": "Reddit Ads : tutoriel pas-à-pas pour lancer votre première campagne",
+          "keyword": "reddit ads tuto",
+          "secondary": ["créer une campagne reddit ads", "publicité reddit comment faire", "reddit ads mode d'emploi", "ciblage subreddit reddit ads"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. med",
+          "template": "how-to",
+          "wordCount": 1800
+        },
+        {
+          "title": "5 exemples de campagnes Reddit Ads qui ont cartonné (et pourquoi)",
+          "keyword": "exemples campagnes reddit ads",
+          "secondary": ["études de cas reddit ads", "reddit ads exemples réussis", "formats publicitaires reddit"],
+          "intent": "Commercial",
+          "volume": "est. low",
+          "difficulty": "est. low",
+          "template": "listicle",
+          "wordCount": 1400
+        }
+      ]
+    },
+    {
+      "name": "Cluster C — Subreddits & community building",
+      "intent": "Informational (TOF/MOF). Feeds organic + ads clusters; very weak SERPs.",
+      "rationale": "The 'trouver les bons subreddits' and 'créer un subreddit' SERPs are the WEAKEST encountered — almost entirely auto-translated junk + raw Reddit wikis. Easiest pure-organic wins, though commercial value is indirect.",
+      "posts": [
+        {
+          "title": "Comment trouver les bons subreddits pour votre marque (méthode + outils)",
+          "keyword": "comment trouver les bons subreddits",
+          "secondary": ["trouver un subreddit", "meilleurs subreddits français", "subreddits pour entreprise", "outil recherche subreddit"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. very low",
+          "template": "how-to",
+          "wordCount": 1500
+        },
+        {
+          "title": "Créer et animer un subreddit de marque : guide complet",
+          "keyword": "comment créer un subreddit",
+          "secondary": ["créer une communauté reddit", "animer un subreddit", "modération subreddit", "subreddit de marque"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. low",
+          "template": "ultimate-guide",
+          "wordCount": 1600
+        }
+      ]
+    },
+    {
+      "name": "Cluster D — Reddit pour le B2B / SaaS / startups",
+      "intent": "Commercial (consideration). Directly targets the agency's ICP (fondateurs SaaS, marketing B2B).",
+      "rationale": "Highest BUYER intent. French SERPs for SaaS-acquisition queries are thin (mostly EN + raw Reddit threads), while B2B queries have a live, active French conversation (xavierdegraux, pulpmeup, chezmarko, comdigitale). These posts attract exactly who hires UpvotePartners.",
+      "posts": [
+        {
+          "title": "Acquérir ses 100 premiers clients SaaS grâce à Reddit (guide fondateurs)",
+          "keyword": "acquérir des clients saas avec reddit",
+          "secondary": ["premiers clients saas reddit", "growth reddit startup", "reddit acquisition saas", "lead generation reddit"],
+          "intent": "Commercial",
+          "volume": "est. low",
+          "difficulty": "est. low",
+          "template": "ultimate-guide",
+          "wordCount": 1800
+        },
+        {
+          "title": "Reddit pour le B2B : faut-il s'y lancer en 2026 ? (guide stratégique)",
+          "keyword": "reddit pour le b2b",
+          "secondary": ["reddit marketing b2b", "reddit entreprise", "reddit lead gen b2b", "reddit g2 b2b"],
+          "intent": "Commercial",
+          "volume": "est. low-med",
+          "difficulty": "est. med",
+          "template": "explainer",
+          "wordCount": 1600
+        },
+        {
+          "title": "Stratégie marketing Reddit pour startups : le playbook go-to-market",
+          "keyword": "stratégie marketing reddit pour startup",
+          "secondary": ["marketing reddit startup", "go-to-market reddit", "reddit growth startup", "stratégie reddit saas"],
+          "intent": "Commercial",
+          "volume": "est. low-med",
+          "difficulty": "est. med",
+          "template": "ultimate-guide",
+          "wordCount": 1800
+        }
+      ]
+    },
+    {
+      "name": "Cluster E — Réputation, veille & Reddit pour le SEO/GEO",
+      "intent": "Informational → bridges to /agence-geo. Lower priority (tool-vendor competition) but high topical-authority value.",
+      "rationale": "Ties Reddit to brand monitoring AND to SEO/GEO (Reddit content now surfaces in Google + AI answers). Veille SERP is dominated by big SaaS tools (agorapulse, awario, meltwater) so it's harder; the Reddit-SEO/GEO angle is the differentiated, winnable sub-topic and the natural cross-link to /agence-geo.",
+      "posts": [
+        {
+          "title": "Reddit SEO & GEO : pourquoi vos posts Reddit rankent sur Google et dans ChatGPT",
+          "keyword": "reddit seo",
+          "secondary": ["reddit google ranking", "reddit dans chatgpt", "reddit geo", "reddit visibilité ia", "reddit answer engine"],
+          "intent": "Informational",
+          "volume": "est. low-med",
+          "difficulty": "est. med",
+          "template": "explainer",
+          "wordCount": 1600
+        },
+        {
+          "title": "Surveiller votre marque sur Reddit : guide de la veille et du social listening",
+          "keyword": "veille reddit social listening",
+          "secondary": ["social listening reddit", "monitorer reddit marque", "outils veille reddit", "e-réputation reddit"],
+          "intent": "Informational",
+          "volume": "est. low",
+          "difficulty": "est. med-high",
+          "template": "ultimate-guide",
+          "wordCount": 1500
+        }
+      ]
+    }
+  ],
+
+  "links": [
+    {"from": "Cluster A / autopromotion sans ban", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence marketing Reddit"},
+    {"from": "Cluster A / promouvoir son site", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit"},
+    {"from": "Cluster A / karma reddit", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence marketing Reddit"},
+    {"from": "Cluster B / reddit ads prix", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit Ads"},
+    {"from": "Cluster B / reddit ads tuto", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit Ads"},
+    {"from": "Cluster B / exemples campagnes", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit Ads"},
+    {"from": "Cluster C / trouver subreddits", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence marketing Reddit"},
+    {"from": "Cluster C / créer subreddit", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit"},
+    {"from": "Cluster D / clients saas reddit", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit pour SaaS"},
+    {"from": "Cluster D / reddit b2b", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence marketing Reddit B2B"},
+    {"from": "Cluster D / stratégie startup", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit"},
+    {"from": "Cluster E / reddit seo geo", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence Reddit"},
+    {"from": "Cluster E / veille reddit", "to": "/", "type": "spoke->home (mandatory)", "anchor": "agence marketing Reddit"},
+
+    {"from": "/", "to": "Cluster D / clients saas reddit", "type": "home->spoke (featured)", "anchor": "acquérir des clients SaaS sur Reddit"},
+    {"from": "/", "to": "Cluster A / autopromotion sans ban", "type": "home->spoke (featured)", "anchor": "promouvoir sans se faire bannir"},
+    {"from": "/", "to": "Cluster B / reddit ads prix", "type": "home->spoke (featured)", "anchor": "combien coûtent les Reddit Ads"},
+
+    {"from": "Cluster A / autopromotion sans ban", "to": "Cluster A / karma reddit", "type": "intra-cluster", "anchor": "gagner du karma"},
+    {"from": "Cluster A / autopromotion sans ban", "to": "Cluster C / trouver subreddits", "type": "intra-cluster", "anchor": "trouver les bons subreddits"},
+    {"from": "Cluster A / promouvoir son site", "to": "Cluster A / autopromotion sans ban", "type": "intra-cluster", "anchor": "sans vous faire bannir"},
+    {"from": "Cluster B / reddit ads tuto", "to": "Cluster B / reddit ads prix", "type": "intra-cluster", "anchor": "le budget à prévoir"},
+    {"from": "Cluster B / reddit ads tuto", "to": "Cluster B / exemples campagnes", "type": "intra-cluster", "anchor": "exemples de campagnes"},
+    {"from": "Cluster B / exemples campagnes", "to": "Cluster B / reddit ads tuto", "type": "intra-cluster", "anchor": "lancer votre campagne"},
+    {"from": "Cluster C / trouver subreddits", "to": "Cluster C / créer subreddit", "type": "intra-cluster", "anchor": "créer votre propre subreddit"},
+    {"from": "Cluster D / clients saas reddit", "to": "Cluster D / stratégie startup", "type": "intra-cluster", "anchor": "playbook go-to-market"},
+    {"from": "Cluster D / reddit b2b", "to": "Cluster D / clients saas reddit", "type": "intra-cluster", "anchor": "vos premiers clients"},
+    {"from": "Cluster E / reddit seo geo", "to": "Cluster E / veille reddit", "type": "intra-cluster", "anchor": "surveiller votre marque"},
+
+    {"from": "Cluster D / clients saas reddit", "to": "Cluster B / reddit ads prix", "type": "cross-cluster", "anchor": "via Reddit Ads"},
+    {"from": "Cluster A / promouvoir son site", "to": "Cluster E / reddit seo geo", "type": "cross-cluster", "anchor": "le SEO de Reddit"},
+    {"from": "Cluster B / reddit ads tuto", "to": "Cluster C / trouver subreddits", "type": "cross-cluster", "anchor": "cibler les bons subreddits"},
+
+    {"from": "Cluster E / reddit seo geo", "to": "/agence-geo", "type": "spoke->/agence-geo (topical)", "anchor": "optimisation pour les moteurs génératifs (GEO)"},
+    {"from": "Cluster E / veille reddit", "to": "/agence-geo", "type": "spoke->/agence-geo (topical)", "anchor": "visibilité dans les réponses IA"},
+    {"from": "Cluster D / reddit b2b", "to": "/agence-geo", "type": "spoke->/agence-geo (topical)", "anchor": "être cité par les IA (GEO)"}
+  ],
+
+  "cannibalizationCheck": {
+    "status": "PASS",
+    "notes": "No two spokes share a primary keyword. Watch zones: (1) 'comment promouvoir son site sur reddit' (Cluster A) and 'marketing reddit' (informational head) share SERP — keep the head term as a pillar-supporting section on homepage or a single hub article, NOT a second spoke. (2) 'agence reddit ads' overlaps ~6-7/10 with 'agence reddit' — keep BOTH on the homepage (same target), never a separate page. (3) Cluster B 'tuto' vs 'prix' vs 'exemples' kept as distinct primaries to avoid intra-cluster overlap."
+  }
+}
