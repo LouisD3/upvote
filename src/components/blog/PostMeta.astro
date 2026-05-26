@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  readingTime: number;
+  authorName: string;
+}
+
+const { title, pubDate, updatedDate, readingTime, authorName } = Astro.props;
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+const iso = (d: Date) => d.toISOString().split('T')[0];
+---
+
+<div class="mb-8">
+  <nav aria-label="Fil d'ariane" class="mb-6">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+      <li><a href="/" class="hover:text-primary transition-colors">Accueil</a></li>
+      <li aria-hidden="true">›</li>
+      <li><a href="/blog" class="hover:text-primary transition-colors">Blog</a></li>
+      <li aria-hidden="true">›</li>
+      <li class="text-foreground font-medium truncate max-w-[18rem]" aria-current="page">{title}</li>
+    </ol>
+  </nav>
+
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+    <span class="font-medium text-foreground">{authorName}</span>
+    <span aria-hidden="true">·</span>
+    <time datetime={iso(pubDate)}>{fmt(pubDate)}</time>
+    {updatedDate && (
+      <>
+        <span aria-hidden="true">·</span>
+        <span>Mis à jour le <time datetime={iso(updatedDate)}>{fmt(updatedDate)}</time></span>
+      </>
+    )}
+    <span aria-hidden="true">·</span>
+    <span>{readingTime} min de lecture</span>
+  </div>
+</div>

@@ -27,3 +27,6 @@ dist-ssr
 MEMORY.md
 seo-audit-details.md
 .astro/
+
+# Local reference/scratch (pages HTML sauvegardées, notes de travail)
+exemple/

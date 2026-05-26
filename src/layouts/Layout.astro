@@ -7,12 +7,96 @@ interface Props {
   robots?: string;
   lang?: 'fr' | 'en';
   alternateUrl?: string;
+  // Défauts = comportement actuel des pages existantes (rétro-compatible).
+  orgSchema?: boolean;      // false sur les articles de blog → pas de ProfessionalService/aggregateRating
+  ogType?: string;          // 'article' sur les articles de blog
+  ogImageWidth?: string;    // '1200' sur les articles de blog (OG 1200×630 réellement servie)
+  ogImageHeight?: string;   // '630'
 }
 
-const { title, description, canonical = 'https://upvotepartners.com', ogImage = 'https://upvotepartners.com/logo.webp', robots = 'index, follow', lang = 'fr', alternateUrl } = Astro.props;
+const {
+  title,
+  description,
+  canonical = 'https://upvotepartners.com',
+  ogImage = 'https://upvotepartners.com/logo.webp',
+  robots = 'index, follow',
+  lang = 'fr',
+  alternateUrl,
+  orgSchema = true,
+  ogType = 'website',
+  ogImageWidth = '512',
+  ogImageHeight = '512',
+} = Astro.props;
 
 const ogLocale = lang === 'en' ? 'en_US' : 'fr_FR';
 const metaLanguage = lang === 'en' ? 'en' : 'fr';
+
+// Schema global ProfessionalService (+ aggregateRating) — émis sur les pages commerciales uniquement.
+// Les articles de blog passent orgSchema={false} (un article ne doit pas porter la note 5/5).
+const orgSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "UpvotePartners",
+  "description": "Agence spécialisée en acquisition de clients via Reddit et en Generative Engine Optimization (GEO) pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA.",
+  "url": "https://upvotepartners.com",
+  "logo": "https://upvotepartners.com/logo.webp",
+  "image": "https://upvotepartners.com/logo.webp",
+  "founder": {
+    "@type": "Person",
+    "name": "Matéo Drouillard",
+    "sameAs": [
+      "https://x.com/mateodr_",
+      "https://www.linkedin.com/in/mateodrouillard/"
+    ]
+  },
+  "serviceType": ["Agence Marketing Reddit", "Agence GEO", "Generative Engine Optimization"],
+  "areaServed": [
+    { "@type": "Country", "name": "France" },
+    { "@type": "Country", "name": "Belgium" },
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "Canada" }
+  ],
+  "availableLanguage": ["French", "English"],
+  "priceRange": "€€€",
+  "sameAs": [
+    "https://x.com/mateodr_",
+    "https://www.linkedin.com/in/mateodrouillard/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services Marketing Reddit & GEO",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Reddit Growth Foundation",
+        "description": "4 à 5 posts par mois, 25 commentaires ciblés, gestion multi-comptes, reporting mensuel",
+        "price": "3000",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Reddit Growth Engine",
+        "description": "6 à 7 posts par mois, 50 commentaires ciblés, gestion multi-comptes, reporting mensuel",
+        "price": "5000",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Reddit Market Dominance",
+        "description": "7 à 8 posts par mois, 100 commentaires ciblés, domination de niche, reporting mensuel",
+        "price": "10000",
+        "priceCurrency": "EUR"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "12"
+  }
+};
 ---
 
 <!doctype html>
@@ -44,13 +128,13 @@ const metaLanguage = lang === 'en' ? 'en' : 'fr';
 
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content={ogType}>
     <meta property="og:url" content={canonical}>
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
     <meta property="og:image" content={ogImage}>
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:image:width" content={ogImageWidth}>
+    <meta property="og:image:height" content={ogImageHeight}>
     <meta property="og:image:alt" content="UpvotePartners | Agence Marketing Reddit & GEO">
     <meta property="og:locale" content={ogLocale}>
     <meta property="og:site_name" content="UpvotePartners">
@@ -69,11 +153,14 @@ const metaLanguage = lang === 'en' ? 'en' : 'fr';
     <link rel="icon" type="image/webp" href="/logo.webp">
     <link rel="apple-touch-icon" href="/logo.webp">
 
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Blog UpvotePartners" href="https://upvotepartners.com/rss.xml">
+
     <!-- Preconnect for third-party scripts -->
     <link rel="preconnect" href="https://t.contentsquare.net">
     <link rel="dns-prefetch" href="https://t.contentsquare.net">
 
-    <!-- Contentsquare / Hotjar — loaded after main thread is idle -->
+    <!-- Contentsquare / Hotjar : loaded after main thread is idle -->
     <script>
       window.addEventListener('load', function() {
         requestIdleCallback(function() {
@@ -84,73 +171,10 @@ const metaLanguage = lang === 'en' ? 'en' : 'fr';
       });
     </script>
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "UpvotePartners",
-      "description": "Agence spécialisée en acquisition de clients via Reddit et en Generative Engine Optimization (GEO) pour les startups. Stratégie organique, leads qualifiés, visibilité SEO et citations IA.",
-      "url": "https://upvotepartners.com",
-      "logo": "https://upvotepartners.com/logo.webp",
-      "image": "https://upvotepartners.com/logo.webp",
-      "founder": {
-        "@type": "Person",
-        "name": "Matéo Drouillard",
-        "sameAs": [
-          "https://x.com/mateodr_",
-          "https://www.linkedin.com/in/mateodrouillard/"
-        ]
-      },
-      "serviceType": ["Agence Marketing Reddit", "Agence GEO", "Generative Engine Optimization"],
-      "areaServed": [
-        { "@type": "Country", "name": "France" },
-        { "@type": "Country", "name": "Belgium" },
-        { "@type": "Country", "name": "Switzerland" },
-        { "@type": "Country", "name": "Canada" }
-      ],
-      "availableLanguage": ["French", "English"],
-      "priceRange": "€€€",
-      "sameAs": [
-        "https://x.com/mateodr_",
-        "https://www.linkedin.com/in/mateodrouillard/"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Services Marketing Reddit & GEO",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "name": "Reddit Growth Foundation",
-            "description": "4 à 5 posts par mois, 25 commentaires ciblés, gestion multi-comptes, reporting mensuel",
-            "price": "3000",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "name": "Reddit Growth Engine",
-            "description": "6 à 7 posts par mois, 50 commentaires ciblés, gestion multi-comptes, reporting mensuel",
-            "price": "5000",
-            "priceCurrency": "EUR"
-          },
-          {
-            "@type": "Offer",
-            "name": "Reddit Market Dominance",
-            "description": "7 à 8 posts par mois, 100 commentaires ciblés, domination de niche, reporting mensuel",
-            "price": "10000",
-            "priceCurrency": "EUR"
-          }
-        ]
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1",
-        "reviewCount": "12"
-      }
-    }
-    </script>
+    <!-- Structured Data (JSON-LD) : schema organisation global (desactive sur le blog via orgSchema) -->
+    {orgSchema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchemaData)} />
+    )}
 
     <slot name="head" />
   </head>

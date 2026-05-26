@@ -5,6 +5,7 @@ export const translations = {
   "nav.howItWorks": { en: "How it works", fr: "Notre méthode" },
   "nav.pricing": { en: "Pricing", fr: "Tarifs" },
   "nav.faq": { en: "FAQ", fr: "FAQ" },
+  "nav.blog": { en: "Blog", fr: "Blog" },
   "header.cta": { en: "Book free Audit", fr: "Réserver un audit gratuit" },
 
   // Hero

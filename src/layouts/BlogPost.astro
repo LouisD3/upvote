@@ -1,0 +1,201 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import '@/index.css';
+import { Header } from '@/components/landing/Header';
+import Footer from '@/components/sections/Footer.astro';
+import Prose from '@/components/blog/Prose.astro';
+import PostMeta from '@/components/blog/PostMeta.astro';
+import AuthorBio from '@/components/blog/AuthorBio.astro';
+import ArticleCTA from '@/components/blog/ArticleCTA.astro';
+import BlogCard from '@/components/blog/BlogCard.astro';
+import type { Author } from '@/data/authors';
+
+interface RelatedPost {
+  href: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags: string[];
+  readingTime: number;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author: Author;
+  ogImage: string; // chemin racine 1200×630 (ou URL absolue)
+  readingTime: number;
+  faq: { q: string; a: string }[];
+  hub: 'home' | 'agence-geo';
+  tags: string[];
+  related?: RelatedPost[];
+}
+
+const {
+  title,
+  description,
+  slug,
+  pubDate,
+  updatedDate,
+  author,
+  ogImage,
+  readingTime,
+  faq,
+  hub,
+  tags,
+  related = [],
+} = Astro.props;
+
+const SITE = 'https://upvotepartners.com';
+const canonical = `${SITE}/blog/${slug}`;
+const ogAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage}`;
+const hasFaq = faq.length > 0;
+
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  image: ogAbsolute,
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate ?? pubDate).toISOString(),
+  author: {
+    '@type': 'Person',
+    name: author.name,
+    url: SITE,
+    sameAs: author.sameAs,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'UpvotePartners',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE}/logo.webp`,
+    },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  inLanguage: 'fr-FR',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: SITE },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog` },
+    { '@type': 'ListItem', position: 3, name: title, item: canonical },
+  ],
+};
+
+// FAQPage UNIQUEMENT si la FAQ est rendue visible (cf. garde-fou audit : pas de schema sans contenu)
+const faqSchema = hasFaq
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : null;
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  lang="fr"
+  ogImage={ogAbsolute}
+  ogType="article"
+  ogImageWidth="1200"
+  ogImageHeight="630"
+  orgSchema={false}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(blogPostingSchema)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+    {faqSchema && (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
+    )}
+  </Fragment>
+
+  <div class="min-h-screen bg-background">
+    <Header
+      client:load
+      lang="fr"
+      currentPath={`/blog/${slug}`}
+      showLangToggle={false}
+      homePath="/"
+      ctaLabel="Réserver un audit gratuit"
+    />
+
+    <div class="pt-16">
+      <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        <PostMeta
+          title={title}
+          pubDate={pubDate}
+          updatedDate={updatedDate}
+          readingTime={readingTime}
+          authorName={author.name}
+        />
+
+        {/* H1 sans animation opacity:0 → visible immédiatement (préserve le LCP) */}
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-foreground mb-4">
+          {title}
+        </h1>
+        <p class="text-lg text-muted-foreground leading-relaxed mb-10">{description}</p>
+
+        <Prose>
+          <slot />
+        </Prose>
+
+        {hasFaq && (
+          <section aria-labelledby="faq-heading" class="not-prose mt-16">
+            <h2 id="faq-heading" class="text-2xl md:text-3xl font-bold text-foreground mb-6">
+              Questions fréquentes
+            </h2>
+            <div class="flex flex-col gap-3">
+              {faq.map((item) => (
+                <details class="group rounded-xl border border-border/60 bg-card px-5 py-4">
+                  <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-foreground">
+                    <span>{item.q}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </summary>
+                  <p class="mt-3 text-muted-foreground leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <ArticleCTA hub={hub} />
+
+        <AuthorBio author={author} />
+
+        {related.length > 0 && (
+          <section aria-labelledby="related-heading" class="not-prose mt-16">
+            <h2 id="related-heading" class="text-2xl font-bold text-foreground mb-6">À lire aussi</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+              {related.map((post) => (
+                <BlogCard
+                  href={post.href}
+                  title={post.title}
+                  description={post.description}
+                  pubDate={post.pubDate}
+                  tags={post.tags}
+                  readingTime={post.readingTime}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
+
+      <Footer lang="fr" />
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,38 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags?: string[];
+  readingTime: number;
+}
+
+const { href, title, description, pubDate, tags = [], readingTime } = Astro.props;
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+const iso = (d: Date) => d.toISOString().split('T')[0];
+---
+
+<article class="group relative h-full flex flex-col rounded-2xl border border-border/60 bg-card p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-card-hover">
+  {tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-3">
+      {tags.slice(0, 2).map((tag) => (
+        <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary">{tag}</span>
+      ))}
+    </div>
+  )}
+
+  <h2 class="text-xl font-bold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
+    <a href={href} class="after:absolute after:inset-0">{title}</a>
+  </h2>
+
+  <p class="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{description}</p>
+
+  <div class="flex items-center gap-2 text-xs text-muted-foreground">
+    <time datetime={iso(pubDate)}>{fmt(pubDate)}</time>
+    <span aria-hidden="true">·</span>
+    <span>{readingTime} min de lecture</span>
+  </div>
+</article>

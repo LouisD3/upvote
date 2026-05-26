@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ChevronDown } from "lucide-react";
+import { t } from "@/lib/i18n";
 import logoAsset from "@/assets/logo_reddit_agence.webp";
 const logo = typeof logoAsset === 'string' ? logoAsset : logoAsset.src;
 
@@ -141,6 +142,14 @@ export const Header = ({
               </div>
             )}
           </div>
+
+          {/* Blog */}
+          <a
+            href="/blog"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {t("nav.blog", lang)}
+          </a>
 
           {/* Scroll-to nav items */}
           {navItems.map((item) => (
